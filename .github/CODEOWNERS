@@ -1,0 +1,11 @@
+/backend/src/main/java/**/identity/    @HasanBasriEngin
+/backend/src/main/java/**/course/      @efekanegeli2
+/backend/src/main/java/**/advising/    @sertugser
+/backend/src/main/java/**/planning/    @sertugser
+/backend/src/main/java/**/assignment/  @SercanFurkan
+/backend/src/main/java/**/grading/     @ogithup
+/infra/                                @efekanegeli2
+/.github/                              @sertugser
+/docs/srs/                             @sertugser
+/docs/ai-log/                          @SercanFurkan
+/tests/golden-master/                  @ogithup

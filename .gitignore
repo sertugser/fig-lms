@@ -1,0 +1,26 @@
+# Java / Gradle / Maven
+target/
+build/
+.gradle/
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Node / React
+node_modules/
+dist/
+coverage/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Environment and secrets
+.env
+*.env.local
+
+# Test output
+playwright-report/
+test-results/
