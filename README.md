@@ -14,6 +14,14 @@
 
 Moodle bugs fixed in the new system: MDL-87490, MDL-85503.
 
+## Getting started
+- **Tasks:** all work is tracked on the [project board](https://github.com/users/sertugser/projects/3) and grouped by [milestone](https://github.com/sertugser/fig-lms/milestones). Filter issues with `assignee:<your-username>`. If an issue is temporarily assigned to someone else, the real owner is in the **Owner** row at the top of the issue.
+- **Moodle source:** we analyse Moodle 5.3.1. Paths in issues are relative to its `public/` folder.
+  ```bash
+  git clone --depth 1 -b MOODLE_503_STABLE https://github.com/moodle/moodle.git
+  ```
+- **How to contribute:** see [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Quick start
 ```bash
 docker compose -f infra/docker-compose.yml up -d   # Moodle 5.3.1 + new system + PostgreSQL
