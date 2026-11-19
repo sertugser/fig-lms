@@ -24,7 +24,6 @@ Read this once before you start your first issue. It takes about 10 minutes.
 | `preserved-function` | A Moodle business rule we must keep |
 | `bug` | A Moodle bug we reproduce and fix |
 | `kpi` | A measurement on Moodle (baseline) |
-| `size: S` / `size: M` | Half a day / 1–2 days |
 
 ## 3. Work on an issue
 1. Move the card to **In Progress** on the board.
@@ -56,7 +55,7 @@ If you use an AI tool, fill in the AI section of the PR template and add an entr
 |---|---|
 | Sat, Nov 21 | Moodle in Docker (#8), backend skeleton (#5), AI log template (#11) |
 | Sun, Nov 22 | SRS skeleton (#3), advising rules (#4) |
-| Mon, Nov 23 | Business rules, bug reproductions, KPI baselines, golden master harness |
+| Mon, Nov 23 | Business rules, bug reproductions, KPI baselines, golden master harness, literature review (#20) |
 | Tue, Nov 24, 12:00 | Everyone adds one slide about their module |
 | Tue, Nov 24, evening | Rehearsal |
 | Wed, Nov 25 | First presentation |
