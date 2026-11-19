@@ -2,6 +2,8 @@
 
 **AI-assisted modernization of selected Moodle subsystems.**
 
+> New to the team? Start with the [first day guide](docs/FIRST-DAY.md).
+
 ## Scope
 | Module | Flows in scope |
 |---|---|
