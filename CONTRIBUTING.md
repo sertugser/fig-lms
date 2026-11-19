@@ -1,7 +1,7 @@
 # Contributing
 
 ## Workflow
-1. Every piece of work starts with an **issue** that carries a requirement ID (e.g. `REQ-ADV-03`). The traceability matrix is built from these.
+1. Every piece of work starts with an **issue** that carries a requirement ID (e.g. `REQ-ADV-03`). The traceability matrix is built from these. When you start an issue, move its card to **In Progress** on the [project board](https://github.com/users/sertugser/projects/3).
 2. No direct pushes to `main`. Branch name: `<type>/<module>-<short-description>`
    - Examples: `feat/advising-prerequisite`, `fix/assignment-MDL-87490`, `test/grading-golden-master`
 3. Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/): `<type>(<module>): <summary>` with type `feat`, `fix`, `test`, `docs`, `refactor` or `chore`.
