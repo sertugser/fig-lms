@@ -1,0 +1,7 @@
+module,paths,src_files,src_code_lines,test_files,test_code_lines,test_to_code_ratio,behat_feature_lines,functions,ccn_mean,ccn_median,ccn_max,functions_over_limit,pct_over_limit
+identity,login auth/manual admin/roles user lib/accesslib.php,191,16712,38,8054,0.482,3656,930,3.51,2.0,43,60,6.5
+course,course enrol/manual enrol/self enrol/category,349,31565,104,27174,0.861,11244,1946,3.55,2.0,67,117,6.0
+advising,availability completion,66,4944,31,4882,0.987,2846,439,3.39,2,25,28,6.4
+assignment,mod/assign,282,27526,60,15992,0.581,8236,1742,3.84,1.0,91,125,7.2
+grading,grade lib/gradelib.php,296,24169,75,10477,0.433,10992,1055,4.73,2,99,107,10.1
+planning,competency,47,8776,21,10804,1.231,0,798,2.39,1.0,36,17,2.1
