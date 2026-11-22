@@ -1,0 +1,48 @@
+Moodle 5.3.1 (Build: 20261112), 2026-11-22 13:17
+PASS | REQ-CRS-01 | normal         | create course with fullname, shortname, category | expected: see check | actual: created id 14
+PASS | REQ-CRS-01 | invalid        | duplicate shortname CS101 | expected: shortnametaken | actual: exception shortnametaken
+PASS | REQ-CRS-01 | boundary       | shortname differing only in case (cs101) | expected: see check | actual: created: uniqueness check is case-sensitive
+PASS | REQ-CRS-01 | invalid        | duplicate course idnumber CS101 | expected: courseidnumbertaken | actual: exception courseidnumbertaken
+PASS | REQ-CRS-01 | boundary       | empty idnumber twice is allowed | expected: see check | actual: created
+PASS | REQ-CRS-01 | invalid        | category does not exist | expected: dml_missing_record_exception | actual: exception invalidrecordunknown
+PASS | REQ-CRS-02 | invalid        | end date before start date | expected: enddatebeforestartdate | actual: exception enddatebeforestartdate
+PASS | REQ-CRS-02 | boundary       | end date equal to start date | expected: see check | actual: created
+PASS | REQ-CRS-02 | invalid        | end date without start date | expected: nostartdatenoenddate | actual: exception nostartdatenoenddate
+PASS | REQ-CRS-02 | normal         | no end date (0) is allowed | expected: see check | actual: created, enddate 0
+PASS | REQ-CRS-03 | normal         | new course gets default enrolment methods | expected: see check | actual: methods: manual(enabled), guest(disabled), self(disabled)
+PASS | REQ-CRS-03 | unauthorized   | student1 has moodle/course:create in category? | expected: see check | actual: no
+PASS | REQ-CRS-03 | unauthorized   | teacher1 (editingteacher in CS101) has moodle/course:create in category? | expected: see check | actual: no
+PASS | REQ-CRS-03 | normal         | admin/manager has moodle/course:create in category? | expected: see check | actual: yes
+PASS | REQ-CRS-04 | normal         | create subcategory under Engineering | expected: see check | actual: depth 2, path /2/9
+PASS | REQ-CRS-04 | invalid        | empty category name | expected: categorynamerequired | actual: exception categorynamerequired
+PASS | REQ-CRS-04 | boundary       | category name of 255 characters | expected: see check | actual: created
+PASS | REQ-CRS-04 | boundary       | category name of 256 characters | expected: categorytoolong | actual: exception categorytoolong
+PASS | REQ-CRS-04 | invalid        | duplicate category idnumber FIG-ENG | expected: categoryidnumbertaken | actual: exception categoryidnumbertaken
+PASS | REQ-CRS-04 | normal         | subcategory of a hidden category is hidden; course in it is hidden | expected: see check | actual: child visible=0, course visible=0
+PASS | REQ-CRS-04 | invalid        | move a category into its own subcategory | expected: cannotmovecategory | actual: exception cannotmovecategory
+PASS | REQ-CRS-04 | unauthorized   | teacher1 has moodle/category:manage in Engineering? | expected: see check | actual: no
+PASS | REQ-CRS-05 | normal         | manual enrol as student -> active enrolment + role | expected: see check | actual: active=true, role=true
+PASS | REQ-CRS-05 | boundary       | enrol the same user twice -> still one user_enrolments row | expected: see check | actual: rows=1
+PASS | REQ-CRS-06 | boundary       | timestart in the future -> not active yet | expected: see check | actual: any=true, active=false
+PASS | REQ-CRS-06 | boundary       | timeend in the past -> not active (expired) | expected: see check | actual: active=false
+PASS | REQ-CRS-06 | normal         | timeend in the future -> active | expected: see check | actual: active=true
+PASS | REQ-CRS-06 | invalid        | timeend before timestart is accepted by enrol_user (no validation) | expected: see check | actual: stored=true, active=false (never active)
+PASS | REQ-CRS-06 | normal         | suspended user enrolment -> not active | expected: see check | actual: active=false
+PASS | REQ-CRS-06 | normal         | enrolment method disabled -> enrolled users not active | expected: see check | actual: active=false
+PASS | REQ-CRS-05 | invalid        | enrol into the site front page course | expected: coding_exception | actual: exception codingerror
+PASS | REQ-CRS-05 | invalid        | guest user is never enrolled | expected: see check | actual: enrolled=false
+PASS | REQ-CRS-07 | normal         | teacher assignment = manual enrolment with role editingteacher; teacher shown as course contact | expected: see check | actual: contacts: Teacher: Ayse Yilmaz
+PASS | REQ-CRS-07 | unauthorized   | student1 has enrol/manual:enrol in course? | expected: see check | actual: no
+PASS | REQ-CRS-07 | normal         | teacher1 (editingteacher) has enrol/manual:enrol in course? | expected: see check | actual: yes
+PASS | REQ-CRS-07 | unauthorized   | roles teacher1 may assign in course (editingteacher not included?) | expected: see check | actual: assignable: teacher, student
+PASS | REQ-CRS-08 | normal         | self enrol allowed; enrolment period sets timeend | expected: see check | actual: can=true, timeend-timestart=2592000
+PASS | REQ-CRS-08 | invalid        | self enrol again when already enrolled | expected: see check | actual: message: Enrolment is disabled or inactive
+PASS | REQ-CRS-08 | boundary       | max enrolled = 2: second user still allowed | expected: see check | actual: can=true
+PASS | REQ-CRS-08 | boundary       | max enrolled = 2: third user rejected | expected: see check | actual: message: Maximum number of users allowed to self-enrol was already reached.
+PASS | REQ-CRS-08 | invalid        | enrolment opens tomorrow (enrolstartdate in future) | expected: see check | actual: message: You cannot enrol yet; enrolment starts on Monday, 23 November 2026, 1:17 PM.
+PASS | REQ-CRS-08 | invalid        | enrolment closed yesterday (enrolenddate in past) | expected: see check | actual: message: You cannot enrol any more, since enrolment ended on Saturday, 21 November 2026, 1:17 PM.
+PASS | REQ-CRS-08 | invalid        | "Allow new self enrolments" = No | expected: see check | actual: message: Enrolment is disabled or inactive
+PASS | REQ-CRS-08 | unauthorized   | guest user cannot self enrol | expected: see check | actual: message: Guests cannot access this course. Please log in. Continue
+PASS | REQ-CRS-08 | invalid        | wrong enrolment key is rejected by the form | expected: see check | actual: error: Incorrect enrolment key, please try again
+
+45 scenarios, 0 failed. All changes rolled back.
