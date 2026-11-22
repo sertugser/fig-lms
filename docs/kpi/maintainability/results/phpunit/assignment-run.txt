@@ -1,0 +1,18 @@
+module: assignment
+exit code: 1 (0 or 1 is normal: 1 means PHPUnit printed warnings or a test failed, see the output below; 124 = stopped by the time limit)
+minutes: 5.5
+command: cd /var/www/moodle && timeout 10800 php vendor/bin/phpunit --configuration phpunit-assignment.xml --do-not-cache-result --coverage-clover /results/assignment-clover.xml --log-junit /results/assignment-junit.xml
+
+--- end of PHPUnit output ---
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:396
+
+224) mod_assign\penalty_test::test_calculate_penalised_grade_applies_factors_for_verified_grade_while_frozen
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:490
+
+OK, but there were issues!
+Tests: 646, Assertions: 2887, PHPUnit Warnings: 224.
+
+Generating code coverage report in Clover XML format ... done [00:02.063]

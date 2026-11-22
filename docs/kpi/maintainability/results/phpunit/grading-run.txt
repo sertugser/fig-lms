@@ -1,0 +1,18 @@
+module: grading
+exit code: 1 (0 or 1 is normal: 1 means PHPUnit printed warnings or a test failed, see the output below; 124 = stopped by the time limit)
+minutes: 3.0
+command: cd /var/www/moodle && timeout 10800 php vendor/bin/phpunit --configuration phpunit-grading.xml --do-not-cache-result --coverage-clover /results/grading-clover.xml --log-junit /results/grading-junit.xml
+
+--- end of PHPUnit output ---
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:345
+
+29) core\gradelib_test::test_grade_get_grades_errors
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:377
+
+FAILURES!
+Tests: 417, Assertions: 3741, Failures: 1, PHPUnit Warnings: 29, PHPUnit Deprecations: 9, Skipped: 1.
+
+Generating code coverage report in Clover XML format ... done [00:02.644]

@@ -1,0 +1,18 @@
+module: identity
+exit code: 1 (0 or 1 is normal: 1 means PHPUnit printed warnings or a test failed, see the output below; 124 = stopped by the time limit)
+minutes: 5.4
+command: cd /var/www/moodle && timeout 10800 php vendor/bin/phpunit --configuration phpunit-identity.xml --do-not-cache-result --coverage-clover /results/identity-clover.xml --log-junit /results/identity-junit.xml
+
+--- end of PHPUnit output ---
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:5164
+
+127) accesslib_test::test_get_deprecated_capability_info_debugging
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:5183
+
+OK, but there were issues!
+Tests: 952, Assertions: 14570, PHPUnit Warnings: 127, Notices: 1, Skipped: 11.
+
+Generating code coverage report in Clover XML format ... done [00:02.515]
