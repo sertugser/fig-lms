@@ -33,7 +33,15 @@ docker compose -f infra/docker-compose.yml up -d  # Moodle 5.3.1 + PostgreSQL 17
 - The first start builds the image and installs Moodle (about 5 minutes). Wait until `docker compose -f infra/docker-compose.yml logs moodle` shows `MOODLE_WS_TOKEN=...`.
 - REST token for the golden master tests: see [infra/README.md](infra/README.md#rest-api-token).
 
-Details, sample data contents and troubleshooting: [infra/README.md](infra/README.md). The new system is added to the same Compose file in #5.
+Details, sample data contents and troubleshooting: [infra/README.md](infra/README.md).
+
+### Backend (new system)
+Requires Java 21 (Maven is downloaded by the wrapper):
+```bash
+cd backend
+./mvnw verify      # build, tests and the module boundary check (ModularityTest)
+```
+Windows: use `mvnw.cmd verify`. CI runs the same command on every pull request. The backend gets its own PostgreSQL service in the Compose file once the first module stores data (#6).
 
 ## Repository layout
 ```
