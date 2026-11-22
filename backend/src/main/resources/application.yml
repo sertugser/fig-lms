@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: fig-lms
+  datasource:
+    # Values come from the root .env (see .env.example).
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:fig}
+    username: ${POSTGRES_USER:fig}
+    password: ${POSTGRES_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
+server:
+  port: ${SERVER_PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,modulith
