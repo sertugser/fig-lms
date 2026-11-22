@@ -1,2 +1,2 @@
-| Date | Member | Module | Task | Model/version | Context | Outcome (accepted/modified/rejected) | Changes | Time (h) |
-|---|---|---|---|---|---|---|---|---|
+| Date | Member | Module | Task | AI used | Model/version | Context | Outcome | Changes | Time (h) | Review defects |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
