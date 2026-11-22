@@ -1,0 +1,74 @@
+# Fig LMS local environment.
+#   cp infra/.env.example infra/.env
+#   docker compose -f infra/docker-compose.yml up -d
+# Moodle: http://localhost:8000 (first start installs Moodle, takes ~3-5 minutes; follow with `logs -f moodle`)
+name: fig-lms
+
+x-moodle-env: &moodle-env
+  MOODLE_DB_HOST: moodle-db
+  MOODLE_DB_NAME: moodle
+  MOODLE_DB_USER: moodle
+  MOODLE_DB_PASSWORD: ${MOODLE_DB_PASSWORD:?copy infra/.env.example to infra/.env}
+  MOODLE_WWWROOT: ${MOODLE_WWWROOT:-http://localhost:8000}
+  MOODLE_ADMIN_PASSWORD: ${MOODLE_ADMIN_PASSWORD:?copy infra/.env.example to infra/.env}
+  MOODLE_WS_TOKEN: ${MOODLE_WS_TOKEN:-}
+  SAMPLE_USER_PASSWORD: ${SAMPLE_USER_PASSWORD:-}
+
+services:
+  moodle-db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: moodle
+      POSTGRES_USER: moodle
+      POSTGRES_PASSWORD: ${MOODLE_DB_PASSWORD:?copy infra/.env.example to infra/.env}
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8"
+    volumes:
+      - moodle-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U moodle -d moodle"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  moodle:
+    build:
+      context: ./moodle
+      args:
+        MOODLE_TAG: v5.3.1
+    image: fig-lms/moodle:5.3.1
+    environment: *moodle-env
+    ports:
+      - "${MOODLE_PORT:-8000}:80"
+    volumes:
+      - moodledata:/var/www/moodledata
+      - ./sample-data:/opt/fig/sample-data:ro
+    depends_on:
+      moodle-db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS -o /dev/null http://localhost/login/index.php || exit 1"]
+      interval: 15s
+      timeout: 10s
+      start_period: 10m
+      retries: 5
+    restart: unless-stopped
+
+  moodle-cron:
+    # Same image as "moodle" (built by that service, never pulled).
+    image: fig-lms/moodle:5.3.1
+    pull_policy: never
+    command: ["cron"]
+    environment: *moodle-env
+    volumes:
+      - moodledata:/var/www/moodledata
+    depends_on:
+      moodle-db:
+        condition: service_healthy
+      moodle:
+        condition: service_started
+    restart: unless-stopped
+
+volumes:
+  moodle-db:
+  moodledata:

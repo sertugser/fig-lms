@@ -23,9 +23,17 @@ Moodle bugs fixed in the new system: MDL-87490, MDL-85503.
 - **How to contribute:** see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Quick start
+Requires Docker (Docker Desktop on macOS/Windows). Run from the repository root:
 ```bash
-docker compose -f infra/docker-compose.yml up -d   # Moodle 5.3.1 + new system + PostgreSQL
+cp infra/.env.example infra/.env                # once; edit the passwords if you like
+docker compose -f infra/docker-compose.yml up -d  # Moodle 5.3.1 + PostgreSQL 17
+./infra/sample-data/load.sh                     # sample courses, users, assignment, grades
 ```
+- Moodle: http://localhost:8000. Log in as `admin` with `MOODLE_ADMIN_PASSWORD` from `infra/.env`.
+- The first start builds the image and installs Moodle (about 5 minutes). Wait until `docker compose -f infra/docker-compose.yml logs moodle` shows `MOODLE_WS_TOKEN=...`.
+- REST token for the golden master tests: see [infra/README.md](infra/README.md#rest-api-token).
+
+Details, sample data contents and troubleshooting: [infra/README.md](infra/README.md). The new system is added to the same Compose file in #5.
 
 ## Repository layout
 ```
