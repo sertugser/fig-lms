@@ -1,0 +1,78 @@
+# Module: Assignment (`REQ-ASG`)
+
+| Owner | Issue | Moodle version | Status |
+| --- | --- | --- | --- |
+| @SercanFurkan | #10 | 5.3.1 (Build 20261112) | Draft for review |
+
+**Scope.** Individual web submissions, date and permission gates, file submissions, and attempt handling. Team behavior is noted where it affects the gate. Group workflow, timed assignments, and grading penalties require separate coverage.
+
+**Source baseline.** Upstream tag `v5.3.1` resolves to commit `cfe123f26fc7071981fe949cb16cd5a08a8234f1`. The source declares build `20261112`, database version `2026100501.00`, and branch `503`. The preserved rules below come from source inspection. Acceptance criteria are proposed test cases. The [MDL-87490 report](../../bugs/MDL-87490.md) records the local evidence for the separate bug-fix requirement. [Version metadata][version]
+
+## Requirements
+
+| ID | Type | Description | Moodle source | Acceptance criteria | Owner |
+| --- | --- | --- | --- | --- | --- |
+| REQ-ASG-01 | preserved | **Submission window.** For an otherwise eligible student, the web submission window MUST open at the effective Allow submissions from timestamp and remain open through the effective cut-off timestamp, inclusive. A date of zero disables that boundary. Apply date overrides for the student. A later individual extension supersedes an enabled cut-off. An earlier extension leaves it in place. When configuring dates, the due date MUST be later than the opening date and the cut-off MUST be at or after the opening and due dates when those dates are enabled. | `assign::update_effective_access()` and `assign::submissions_open()`. [Overrides][overrides] · [Window][window] · [Form validation][dateform] | With the clock fixed, reject a save one second before opening and permit it at opening and at cut-off. Reject it one second after cut-off. Repeat with a later extension and verify the new boundary. Disable cut-off and confirm the due date alone leaves the window open. Verify the settings form rejects a due date equal to opening and a cut-off earlier than the due date. | @SercanFurkan |
+| REQ-ASG-02 | preserved | **Due date and lateness.** For an untimed assignment with a due date, the system MUST permit otherwise eligible work after the due date while the submission window is open. The submission status page MUST show submitted work as late when the last modification is strictly later than the effective due date or a later individual extension. | `assign::submissions_open()` and `renderer::get_time_remaining()`. [Window][window] · [Status display][lateness] | In separate otherwise identical runs, submit at the due date and one second after it, with a later cut-off. Both saves succeed and only the second is shown as late. Repeat with a later extension and confirm that the same timestamp is now on time. | @SercanFurkan |
+| REQ-ASG-03 | preserved | **Student eligibility and locks.** To edit their own submission, a student MUST be enrolled, have `mod/assign:submit` in the activity, and satisfy the submission window and lock checks. An assignment lock or locked gradebook grade blocks editing and final submission. With draft tracking enabled, a submitted attempt is closed to student edits. A team activity configured to require group membership prevents self-editing by a student without an eligible group. | `assign::submissions_open()`, `can_edit_submission()`, `process_save_submission()`, and `submit_for_grading()`. [Locks and enrolment][eligibility] · [Self-edit][edit] · [Web save][websave] · [Final submit][submit] · [Capabilities][permissions] | Using an open individual assignment, verify an eligible student can edit a draft. Remove enrolment or submit capability, or apply either lock, in independent trials. Verify the action is unavailable or rejected in each trial. For the group condition, compare a member with a user lacking an eligible group. | @SercanFurkan |
+| REQ-ASG-04 | preserved | **Draft and final submission.** A valid save MUST set `draft` when the activity requires an explicit submit action, and `submitted` otherwise. With explicit submission, the student MUST be able to finalize eligible draft work only after accepting the submission statement if the setting is enabled and the resolved statement is nonempty. The web confirmation checks enabled submission plugins and requires content. | `assign::save_submission()`, `check_submit_for_grading()`, `submit_for_grading()`, and `submit_submission()`. [Save][save] · [Confirmation][confirm] · [Final submit][submit] | In explicit mode, save nonempty work and verify it remains editable as a draft. Attempt to confirm without accepting a configured nonempty statement, then accept it and verify `submitted`. Verify the student can no longer edit it. In implicit mode, save valid work and verify it becomes `submitted` immediately. | @SercanFurkan |
+| REQ-ASG-05 | preserved | **File submissions.** When the file plugin is available at site level, enabled for the assignment, and configured with a positive file limit, the system MUST offer eligible students a file manager with the configured file count, maximum upload size, and accepted file types. Saving MUST attach files to the specific submission attempt and record their count. A file-only save with zero files MUST be rejected. | `assign::add_plugin_submission_elements()`, `save_submission()`, and the file plugin’s form, save, and empty checks. [Form gate][filegate] · [File manager][fileoptions] · [Storage and count][filestore] · [Empty check][fileempty] · [Save gate][save] | Use an open file-only assignment with the plugin available at site level and enabled on the activity. Set a one-file limit and verify that an empty save is rejected, one permitted file is stored on the current attempt with count one, and the file manager prevents adding a second. In independent checks, disable the plugin at site level with the activity setting still enabled, then restore site availability and disable it at activity level. Verify the file manager is unavailable in both cases. | @SercanFurkan |
+| REQ-ASG-06 | preserved | **Attempt limit.** The first attempt is stored as `0`. Granting another attempt MUST require `mod/assign:grade`. The direct **Allow another attempt** action requires an existing submission row. In the Manual grading form, saving with **Allow another attempt** enabled can initialize attempt `0` for a student without a submission row and then grant attempt `1`. With a finite maximum `N`, deny further attempts at stored attempt `N−1`. Unlimited uses `-1`. A granted attempt MUST have the next number and status `reopened`. | `assign::get_user_submission()`, `add_attempt()`, `get_user_grade()`, `apply_grade_to_user()`, and `reopen_submission_if_required()`. [First attempt][firstattempt] · [Direct action and limit][addattempt] · [Grade initialization][gradeinit] · [Grading save][gradesave] · [Policy][reopen] | In Manual mode with a limit of two, verify the direct action grants `0 → 1` and denies a third attempt. With unlimited attempts, verify it permits `1 → 2`. For a student with no submission row, verify the direct action cannot grant an attempt. In a separate fixture with no submission row and capacity for two attempts, save the Manual grading form with **Allow another attempt** enabled and verify that attempt `0` exists and attempt `1` is current and reopened. Verify a student without grade permission cannot grant attempts. | @SercanFurkan |
+| REQ-ASG-07 | preserved | **Reopening after grading.** For the latest attempt, the configured policy MUST govern whether a grade update grants another attempt, subject to REQ-ASG-06. Manual requires the grader to request it. Automatic grants another attempt on the grading path. Until pass grants one only when the gradebook explicitly reports a failing grade. An older attempt's grade update does not grant another attempt. The separate MDL-87490 investigation covers ungraded draft reversion. | `assign::update_grade()` and `reopen_submission_if_required()`. [Latest attempt check][gradeupdate] · [Policy branches][reopen] | With capacity remaining, save a grade in Manual with the option off and on, in independent runs. Verify that Automatic grants the next attempt after grading. In Until pass, verify failure grants another attempt and passing or an undefined pass result does not. Update an older attempt and verify the latest attempt number remains unchanged. | @SercanFurkan |
+
+## REQ-ASG-08 — Reverting an ungraded submission to draft
+
+**Type:** Bug fix. **Owner:** @SercanFurkan.
+
+**Preconditions.** Individual assignment with an eligible student, a submitted attempt with a file, and no assigned grade. The grader has `mod/assign:grade`. The verified configuration requires explicit submission and acceptance of the submission statement, allows unlimited attempts, and grants attempts automatically.
+
+**Requirement.** Reverting an ungraded attempt to draft MUST keep that same attempt current, retain its file, and permit the eligible student to edit or replace the file and resubmit. The revert MUST preserve the attempt number and MUST create no new attempt. Apply existing eligibility and lock rules when the student edits or resubmits. A later grading action may still grant an attempt under REQ-ASG-06 and REQ-ASG-07.
+
+**Observed in Moodle 5.3.1.** Revert made the original attempt a draft and opened an empty second attempt as current. The student could view the original file in history and start a new attempt. The original had no direct edit or remove action. [Reproduction and evidence](../../bugs/MDL-87490.md#reproduction)
+
+**Moodle source.** `assign::revert_to_draft()` calls `update_grade()`, which calls `reopen_submission_if_required()`. The Automatic branch invokes `add_attempt()` even with an ungraded placeholder. [Draft reversion][revert] · [Grade update][gradeupdate] · [Attempt policy][reopen] · [Attempt creation][addattempt]
+
+**Acceptance criteria.**
+
+1. In the verified configuration, submit a file in attempt 1. Revert it from the teacher’s submission actions without assigning a grade. Verify that the original submission ID and attempt number remain current, the status is draft, and no additional attempt row exists.
+2. As the student, edit or replace the file and resubmit. Verify that the same attempt becomes submitted.
+3. As a regression control, assign a grade to the resubmitted attempt with Automatic granting and remaining capacity. Verify that normal grading can still grant the next attempt.
+
+## Data model
+
+Relationships marked logical are application references. The XML declares the keys identified as foreign keys below.
+
+| Table | Purpose | Primary key | Key columns and relationships |
+| --- | --- | --- | --- |
+| `assign` | Activity settings | `id` | `course` logically references `course.id` and is indexed. `name`, `allowsubmissionsfromdate`, `duedate`, `cutoffdate`, `submissiondrafts`, `requiresubmissionstatement`, `grade`, `teamsubmission`, `attemptreopenmethod`, `maxattempts`. [Schema][assignschema] |
+| `assign_submission` | Attempt metadata | `id` | Foreign key `assignment → assign.id`. `userid` and `groupid` logically reference `user.id` and `groups.id` where applicable. Other fields include `status`, `attemptnumber`, `latest`, `timecreated`, `timemodified`, and `timestarted`. Unique index on `assignment, userid, groupid, attemptnumber`. File contents are stored through the file plugin. [Schema][submissionschema] |
+| `assign_grades` | Per-user, per-attempt grade | `id` | Foreign key `assignment → assign.id`. `userid` and `grader` logically identify users. `grade`, `penalty`, `timecreated`, `timemodified`, `attemptnumber`. Unique index on `assignment, userid, attemptnumber`. Individual attempts correlate by those three fields. [Schema][gradeschema] |
+| `assign_user_flags` | Per-user assignment flags | `id` | Foreign keys `userid → user.id` and `assignment → assign.id`. `locked`, `mailed`, `extensionduedate`, `workflowstate`. [Schema][flagsschema] |
+
+[version]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/version.php#L32-L36
+[overrides]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L1037-L1074
+[dateform]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/mod_form.php#L449-L462
+[window]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L6903-L6950
+[lateness]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/classes/output/renderer.php#L1323-L1348
+[eligibility]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L6925-L6988
+[edit]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L7014-L7053
+[websave]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L8781-L8805
+[permissions]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/db/access.php#L40-L58
+[submit]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L7502-L7575
+[save]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L8661-L8733
+[confirm]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L5826-L5877
+[fileoptions]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/submission/file/locallib.php#L146-L186
+[filestore]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/submission/file/locallib.php#L216-L307
+[fileempty]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/submission/file/locallib.php#L573-L597
+[firstattempt]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L4271-L4322
+[addattempt]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L10477-L10535
+[gradeupdate]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L3224-L3287
+[reopen]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L10200-L10235
+[assignschema]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/db/install.xml#L7-L58
+[submissionschema]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/db/install.xml#L59-L82
+[gradeschema]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/db/install.xml#L83-L104
+[flagsschema]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/db/install.xml#L136-L154
+[revert]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L9520-L9557
+[filegate]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L9350-L9366
+[gradeinit]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L4409-L4429
+[gradesave]: https://github.com/moodle/moodle/blob/cfe123f26fc7071981fe949cb16cd5a08a8234f1/public/mod/assign/locallib.php#L10110-L10120

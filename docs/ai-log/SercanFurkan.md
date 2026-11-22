@@ -1,0 +1,3 @@
+| Date | Member | Module | Task | Model/version | Context | Outcome (accepted/modified/rejected) | Changes | Time (h) |
+|---|---|---|---|---|---|---|---|---|
+| 2026-11-22 | SercanFurkan | assignment | #10 / REQ-ASG-01–08 — Extract assignment rules and investigate MDL-87490 | GPT-6 (exact model identifier unknown) | Issue #10, Moodle 5.3.1 source, upstream MDL-87490, and Issue #8 Docker and sample-data documentation | unknown | Documented the assignment rules, confirmed MDL-87490 reproduction, and added the separate REQ-ASG-08 bug-fix requirement. Used temporary PHP and browser automation for fixture setup and verification. | unknown |
