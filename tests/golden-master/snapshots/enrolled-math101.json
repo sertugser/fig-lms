@@ -1,0 +1,16 @@
+{
+  "course" : "MATH101",
+  "users" : [ {
+    "fullname" : "Elif Arslan",
+    "roles" : [ "student" ],
+    "username" : "student4"
+  }, {
+    "fullname" : "Emre Dogan",
+    "roles" : [ "student" ],
+    "username" : "student5"
+  }, {
+    "fullname" : "Mehmet Kaya",
+    "roles" : [ "editingteacher" ],
+    "username" : "teacher2"
+  } ]
+}

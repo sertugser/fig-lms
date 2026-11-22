@@ -1,0 +1,7 @@
+[
+  {"id": 12, "username": "student1", "fullname": "Student One", "lastaccess": 99,
+   "roles": [{"roleid": 5, "name": "Student", "shortname": "student", "sortorder": 0}]},
+  {"id": 10, "username": "teacher1", "fullname": "Teacher One", "lastaccess": 98,
+   "roles": [{"roleid": 3, "name": "Teacher", "shortname": "editingteacher", "sortorder": 0},
+             {"roleid": 5, "name": "Student", "shortname": "student", "sortorder": 1}]}
+]

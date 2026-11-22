@@ -1,0 +1,28 @@
+{
+  "course" : "CS101",
+  "users" : [ {
+    "fullname" : "Ali Demir",
+    "roles" : [ "student" ],
+    "username" : "student1"
+  }, {
+    "fullname" : "Zeynep Celik",
+    "roles" : [ "student" ],
+    "username" : "student2"
+  }, {
+    "fullname" : "Can Sahin",
+    "roles" : [ "student" ],
+    "username" : "student3"
+  }, {
+    "fullname" : "Elif Arslan",
+    "roles" : [ "student" ],
+    "username" : "student4"
+  }, {
+    "fullname" : "Emre Dogan",
+    "roles" : [ "student" ],
+    "username" : "student5"
+  }, {
+    "fullname" : "Ayse Yilmaz",
+    "roles" : [ "editingteacher" ],
+    "username" : "teacher1"
+  } ]
+}

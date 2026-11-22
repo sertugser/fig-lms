@@ -1,0 +1,10 @@
+{
+  "completed" : false,
+  "course" : "CS101",
+  "criteria" : [ {
+    "complete" : false,
+    "criteria" : "Assignment 1",
+    "type" : "Activity completion"
+  } ],
+  "username" : "student4"
+}
