@@ -1,0 +1,34 @@
+Items for student1: A=80 (weight 1), B=40 (weight 3), C=empty (weight 2); all out of 100
+
+-- Aggregation and empty grades
+PASS G1   Weighted mean, empty grade excluded: (80*1 + 40*3) / (1+3)                     expected 50           actual 50
+PASS G2   Weighted mean, empty grade counted as 0: (80*1 + 40*3 + 0*2) / 6               expected 33.33        actual 33.33
+PASS G3   Mean of grades, empty excluded: (80 + 40) / 2                                  expected 60           actual 60
+PASS G4   Mean of grades, empty counted as 0: (80 + 40 + 0) / 3                          expected 40           actual 40
+PASS G5   Student2 has no grade at all: total is empty (null)                            expected NULL         actual NULL
+
+-- Drop lowest
+PASS G6   Mean, empty excluded, drop lowest 1 (drops 40): 80                             expected 80           actual 80
+PASS G7   Mean, empty counted as 0, drop lowest 1 (drops the 0): (80 + 40) / 2           expected 60           actual 60
+PASS G8   Drop lowest and keep highest cannot both be set (keephigh is reset to 0)       expected 0            actual 0
+
+-- Invalid input
+PASS G9   Grade 150 for an item with maximum 100 is saved as the maximum                 expected 100          actual 100
+PASS G10  Grade -5 for an item with minimum 0 is saved as the minimum                    expected 0            actual 0
+
+-- What a student can see (gradereport_user_get_grade_items, called as the student)
+PASS G11  Own grades are visible (Item A, B, C and the course total)                     expected 4            actual 4
+PASS G12  Own grade of Item A as the student sees it                                     expected 'Item A=80.00' actual 'Item A=80.00'
+     (student sees: Item A=80.00; Item C=-; course=50.00; setting grade_report_user_showtotalsifcontainhidden = '0')
+PASS G13  Hidden item B is not shown to the student                                      expected false        actual false
+PASS G14  Web service: the course total still includes the hidden item (50, not 80)      expected true         actual true
+
+-- Unauthorized access
+PASS G15  student1 asks for the grades of student2                                       expected 'nopermissiontoviewgrades' actual 'nopermissiontoviewgrades'
+PASS G16  student1 asks for all grades of the course (userid 0)                          expected 'nopermissions' actual 'nopermissions'
+PASS G17  Course setting "Show gradebook to students" off: student1 asks for own grades  expected 'nopermissiontoviewgrades' actual 'nopermissiontoviewgrades'
+PASS G18  A student has moodle/grade:edit and moodle/grade:viewall? (edit / viewall)     expected 'denied / denied' actual 'denied / denied'
+
+Temporary course deleted.
+
+All checks passed
