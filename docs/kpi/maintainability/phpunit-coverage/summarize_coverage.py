@@ -17,6 +17,8 @@ import importlib.util
 import re
 import sys
 import xml.etree.ElementTree as ET
+
+sys.dont_write_bytecode = True  # importing measure.py must not leave a __pycache__ folder in the repository
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
