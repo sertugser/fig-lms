@@ -1,0 +1,5 @@
+# AI log: course creation, category and enrolment rules (#9)
+
+| Date | Member | Module | Task | Model/version | Context | Outcome (accepted/modified/rejected) | Changes | Time (h) |
+|---|---|---|---|---|---|---|---|---|
+| 2026-11-22 | efekanegeli2 | course | Read Moodle course/category/enrolment code, write `REQ-CRS-01..09`, golden master scenarios and data model in `docs/srs/modules/course.md`; write `verify_rules.php`; take UI screenshots | Claude Opus 5.5 (Claude Code) | Issue #9, #3 (requirement format), Moodle 5.3.1 source (`course/lib.php`, `course/edit_form.php`, `course/classes/category.php`, `lib/enrollib.php`, `enrol/manual`, `enrol/self`, `lib/db/install.xml`), Docker Moodle from #8 | modified | Every rule was checked by running it: 45/45 scenarios pass in Moodle 5.3.1. Corrected during the checks: the expected self-enrolment messages (the real strings differ from the first guess), exception class matching (Moodle 5 namespaced exceptions), and the course contact check. Observations recorded as REQ-CRS-09: no DB uniqueness, end-before-start enrolments accepted, case-sensitive short names | 2 |
