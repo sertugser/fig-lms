@@ -1,0 +1,188 @@
+Moodle 5.3.1 (Build: 20261112)
+Php: 8.3.37, pgsql: 17.12 (Debian 17.12-1.pgdg13+1), OS: Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.3.37 with PCOV 1.0.12
+Configuration: /var/www/moodle/phpunit-grading.xml
+
+...............................................................  63 / 417 ( 15%)
+............................................................... 126 / 417 ( 30%)
+............................................................... 189 / 417 ( 45%)
+.............................................DDDDDDDD.......... 252 / 417 ( 60%)
+............................................................... 315 / 417 ( 75%)
+..WWWWWWWWWWW.................................................. 378 / 417 ( 90%)
+...F...S.............WWWWWWWWWWWWWWWWWW                         417 / 417 (100%)
+
+Time: 02:52.938, Memory: 149.00 MB
+
+There was 1 failure:
+
+1) reportlib_test::test_blank_hidden_total_and_adjust_bounds
+Failed asserting that two arrays are equal.
+--- Expected
++++ Actual
+@@ @@
+ Array (
+-    'grade' => null
++    'grade' => 120
+     'grademax' => '100.00000'
+     'grademin' => '0.00000'
+     'aggregationstatus' => 'unknown'
+     'aggregationweight' => null
+ )
+
+/var/www/moodle/public/grade/tests/reportlib_test.php:133
+
+--
+
+29 tests triggered 29 PHPUnit warnings:
+
+1) core_grades\outcome_scaleless_test::test_outcome_without_scale_can_be_created
+"backup_annotate_course_outcomes" is not a valid target for code coverage
+
+/var/www/moodle/public/grade/tests/outcome_scaleless_test.php:60
+
+2) core_grades\outcome_scaleless_test::test_load_scale_returns_false_for_scaleless_outcome
+"backup_annotate_course_outcomes" is not a valid target for code coverage
+
+/var/www/moodle/public/grade/tests/outcome_scaleless_test.php:82
+
+3) core_grades\outcome_scaleless_test::test_load_scale_returns_scale_for_scaled_outcome
+"backup_annotate_course_outcomes" is not a valid target for code coverage
+
+/var/www/moodle/public/grade/tests/outcome_scaleless_test.php:99
+
+4) core_grades\outcome_scaleless_test::test_scaleless_outcomes_do_not_create_grade_items
+"backup_annotate_course_outcomes" is not a valid target for code coverage
+
+/var/www/moodle/public/grade/tests/outcome_scaleless_test.php:120
+
+5) core_grades\outcome_scaleless_test::test_add_outcome_to_module_creates_record
+"backup_annotate_course_outcomes" is not a valid target for code coverage
+
+/var/www/moodle/public/grade/tests/outcome_scaleless_test.php:185
+
+6) core_grades\outcome_scaleless_test::test_scaled_outcome_not_added_to_outcome_module
+"backup_annotate_course_outcomes" is not a valid target for code coverage
+
+/var/www/moodle/public/grade/tests/outcome_scaleless_test.php:214
+
+7) core_grades\outcome_scaleless_test::test_remove_outcome_from_module_deletes_association
+"backup_annotate_course_outcomes" is not a valid target for code coverage
+
+/var/www/moodle/public/grade/tests/outcome_scaleless_test.php:242
+
+8) core_grades\outcome_scaleless_test::test_delete_outcome_removes_all_module_records
+"backup_annotate_course_outcomes" is not a valid target for code coverage
+
+/var/www/moodle/public/grade/tests/outcome_scaleless_test.php:263
+
+9) core_grades\outcome_scaleless_test::test_used_outcomes_are_detected_as_used
+"backup_annotate_course_outcomes" is not a valid target for code coverage
+
+/var/www/moodle/public/grade/tests/outcome_scaleless_test.php:285
+
+10) core_grades\outcome_scaleless_test::test_unused_outcomes_are_not_detected_as_used
+"backup_annotate_course_outcomes" is not a valid target for code coverage
+
+/var/www/moodle/public/grade/tests/outcome_scaleless_test.php:323
+
+11) core_grades\outcome_scaleless_test::test_scaleless_outcomes_are_returned_for_course_module
+"backup_annotate_course_outcomes" is not a valid target for code coverage
+
+/var/www/moodle/public/grade/tests/outcome_scaleless_test.php:343
+
+12) core\gradelib_test::test_grade_update_mod_grades
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:36
+
+13) core\gradelib_test::test_is_gradable with data set "No grade items" ([], false)
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:72
+
+14) core\gradelib_test::test_is_gradable with data set "No grading item" ([0], false)
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:72
+
+15) core\gradelib_test::test_is_gradable with data set "Grading by feedback" ([3], false)
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:72
+
+16) core\gradelib_test::test_is_gradable with data set "Grading by points" ([1], true)
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:72
+
+17) core\gradelib_test::test_is_gradable with data set "Grading by scale" ([2], true)
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:72
+
+18) core\gradelib_test::test_is_gradable with data set "Mix of grading" ([3, 0, 1, 2], true)
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:72
+
+19) core\gradelib_test::test_remove_grade_letters
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:130
+
+20) core\gradelib_test::test_grade_course_category_delete
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:173
+
+21) core\gradelib_test::test_grade_regrade_final_grades
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:196
+
+22) core\gradelib_test::test_grade_get_date_for_user_grade with data set "If the user is the last person to have modified the grade_item then show the date that it was graded" (stdClass Object (...), stdClass Object (...), 1234567890)
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:248
+
+23) core\gradelib_test::test_grade_get_date_for_user_grade with data set "If there is no grade and there is no feedback, then show graded date as null" (stdClass Object (...), stdClass Object (...), null)
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:248
+
+24) core\gradelib_test::test_grade_get_date_for_user_grade with data set "If the user is not the last person to have modified the grade_item, and there is no submission date, then show the date that it was submitted" (stdClass Object (...), stdClass Object (...), 9876543210)
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:248
+
+25) core\gradelib_test::test_grade_get_date_for_user_grade with data set "If the user is not the last person to have modified the grade_item, but there is no submission date, then show the date that it was graded" (stdClass Object (...), stdClass Object (...), 1234567890)
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:248
+
+26) core\gradelib_test::test_grade_get_date_for_user_grade with data set "If the user is the last person to have modified the grade_item, and there is no submission date, then still show the date that it was graded" (stdClass Object (...), stdClass Object (...), 1234567890)
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:248
+
+27) core\gradelib_test::test_get_grade_letters
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:320
+
+28) core\gradelib_test::test_get_grade_letters_custom
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:345
+
+29) core\gradelib_test::test_grade_get_grades_errors
+"is_gradable" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/gradelib_test.php:377
+
+FAILURES!
+Tests: 417, Assertions: 3741, Failures: 1, PHPUnit Warnings: 29, PHPUnit Deprecations: 9, Skipped: 1.
+
+Generating code coverage report in Clover XML format ... done [00:02.644]

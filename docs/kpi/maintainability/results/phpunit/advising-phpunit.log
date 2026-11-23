@@ -1,0 +1,331 @@
+Moodle 5.3.1 (Build: 20261112)
+Php: 8.3.37, pgsql: 17.12 (Debian 17.12-1.pgdg13+1), OS: Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.3.37 with PCOV 1.0.12
+Configuration: /var/www/moodle/phpunit-advising.xml
+
+...............................................................  63 / 314 ( 20%)
+...........................................DDDDDDDDDD.......... 126 / 314 ( 40%)
+............................................................... 189 / 314 ( 60%)
+............................................................... 252 / 314 ( 80%)
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW  314 / 314 (100%)
+
+Time: 01:54.082, Memory: 137.00 MB
+
+62 tests triggered 62 PHPUnit warnings:
+
+1) completionlib_test::test_is_enabled
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:107
+
+2) completionlib_test::test_update_state
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:142
+
+3) completionlib_test::test_internal_get_state with data set "View required, but not viewed yet" (1, 1, '', 0)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:412
+
+4) completionlib_test::test_internal_get_state with data set "View not required and not viewed yet" (0, 1, '', 0)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:412
+
+5) completionlib_test::test_internal_get_state with data set "View not required, grade required but no grade yet, $cm->modname not set" (0, 1, 'modname', 0)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:412
+
+6) completionlib_test::test_internal_get_state with data set "View not required, grade required but no grade yet, $cm->course not set" (0, 1, 'course', 0)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:412
+
+7) completionlib_test::test_internal_get_state with data set "View not required, grade not required" (0, 0, '', 1)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:412
+
+8) completionlib_test::test_internal_get_state_with_grade_criteria with data set "Passing grade enabled and achieve. State should be COMPLETION_COMPLETE_PASS" ([1, 1, 50], 50, 2)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:496
+
+9) completionlib_test::test_internal_get_state_with_grade_criteria with data set "Passing grade enabled and not achieve. State should be COMPLETION_COMPLETE_FAIL" ([1, 1, 50], 40, 3)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:496
+
+10) completionlib_test::test_internal_get_state_with_grade_criteria with data set "Passing grade not enabled with passing grade set." ([1, 50], 50, 2)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:496
+
+11) completionlib_test::test_internal_get_state_with_grade_criteria with data set "Passing grade not enabled with passing grade not set." ([1], 90, 1)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:496
+
+12) completionlib_test::test_internal_get_state_with_grade_criteria with data set "Passing grade not enabled with passing grade not set. No submission made." ([1], null, 0)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:496
+
+13) completionlib_test::test_internal_get_state_with_different_user
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:536
+
+14) completionlib_test::test_internal_get_state_with_custom_completion
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:578
+
+15) completionlib_test::test_set_module_viewed
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:603
+
+16) completionlib_test::test_count_user_data
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:658
+
+17) completionlib_test::test_delete_all_state
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:674
+
+18) completionlib_test::test_reset_all_state
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:691
+
+19) completionlib_test::test_get_data with data set "No completion record" (false, true, false, 0)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:781
+
+20) completionlib_test::test_get_data with data set "Not completed" (false, true, true, 0)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:781
+
+21) completionlib_test::test_get_data with data set "Completed" (false, true, true, 1)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:781
+
+22) completionlib_test::test_get_data with data set "Whole course, complete" (true, true, true, 1)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:781
+
+23) completionlib_test::test_get_data with data set "Get data for another user, result should be not cached" (false, false, true, 0)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:781
+
+24) completionlib_test::test_get_data with data set "Get data for another user, including whole course, result should be not cached" (true, false, true, 0)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:781
+
+25) completionlib_test::test_get_data_successive_calls
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:849
+
+26) completionlib_test::test_get_completion_data
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:917
+
+27) completionlib_test::test_get_other_cm_completion_data
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:974
+
+28) completionlib_test::test_internal_set_data
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1045
+
+29) completionlib_test::test_get_progress_all_few
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1152
+
+30) completionlib_test::test_get_progress_all_lots
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1186
+
+31) completionlib_test::test_inform_grade_changed
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1252
+
+32) completionlib_test::test_internal_get_grade_state
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1320
+
+33) completionlib_test::test_get_activities
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1386
+
+34) completionlib_test::test_has_activities
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1427
+
+35) completionlib_test::test_clear_criteria with data set #0 (false)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1467
+
+36) completionlib_test::test_clear_criteria with data set #1 (true)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1467
+
+37) completionlib_test::test_course_delete_prerequisite
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1510
+
+38) completionlib_test::test_course_module_completion_updated_event
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1545
+
+39) completionlib_test::test_course_completed_event
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1581
+
+40) completionlib_test::test_course_completed_message
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1608
+
+41) completionlib_test::test_course_completion_updated_event
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1634
+
+42) completionlib_test::test_completion_can_view_data
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1657
+
+43) completionlib_test::test_get_grade_completion with data set "Grade not required" (false, false, null, null, null)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1693
+
+44) completionlib_test::test_get_grade_completion with data set "Grade required, but has no grade yet" (true, false, null, null, 0)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1693
+
+45) completionlib_test::test_get_grade_completion with data set "Grade required, grade received" (true, true, null, null, 1)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1693
+
+46) completionlib_test::test_get_grade_completion with data set "Grade required, passing grade received" (true, true, 70, null, 2)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1693
+
+47) completionlib_test::test_get_grade_completion with data set "Grade required, failing grade received" (true, true, 80, null, 3)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1693
+
+48) completionlib_test::test_get_grade_completion_without_grade_item
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1725
+
+49) completionlib_test::test_aggregate_completions
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1763
+
+50) completionlib_test::test_save
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1858
+
+51) completionlib_test::test_mark_enrolled
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1900
+
+52) completionlib_test::test_mark_inprogress
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1941
+
+53) completionlib_test::test_mark_complete
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:1982
+
+54) completionlib_test::test_criteria_mark_complete
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:2022
+
+55) completionlib_test::test_course_reset_completion
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:2058
+
+56) completionlib_test::test_count_modules_completed with data set "Multiple users with two different modules but only one completed" (true, 3, [['assign', 1], ['choice', 0]], 1)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:2193
+
+57) completionlib_test::test_count_modules_completed with data set "Multiple users with three different modules but only two completed" (true, 4, [['assign', 1], ['choice', 0], ['workshop', 1]], 2)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:2193
+
+58) completionlib_test::test_count_modules_completed with data set "Multiple users with one completion each" (true, 5, [['assign', 1]], 1)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:2193
+
+59) completionlib_test::test_count_modules_completed with data set "One user with one completion" (true, 1, [['assign', 1]], 1)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:2193
+
+60) completionlib_test::test_count_modules_completed with data set "Multiple users without completion" (true, 3, [['assign', 0]], 0)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:2193
+
+61) completionlib_test::test_count_modules_completed with data set "Non-existing user" (false, 1, [['assign', 0]], 0)
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:2193
+
+62) completionlib_test::test_disabled_activities_are_not_returned
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:2252
+
+OK, but there were issues!
+Tests: 314, Assertions: 1578, PHPUnit Warnings: 62, PHPUnit Deprecations: 10.
+
+Generating code coverage report in Clover XML format ... done [00:00.634]

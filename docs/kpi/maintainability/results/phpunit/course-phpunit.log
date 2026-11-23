@@ -1,0 +1,1344 @@
+Moodle 5.3.1 (Build: 20261112)
+Php: 8.3.37, pgsql: 17.12 (Debian 17.12-1.pgdg13+1), OS: Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.3.37 with PCOV 1.0.12
+Configuration: /var/www/moodle/phpunit-course.xml
+
+.......................................WWWWWWWWWWWWWWWWWWWWWW   61 / 2309 (  2%)
+WWWWWWWWWWWWWWWWWWWWWWWWW....................................  122 / 2309 (  5%)
+.............................................................  183 / 2309 (  7%)
+.............................................................  244 / 2309 ( 10%)
+.............................................................  305 / 2309 ( 13%)
+.............................................................  366 / 2309 ( 15%)
+.............................................................  427 / 2309 ( 18%)
+.............................................................  488 / 2309 ( 21%)
+.............................................................  549 / 2309 ( 23%)
+.............................................................  610 / 2309 ( 26%)
+.............................................................  671 / 2309 ( 29%)
+.............................................................  732 / 2309 ( 31%)
+.............................................................  793 / 2309 ( 34%)
+.............S...............................................  854 / 2309 ( 36%)
+............................................................N  915 / 2309 ( 39%)
+NNNNN............NN.................N.........NNNN...........  976 / 2309 ( 42%)
+............................................................. 1037 / 2309 ( 44%)
+............................................................. 1098 / 2309 ( 47%)
+...........................................WWWWWWWWWWWWWWWWWW 1159 / 2309 ( 50%)
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW 1220 / 2309 ( 52%)
+WWWWWWWWWWWWWWW.............................................W 1281 / 2309 ( 55%)
+W.WWWWWWWWWWWWWWWWWWWW............................S.......... 1342 / 2309 ( 58%)
+.................................S......................S.... 1403 / 2309 ( 60%)
+............................................................. 1464 / 2309 ( 63%)
+............................................................. 1525 / 2309 ( 66%)
+............................................................. 1586 / 2309 ( 68%)
+.............................................WWWWWWW......... 1647 / 2309 ( 71%)
+.....................................WWW..................... 1708 / 2309 ( 73%)
+...............SSSSSSSS...................................... 1769 / 2309 ( 76%)
+...................WWWW...................................... 1830 / 2309 ( 79%)
+............................................................. 1891 / 2309 ( 81%)
+............................................................. 1952 / 2309 ( 84%)
+............................................................. 2013 / 2309 ( 87%)
+............................................................. 2074 / 2309 ( 89%)
+..........................WWWWWWWWWWWWW........WWWWWWWWWWWWWW 2135 / 2309 ( 92%)
+W............................................................ 2196 / 2309 ( 95%)
+..........WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW 2257 / 2309 ( 97%)
+WW..................................................          2309 / 2309 (100%)
+
+Time: 16:35.734, Memory: 250.50 MB
+
+258 tests triggered 258 PHPUnit warnings:
+
+1) base_test::test_courseformat_saveandload
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:43
+
+2) base_test::test_available_hook
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:66
+
+3) base_test::test_supports_news
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:185
+
+4) base_test::test_supports_news_legacy
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:194
+
+5) base_test::test_get_return_options
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:203
+
+6) base_test::test_get_view_url
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:223
+
+7) base_test::test_get_output_classname with data set "overridden class" ('state\course', 'format_theunittest\output\cou...course', false)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:297
+
+8) base_test::test_get_output_classname with data set "original class" ('state\section', 'core_courseformat\output\loca...ection', false)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:297
+
+9) base_test::test_get_output_classname with data set "invalid overridden class" ('state\invalidoutput', '', true)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:297
+
+10) base_test::test_get_sections_preferences
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:337
+
+11) base_test::test_set_sections_preference
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:369
+
+12) base_test::test_add_section_preference_ids
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:397
+
+13) base_test::test_remove_section_preference_ids
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:426
+
+14) base_test::test_get_last_section_number
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:460
+
+15) base_test::test_delete_format_data with data set "direct call" (false)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:487
+
+16) base_test::test_delete_format_data with data set "use hook" (true)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:487
+
+17) base_test::test_duplicate_section
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:550
+
+18) base_test::test_duplicate_section_with_delegated_sections
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:592
+
+19) base_test::test_get_format_string with data set "Existing in format lang" ('addsection', null, ['addsection', 'format_weeks', null], 'weeks')
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:636
+
+20) base_test::test_get_format_string with data set "Not existing in format lang" ('bulkedit', null, ['bulkedit', 'core_courseformat', null])
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:636
+
+21) base_test::test_get_format_string with data set "Existing in format lang with data" ('section_highlight_feedback', 'Example', ['section_highlight_feedback', 'format_topics', 'Example'])
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:636
+
+22) base_test::test_get_format_string with data set "Not existing in format lang with data" ('bulkselection', 'X', ['bulkselection', 'core_courseformat', 'X'])
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:636
+
+23) base_test::test_get_format_string with data set "Non existing string" ('%&non_existing_string_in_lang...es$%@#', null, null)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:636
+
+24) base_test::test_move_section_after with data set "Move top" ('section3', 'section0', ['section0', 'section3', 'section1', 'section2', 'section4', 'section5'])
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:701
+
+25) base_test::test_move_section_after with data set "Move up" ('section3', 'section1', ['section0', 'section1', 'section3', 'section2', 'section4', 'section5'])
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:701
+
+26) base_test::test_move_section_after with data set "Do not move" ('section3', 'section2', ['section0', 'section1', 'section2', 'section3', 'section4', 'section5'])
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:701
+
+27) base_test::test_move_section_after with data set "Same position" ('section3', 'section3', ['section0', 'section1', 'section2', 'section3', 'section4', 'section5'])
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:701
+
+28) base_test::test_move_section_after with data set "Move down" ('section3', 'section4', ['section0', 'section1', 'section2', 'section4', 'section3', 'section5'])
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:701
+
+29) base_test::test_move_section_after with data set "Move bottom" ('section3', 'section5', ['section0', 'section1', 'section2', 'section4', 'section5', 'section3'])
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:701
+
+30) base_test::test_get_non_ajax_cm_action_url with data set "duplicate" ('cmDuplicate', 'duplicate', false)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:823
+
+31) base_test::test_get_non_ajax_cm_action_url with data set "hide" ('cmHide', 'hide', false)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:823
+
+32) base_test::test_get_non_ajax_cm_action_url with data set "show" ('cmShow', 'show', false)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:823
+
+33) base_test::test_get_non_ajax_cm_action_url with data set "stealth" ('cmStealth', 'stealth', false)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:823
+
+34) base_test::test_get_non_ajax_cm_action_url with data set "delete" ('cmDelete', 'delete', false)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:823
+
+35) base_test::test_get_non_ajax_cm_action_url with data set "non-existent" ('nonExistent', '', true)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:823
+
+36) base_test::test_get_required_jsfiles
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:887
+
+37) base_test::test_set_sectionid
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:900
+
+38) base_test::test_set_sectionnum with data set "General sectionnumber" (0, false)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:938
+
+39) base_test::test_set_sectionnum with data set "Existing sectionnumber" (1, false)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:938
+
+40) base_test::test_set_sectionnum with data set "Another existing sectionnumber" (2, false)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:938
+
+41) base_test::test_set_sectionnum with data set "Null sectionnumber" (null, true)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:938
+
+42) base_test::test_set_sectionnum with data set "Invalid sectionnumber" (3, true, true)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:938
+
+43) base_test::test_set_sectionnum with data set "Another invalid sectionnumber" (-1, true, true)
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:938
+
+44) base_test::test_can_sections_be_removed_from_navigation
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:995
+
+45) base_test::test_is_section_visible
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:1009
+
+46) base_test::test_get_generic_section_name
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:1044
+
+47) base_test::test_session_caches_methods
+::get_return_options is not a valid target for code coverage
+
+/var/www/moodle/public/course/format/tests/base_test.php:1067
+
+48) externallib_test::test_create_categories
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:42
+
+49) externallib_test::test_delete_categories
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:120
+
+50) externallib_test::test_get_categories
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:163
+
+51) externallib_test::test_update_categories
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:294
+
+52) externallib_test::test_update_categories_moving
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:357
+
+53) externallib_test::test_create_course_numsections
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:395
+
+54) externallib_test::test_create_courses
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:429
+
+55) externallib_test::test_create_courses_empty_field with data set #0 (['', 'ws101'], 'fullname')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:625
+
+56) externallib_test::test_create_courses_empty_field with data set #1 ([' ', 'ws101'], 'fullname')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:625
+
+57) externallib_test::test_create_courses_empty_field with data set #2 (['Web Services', ''], 'shortname')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:625
+
+58) externallib_test::test_create_courses_empty_field with data set #3 (['Web Services', ' '], 'shortname')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:625
+
+59) externallib_test::test_update_courses_empty_field with data set #0 (['', 'ws101'], 'fullname')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:644
+
+60) externallib_test::test_update_courses_empty_field with data set #1 ([' ', 'ws101'], 'fullname')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:644
+
+61) externallib_test::test_update_courses_empty_field with data set #2 (['Web Services', ''], 'shortname')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:644
+
+62) externallib_test::test_update_courses_empty_field with data set #3 (['Web Services', ' '], 'shortname')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:644
+
+63) externallib_test::test_delete_courses
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:664
+
+64) externallib_test::test_get_courses
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:724
+
+65) externallib_test::test_get_courses_customfields
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:841
+
+66) externallib_test::test_get_courses_without_capability
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:927
+
+67) externallib_test::test_search_courses
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:953
+
+68) externallib_test::test_search_courses_customfields
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1050
+
+69) externallib_test::test_get_course_contents
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1179
+
+70) externallib_test::test_get_course_contents_student
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1333
+
+71) externallib_test::test_get_course_contents_excluding_modules
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1381
+
+72) externallib_test::test_get_course_contents_excluding_contents
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1399
+
+73) externallib_test::test_get_course_contents_section_number
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1423
+
+74) externallib_test::test_get_course_contents_cmid
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1441
+
+75) externallib_test::test_get_course_contents_section_cmid
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1461
+
+76) externallib_test::test_get_course_contents_modname
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1483
+
+77) externallib_test::test_get_course_contents_modid
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1502
+
+78) externallib_test::test_get_course_contents_downloadcontent
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1525
+
+79) externallib_test::test_get_course_contents_completion_manual
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1547
+
+80) externallib_test::test_get_course_contents_completion_auto
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1621
+
+81) externallib_test::test_get_course_contents_including_mimetype
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1663
+
+82) externallib_test::test_get_course_contents_contentsinfo
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1685
+
+83) externallib_test::test_get_course_contents_hiddensections
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1763
+
+84) externallib_test::test_get_course_contents_dates
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1816
+
+85) externallib_test::test_get_course_contents_invalid_format
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1869
+
+86) externallib_test::test_get_course_contents_subsections
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1886
+
+87) externallib_test::test_duplicate_course
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1930
+
+88) externallib_test::test_update_courses
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:1976
+
+89) externallib_test::test_delete_modules
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:2278
+
+90) externallib_test::test_import_course_empty
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:2378
+
+91) externallib_test::test_import_course_filled
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:2425
+
+92) externallib_test::test_import_course_blocksonly
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:2476
+
+93) externallib_test::test_import_course_deletecontent
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:2517
+
+94) externallib_test::test_import_course_invalid_deletecontent_option
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:2565
+
+95) externallib_test::test_view_course
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:2580
+
+96) externallib_test::test_get_course_module
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:2617
+
+97) externallib_test::test_get_course_module_by_instance
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:2745
+
+98) externallib_test::test_get_user_navigation_options
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:2818
+
+99) externallib_test::test_get_user_administration_options
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:2876
+
+100) externallib_test::test_get_courses_by_field
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:2943
+
+101) externallib_test::test_get_courses_by_field_customfields
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3182
+
+102) externallib_test::test_get_courses_by_field_communication
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3225
+
+103) externallib_test::test_get_courses_by_field_invalid_field
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3268
+
+104) externallib_test::test_get_courses_by_field_invalid_courses
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3273
+
+105) externallib_test::test_get_courses_by_field_invalid_theme_and_lang
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3282
+
+106) externallib_test::test_check_updates
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3294
+
+107) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "empty set" ([], 'future', 2, 0, 'shortname ASC', [], 0)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+108) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "future not limit no offset" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'future', 0, 0, 'shortname ASC', ['afuture', 'bfuture', 'cfuture', 'dfuture', 'efuture'], 15)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+109) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "future no offset" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'future', 2, 0, 'shortname ASC', ['afuture', 'bfuture'], 4)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+110) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "future offset" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'future', 2, 2, 'shortname ASC', ['bfuture', 'cfuture'], 7)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+111) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "future exact limit" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'future', 5, 0, 'shortname ASC', ['afuture', 'bfuture', 'cfuture', 'dfuture', 'efuture'], 13)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+112) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "future limit less results" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'future', 10, 0, 'shortname ASC', ['afuture', 'bfuture', 'cfuture', 'dfuture', 'efuture'], 15)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+113) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "future limit less results with offset" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'future', 10, 5, 'shortname ASC', ['cfuture', 'dfuture', 'efuture'], 15)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+114) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all no limit or offset" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 0, 0, 'shortname ASC', ['afuture', 'ainprogress', 'apast', 'bfuture', 'binprogress', 'bpast', 'cfuture', 'cinprogress', 'cpast', 'dfuture', 'dinprogress', 'dpast', 'efuture', 'einprogress', 'epast'], 15)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+115) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit no offset" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 0, 'shortname ASC', ['afuture', 'ainprogress', 'apast', 'bfuture', 'binprogress'], 5)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+116) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 5, 'shortname ASC', ['bpast', 'cfuture', 'cinprogress', 'cpast', 'dfuture'], 10)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+117) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all offset past result set" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 50, 'shortname ASC', [], 50)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+118) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with sort ul.timeaccess desc" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'inprogress', 0, 0, 'ul.timeaccess desc', ['ainprogress', 'binprogress', 'cinprogress', 'dinprogress', 'einprogress'], 15)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+119) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with sort sql injection for sort or 1==1" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 5, 'ul.timeaccess desc or 1==1', [], 0, 'Invalid $sort parameter in en...rses()')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+120) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with sql injection of sort a custom one" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 5, 'ul.timeaccess LIMIT 1--', [], 0, 'Invalid $sort parameter in en...rses()')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+121) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with wrong sort direction" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 5, 'ul.timeaccess.foo ascd', [], 0, 'Invalid sort direction in $so...rses()')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+122) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with wrong sort param" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 5, 'foobar', [], 0, 'Invalid $sort parameter in en...rses()')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+123) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with wrong field separator" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 5, 'ul.timeaccess.foo', [], 0, 'Invalid $sort parameter in en...rses()')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+124) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with wrong field separator #" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 5, 'ul#timeaccess', [], 0, 'Invalid $sort parameter in en...rses()')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+125) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with wrong field separator $" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 5, 'ul$timeaccess', [], 0, 'Invalid $sort parameter in en...rses()')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+126) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with wrong field name" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 5, 'timeaccess123', [], 0, 'Invalid $sort parameter in en...rses()')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+127) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with no sort direction for ul" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'inprogress', 0, 0, 'ul.timeaccess', ['ainprogress', 'binprogress', 'cinprogress', 'dinprogress', 'einprogress'], 15)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+128) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with valid field name and no prefix, test for ul" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'inprogress', 0, 0, 'timeaccess', ['ainprogress', 'binprogress', 'cinprogress', 'dinprogress', 'einprogress'], 15)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+129) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with valid field name and no prefix" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 5, 'fullname', ['bpast', 'cpast', 'dfuture', 'dpast', 'efuture'], 10)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+130) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "all limit and offset with valid field name and no prefix and with sort direction" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'all', 5, 5, 'fullname desc', ['bpast', 'cpast', 'dfuture', 'dpast', 'efuture'], 10)
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+131) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "Search courses for courses containing bfut" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'search', 0, 0, null, ['bfuture'], 1, null, 'bfut')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+132) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "Search courses for courses containing inp" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'search', 0, 0, null, ['ainprogress', 'binprogress', 'cinprogress', 'dinprogress', 'einprogress'], 5, null, 'inp')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+133) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "Search courses for courses containing fail" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'search', 0, 0, null, [], 0, null, 'fail')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+134) externallib_test::test_get_enrolled_courses_by_timeline_classification with data set "Search courses for courses containing !`~[]C" ([['apast', 1795195674, 1795282074], ['bpast', 1795195674, 1795282074], ['cpast', 1795195674, 1795282074], ['dpast', 1795195674, 1795282074], ['epast', 1795195674, 1795282074], ['ainprogress', 1795282074, 1795454874], ['binprogress', 1795282074, 1795454874], ['cinprogress', 1795282074, 1795454874], ['dinprogress', 1795282074, 1795454874], ['einprogress', 1795282074, 1795454874], ['afuture', 1795454874], ['bfuture', 1795454874], ['cfuture', 1795454874], ['dfuture', 1795454874], ['efuture', 1795454874]], 'search', 0, 0, null, [], 0, null, '!`~[]C')
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3828
+
+135) externallib_test::test_get_recent_courses
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3888
+
+136) externallib_test::test_get_enrolled_users_by_cmid
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:3976
+
+137) externallib_test::test_add_content_item_to_user_favourites
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:4082
+
+138) externallib_test::test_remove_content_item_from_user_favourites
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:4120
+
+139) externallib_test::test_get_course_content_items
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:4160
+
+140) externallib_test::test_get_course_content_items_no_permission_to_manage
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:4186
+
+141) externallib_test::test_toggle_activity_recommendation
+::get_course_contents is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/externallib_test.php:4203
+
+142) core_course\modlib_test::test_set_moduleinfo_defaults_with_uninstalled_ai_placement with data set "course assistance placement" ('aiplacement_courseassist', 'explain_text')
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:63
+
+143) core_course\modlib_test::test_set_moduleinfo_defaults_with_uninstalled_ai_placement with data set "editor placement" ('aiplacement_editor', 'generate_text')
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:63
+
+144) core_course\modlib_test::test_prepare_new_moduleinfo_data
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:130
+
+145) core_course\modlib_test::test_prepare_new_moduleinfo_data_with_suffix
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:178
+
+146) core_course\modlib_test::test_get_moduleinfo_data
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:221
+
+147) core_course\modlib_test::test_update_moduleinfo_pins_coursemodule_from_cm
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:302
+
+148) core_course\modlib_test::test_update_moduleinfo_pins_modulename_from_cm
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:342
+
+149) core_course\modlib_test::test_add_moduleinfo
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:371
+
+150) core_course\modlib_test::test_can_add_moduleinfo_invalid_module
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:440
+
+151) core_course\modlib_test::test_can_add_moduleinfo_deny_add_instance
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:462
+
+152) core_course\modlib_test::test_can_add_moduleinfo_capability with data set "Editing teacher" ('editingteacher', true)
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:500
+
+153) core_course\modlib_test::test_can_add_moduleinfo_capability with data set "Manager" ('manager', true)
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:500
+
+154) core_course\modlib_test::test_can_add_moduleinfo_capability with data set "Course creator" ('coursecreator', false)
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:500
+
+155) core_course\modlib_test::test_can_add_moduleinfo_capability with data set "Non-editing teacher" ('teacher', false)
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:500
+
+156) core_course\modlib_test::test_can_add_moduleinfo_capability with data set "Student" ('student', false)
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:500
+
+157) core_course\modlib_test::test_can_add_moduleinfo_capability with data set "Guest" ('guest', false)
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:500
+
+158) core_course\modlib_test::test_can_add_moduleinfo_delegate_section with data set "Editing teacher" ('editingteacher', true)
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:539
+
+159) core_course\modlib_test::test_can_add_moduleinfo_delegate_section with data set "Manager" ('manager', true)
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:539
+
+160) core_course\modlib_test::test_can_add_moduleinfo_delegate_section with data set "Course creator" ('coursecreator', false)
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:539
+
+161) core_course\modlib_test::test_can_add_moduleinfo_delegate_section with data set "Non-editing teacher" ('teacher', false)
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:539
+
+162) core_course\modlib_test::test_can_add_moduleinfo_delegate_section with data set "Student" ('student', false)
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:539
+
+163) core_course\modlib_test::test_can_add_moduleinfo_delegate_section with data set "Guest" ('guest', false)
+"add_moduleinfo" is not a valid target for code coverage
+
+/var/www/moodle/public/course/tests/modlib_test.php:539
+
+164) enrol_cohort\lib_test::test_enrol_cohort_create_new_group
+::validate_plugin_data_context is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/cohort/tests/lib_test.php:44
+
+165) enrol_cohort\lib_test::test_get_user_enrolment_actions
+::validate_plugin_data_context is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/cohort/tests/lib_test.php:90
+
+166) enrol_cohort\lib_test::test_enrol_cohort_unenrolaction_suspend_only
+::validate_plugin_data_context is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/cohort/tests/lib_test.php:139
+
+167) enrol_cohort\lib_test::test_validate_plugin_data_context
+::validate_plugin_data_context is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/cohort/tests/lib_test.php:220
+
+168) enrol_cohort\lib_test::test_fill_enrol_custom_fields
+::validate_plugin_data_context is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/cohort/tests/lib_test.php:263
+
+169) enrol_cohort\lib_test::test_validate_enrol_plugin_data
+::validate_plugin_data_context is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/cohort/tests/lib_test.php:316
+
+170) enrol_cohort\lib_test::test_find_instance
+::validate_plugin_data_context is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/cohort/tests/lib_test.php:406
+
+171) enrol_guest\lib_test::test_validate_enrol_plugin_data
+::validate_enrol_plugin_data is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/guest/tests/lib_test.php:35
+
+172) enrol_guest\lib_test::test_update_enrol_plugin_data
+::validate_enrol_plugin_data is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/guest/tests/lib_test.php:75
+
+173) enrol_guest\lib_test::test_find_instance
+::validate_enrol_plugin_data is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/guest/tests/lib_test.php:102
+
+174) enrol_lti\lib_test::test_delete_instance
+"enrol_lti_pre_course_module_delete" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/lti/tests/lib_test.php:62
+
+175) enrol_lti\lib_test::test_delete_instance_lti_advantage
+"enrol_lti_pre_course_module_delete" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/lti/tests/lib_test.php:130
+
+176) enrol_lti\lib_test::test_get_user_enrolment_actions
+"enrol_lti_pre_course_module_delete" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/lti/tests/lib_test.php:175
+
+177) enrol_lti\lib_test::test_course_module_deletion
+"enrol_lti_pre_course_module_delete" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/lti/tests/lib_test.php:224
+
+178) enrol_manual\lib_test::test_migrate_plugin_enrolments
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:38
+
+179) enrol_manual\lib_test::test_expired
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:203
+
+180) enrol_manual\lib_test::test_send_expiry_notifications
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:330
+
+181) enrol_manual\lib_test::test_get_user_enrolment_actions
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:497
+
+182) enrol_manual\lib_test::test_default_enrolment_instance_acquires_correct_settings with data set "enabled, student role, no duration set, notify no one on expiry, 12 hours notification threshold" (stdClass Object (...), stdClass Object (...))
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:548
+
+183) enrol_manual\lib_test::test_default_enrolment_instance_acquires_correct_settings with data set "enabled, student role, 72 hours duration, notify enroller only on expiry, 1 day notification threshold" (stdClass Object (...), stdClass Object (...))
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:548
+
+184) enrol_manual\lib_test::test_default_enrolment_instance_acquires_correct_settings with data set "disabled, teacher role, no duration set, notify enroller and enrolled on expiry, 0 notification threshold" (stdClass Object (...), stdClass Object (...))
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:548
+
+185) enrol_manual\lib_test::test_enrolment_instance_is_updated with data set "disabled, all the others are default" (stdClass Object (...), stdClass Object (...))
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:651
+
+186) enrol_manual\lib_test::test_enrolment_instance_is_updated with data set "enabled, teacher role, no duration set, notify no one on expiry, 0 notification threshold" (stdClass Object (...), stdClass Object (...))
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:651
+
+187) enrol_manual\lib_test::test_enrolment_instance_is_updated with data set "notify enroller and enrolled on expiry, all the others are default" (stdClass Object (...), stdClass Object (...))
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:651
+
+188) enrol_manual\lib_test::test_find_instance
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:759
+
+189) enrol_manual\lib_test::test_send_course_welcome_message
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:784
+
+190) enrol_manual\lib_test::test_send_course_welcome_message_via_hook
+enrol_manual::add_default_instance is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/manual/tests/lib_test.php:909
+
+191) enrol_meta\plugin_test::test_sync
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:83
+
+192) enrol_meta\plugin_test::test_add_to_group
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:453
+
+193) enrol_meta\plugin_test::test_add_to_group_with_member
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:549
+
+194) enrol_meta\plugin_test::test_add_to_group_invalid
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:610
+
+195) enrol_meta\plugin_test::test_user_enrolment_created_event
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:641
+
+196) enrol_meta\plugin_test::test_user_enrolment_deleted_event
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:673
+
+197) enrol_meta\plugin_test::test_user_enrolment_updated_event
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:706
+
+198) enrol_meta\plugin_test::test_enrol_meta_create_new_group
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:741
+
+199) enrol_meta\plugin_test::test_timeend
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:781
+
+200) enrol_meta\plugin_test::test_get_user_enrolment_actions
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:905
+
+201) enrol_meta\plugin_test::test_edit_instance_validation
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:957
+
+202) enrol_meta\plugin_test::test_fill_enrol_custom_fields
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:1100
+
+203) enrol_meta\plugin_test::test_validate_enrol_plugin_data
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:1151
+
+204) enrol_meta\plugin_test::test_find_instance
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:1223
+
+205) enrol_meta\plugin_test::test_get_instance_name_for_management_page
+::fill_enrol_custom_fields is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/meta/tests/plugin_test.php:1264
+
+206) enrollib_test::test_enrol_get_all_users_courses
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:48
+
+207) enrollib_test::test_enrol_course_delete_without_userid
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:252
+
+208) enrollib_test::test_enrol_course_delete_with_userid with data set "The teacher can un-enrol users in a course" ([], [false, false, false, false, false, false, false, false])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:315
+
+209) enrollib_test::test_enrol_course_delete_with_userid with data set "The teacher cannot un-enrol self enrolled users" (['enrol/self:unenrol'], [false, true, false, false, true, true, false, false])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:315
+
+210) enrollib_test::test_enrol_course_delete_with_userid with data set "The teacher cannot un-enrol self and manually enrolled users" (['enrol/manual:unenrol', 'enrol/self:unenrol'], [true, true, true, true, true, true, true, true])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:315
+
+211) enrollib_test::test_enrol_course_delete_with_disabled_plugin
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:400
+
+212) enrollib_test::test_enrol_user_sees_own_courses
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:547
+
+213) enrollib_test::test_enrol_get_shared_courses
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:646
+
+214) enrollib_test::test_enrol_get_shared_courses_different_methods
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:675
+
+215) enrollib_test::test_user_enrolment_created_event
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:734
+
+216) enrollib_test::test_user_enrolment_deleted_event
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:768
+
+217) enrollib_test::test_instance_events
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:802
+
+218) enrollib_test::test_enrollment_update_timemodified
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:862
+
+219) enrollib_test::test_enrol_get_my_courses_only_enrolled_courses
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:917
+
+220) enrollib_test::test_enrol_get_my_courses_include_hidden
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:965
+
+221) enrollib_test::test_enrol_get_my_courses_all_accessible
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1016
+
+222) enrollib_test::test_enrol_get_my_courses_by_time with data set "No start or end time" (null, null, true)
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1159
+
+223) enrollib_test::test_enrol_get_my_courses_by_time with data set "Start time now, no end time" (0, null, true)
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1159
+
+224) enrollib_test::test_enrol_get_my_courses_by_time with data set "Start time now, end time in the future" (0, 60, true)
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1159
+
+225) enrollib_test::test_enrol_get_my_courses_by_time with data set "Start time in the past, no end time" (-60, null, true)
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1159
+
+226) enrollib_test::test_enrol_get_my_courses_by_time with data set "Start time in the past, end time in the future" (-60, 60, true)
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1159
+
+227) enrollib_test::test_enrol_get_my_courses_by_time with data set "Start time in the past, end time in the past" (-86400, -3600, false)
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1159
+
+228) enrollib_test::test_enrol_get_my_courses_by_time with data set "Start time in the future" (60, null, false)
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1159
+
+229) enrollib_test::test_course_users
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1184
+
+230) enrollib_test::test_course_users_in_groups
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1217
+
+231) enrollib_test::test_count_enrolled_users
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1253
+
+232) enrollib_test::test_enrol_get_my_courses_sort_by_last_access with data set "empty set" ([], [['x', 1795368473], ['y', 1795368474], ['z', 1795368475]], 'ul.timeaccess asc', 0, 0, [])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1403
+
+233) enrollib_test::test_enrol_get_my_courses_sort_by_last_access with data set "ul.timeaccess asc, shortname asc no limit or offset" ([['a', 1795368473], ['b', 1795368474], ['c', 1795368475], ['d', 1795368474], ['e']], [['x', 1795368473], ['y', 1795368474], ['z', 1795368475]], 'ul.timeaccess asc, shortname asc', 0, 0, ['e', 'a', 'b', 'd', 'c'])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1403
+
+234) enrollib_test::test_enrol_get_my_courses_sort_by_last_access with data set "ul.timeaccess asc, shortname asc with limit no offset" ([['a', 1795368473], ['b', 1795368474], ['c', 1795368475], ['d', 1795368474], ['e']], [['x', 1795368473], ['y', 1795368474], ['z', 1795368475]], 'ul.timeaccess asc, shortname asc', 2, 0, ['e', 'a'])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1403
+
+235) enrollib_test::test_enrol_get_my_courses_sort_by_last_access with data set "ul.timeaccess asc, shortname asc with limit and offset" ([['a', 1795368473], ['b', 1795368474], ['c', 1795368475], ['d', 1795368474], ['e']], [['x', 1795368473], ['y', 1795368474], ['z', 1795368475]], 'ul.timeaccess asc, shortname asc', 2, 2, ['b', 'd'])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1403
+
+236) enrollib_test::test_enrol_get_my_courses_sort_by_last_access with data set "ul.timeaccess asc, shortname asc with limit and offset beyond end of data set" ([['a', 1795368473], ['b', 1795368474], ['c', 1795368475], ['d', 1795368474], ['e']], [['x', 1795368473], ['y', 1795368474], ['z', 1795368475]], 'ul.timeaccess asc, shortname asc', 2, 4, ['c'])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1403
+
+237) enrollib_test::test_enrol_get_my_courses_sort_by_last_access with data set "ul.timeaccess desc, shortname asc no limit or offset" ([['a', 1795368473], ['b', 1795368474], ['c', 1795368475], ['d', 1795368474], ['e']], [['x', 1795368473], ['y', 1795368474], ['z', 1795368475]], 'ul.timeaccess desc, shortname asc', 0, 0, ['c', 'b', 'd', 'a', 'e'])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1403
+
+238) enrollib_test::test_enrol_get_my_courses_sort_by_last_access with data set "ul.timeaccess desc, shortname desc, no limit or offset" ([['a', 1795368473], ['b', 1795368474], ['c', 1795368475], ['d', 1795368474], ['e']], [['x', 1795368473], ['y', 1795368474], ['z', 1795368475]], 'ul.timeaccess desc, shortname desc', 0, 0, ['c', 'd', 'b', 'a', 'e'])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1403
+
+239) enrollib_test::test_enrol_get_my_courses_sort_by_last_access with data set "ul.timeaccess asc, shortname desc, no limit or offset" ([['a', 1795368473], ['b', 1795368474], ['c', 1795368475], ['d', 1795368474], ['e']], [['x', 1795368473], ['y', 1795368474], ['z', 1795368475]], 'ul.timeaccess asc, shortname desc', 0, 0, ['e', 'a', 'd', 'b', 'c'])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1403
+
+240) enrollib_test::test_enrol_get_my_courses_sort_by_last_access with data set "shortname asc, no limit or offset" ([['a', 1795368473], ['b', 1795368474], ['c', 1795368475], ['d', 1795368474], ['e']], [['x', 1795368473], ['y', 1795368474], ['z', 1795368475]], 'shortname asc', 0, 0, ['a', 'b', 'c', 'd', 'e'])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1403
+
+241) enrollib_test::test_enrol_get_my_courses_sort_by_last_access with data set "shortname desc, no limit or offset" ([['a', 1795368473], ['b', 1795368474], ['c', 1795368475], ['d', 1795368474], ['e']], [['x', 1795368473], ['y', 1795368474], ['z', 1795368475]], 'shortname desc', 0, 0, ['e', 'd', 'c', 'b', 'a'])
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1403
+
+242) enrollib_test::test_enrol_get_course_users_roles
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1476
+
+243) enrollib_test::test_enrol_calculate_duration
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1526
+
+244) enrollib_test::test_get_enrolled_with_capabilities_join_cannotmatchanyrows with data set "no prohibits, no capability" ('', false, 0, 1)
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1551
+
+245) enrollib_test::test_get_enrolled_with_capabilities_join_cannotmatchanyrows with data set "no prohibits with capability" ('moodle/course:manageactivities', false, 0, 1)
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1551
+
+246) enrollib_test::test_get_enrolled_with_capabilities_join_cannotmatchanyrows with data set "prohibits with capability" ('moodle/course:manageactivities', true, 1, 0)
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1551
+
+247) enrollib_test::test_enrol_check_plugins_with_forced_option
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1618
+
+248) enrollib_test::test_enrol_check_plugins_with_empty_config_value with data set #0 (0)
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1648
+
+249) enrollib_test::test_enrol_check_plugins_with_empty_config_value with data set #1 ('0')
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1648
+
+250) enrollib_test::test_enrol_check_plugins_with_empty_config_value with data set #2 (false)
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1648
+
+251) enrollib_test::test_enrol_check_plugins_with_empty_config_value with data set #3 ('')
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1648
+
+252) enrollib_test::test_enrol_check_plugins_with_empty_config_value with data set #4 ('string')
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1648
+
+253) enrollib_test::test_last_time_enrolments_synced_is_set_if_not_forced
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1663
+
+254) enrollib_test::test_last_time_enrolments_synced_is_set_if_not_forced_if_have_not_passed_interval
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1683
+
+255) enrollib_test::test_enrol_selfenrol_available
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1706
+
+256) enrollib_test::test_validate_enrol_plugin_data
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1835
+
+257) enrollib_test::test_update_enrol_plugin_data
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1855
+
+258) enrollib_test::test_email_greetings
+"enrol_get_course_users" is not a valid target for code coverage
+
+/var/www/moodle/public/enrol/tests/enrollib_test.php:1923
+
+OK, but there were issues!
+Tests: 2309, Assertions: 13817, PHPUnit Warnings: 258, Notices: 13, Skipped: 12.
+
+Generating code coverage report in Clover XML format ... done [00:09.949]

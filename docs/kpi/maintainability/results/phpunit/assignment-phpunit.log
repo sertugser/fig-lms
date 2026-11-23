@@ -1,0 +1,1147 @@
+Moodle 5.3.1 (Build: 20261112)
+Php: 8.3.37, pgsql: 17.12 (Debian 17.12-1.pgdg13+1), OS: Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.3.37 with PCOV 1.0.12
+Configuration: /var/www/moodle/phpunit-assignment.xml
+
+...............................................................  63 / 646 (  9%)
+............................................................... 126 / 646 ( 19%)
+............................................................... 189 / 646 ( 29%)
+.......................................WWWWWWW........WWWWWWWWW 252 / 646 ( 39%)
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW................... 315 / 646 ( 48%)
+................................WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW 378 / 646 ( 58%)
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW.WWWWWWWWWWWW 441 / 646 ( 68%)
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW.......... 504 / 646 ( 78%)
+............................................................... 567 / 646 ( 87%)
+.......................................WWWWWWWWWWWWWWWWWW...... 630 / 646 ( 97%)
+................                                                646 / 646 (100%)
+
+Time: 05:24.844, Memory: 197.00 MB
+
+224 tests triggered 224 PHPUnit warnings:
+
+1) mod_assign\external\remove_submission_test::test_remove_submission_with_invalid_assign_id
+::execute is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/external/remove_submission_test.php:71
+
+2) mod_assign\external\remove_submission_test::test_remove_submission_with_invalid_user_id
+::execute is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/external/remove_submission_test.php:81
+
+3) mod_assign\external\remove_submission_test::test_teacher_remove_submissions
+::execute is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/external/remove_submission_test.php:93
+
+4) mod_assign\external\remove_submission_test::test_teacher_editothersubmission_remove_submissions
+::execute is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/external/remove_submission_test.php:112
+
+5) mod_assign\external\remove_submission_test::test_remove_own_notexists_submission
+::execute is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/external/remove_submission_test.php:139
+
+6) mod_assign\external\remove_submission_test::test_remove_own_submission
+::execute is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/external/remove_submission_test.php:153
+
+7) mod_assign\external\remove_submission_test::test_remove_own_submission_reopened
+::execute is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/external/remove_submission_test.php:180
+
+8) mod_assign\externallib_test::test_get_grades
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:51
+
+9) mod_assign\externallib_test::test_get_assignments
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:151
+
+10) mod_assign\externallib_test::test_get_assignments_with_override
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:345
+
+11) mod_assign\externallib_test::test_get_assignments_with_submissionstatement
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:396
+
+12) mod_assign\externallib_test::test_get_assignments_when_submissionattachments_is_enabled
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:452
+
+13) mod_assign\externallib_test::test_get_submissions
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:524
+
+14) mod_assign\externallib_test::test_get_submissions_group_submission
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:624
+
+15) mod_assign\externallib_test::test_get_submissions_group_submission_attemptnumber
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:670
+
+16) mod_assign\externallib_test::test_get_user_flags
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:751
+
+17) mod_assign\externallib_test::test_get_user_mappings
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:820
+
+18) mod_assign\externallib_test::test_lock_submissions
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:881
+
+19) mod_assign\externallib_test::test_unlock_submissions
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:942
+
+20) mod_assign\externallib_test::test_submit_for_grading
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1008
+
+21) mod_assign\externallib_test::test_save_user_extensions
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1064
+
+22) mod_assign\externallib_test::test_reveal_identities
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1131
+
+23) mod_assign\externallib_test::test_revert_submissions_to_draft
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1191
+
+24) mod_assign\externallib_test::test_save_submission
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1238
+
+25) mod_assign\externallib_test::test_save_grade
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1329
+
+26) mod_assign\externallib_test::test_save_grades_with_advanced_grading
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1406
+
+27) mod_assign\externallib_test::test_save_grades_with_group_submission
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1556
+
+28) mod_assign\externallib_test::test_copy_previous_attempt
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1681
+
+29) mod_assign\externallib_test::test_set_user_flags
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1758
+
+30) mod_assign\externallib_test::test_view_grading_table_invalid_instance
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1841
+
+31) mod_assign\externallib_test::test_view_grading_table_not_enrolled
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1860
+
+32) mod_assign\externallib_test::test_view_grading_table_correct
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1882
+
+33) mod_assign\externallib_test::test_view_grading_table_without_capability
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1921
+
+34) mod_assign\externallib_test::test_subplugins_availability
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1953
+
+35) mod_assign\externallib_test::test_view_submission_status
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:1996
+
+36) mod_assign\externallib_test::test_get_submission_status_in_draft_status
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2065
+
+37) mod_assign\externallib_test::test_get_submission_status_in_submission_status
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2131
+
+38) mod_assign\externallib_test::test_get_submission_status_in_submission_status_for_teacher
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2164
+
+39) mod_assign\externallib_test::test_get_submission_status_in_reopened_status
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2237
+
+40) mod_assign\externallib_test::test_get_submission_status_access_control
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2339
+
+41) mod_assign\externallib_test::test_get_submission_status_hidden_grader
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2355
+
+42) mod_assign\externallib_test::test_get_submission_status_multiple_markers
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2442
+
+43) mod_assign\externallib_test::test_get_submission_status_with_override
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2568
+
+44) mod_assign\externallib_test::test_get_submission_status_with_time_limit_enabled
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2630
+
+45) mod_assign\externallib_test::test_get_participant_no_assignment
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2706
+
+46) mod_assign\externallib_test::test_get_participant_no_view_capability
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2716
+
+47) mod_assign\externallib_test::test_get_participant_no_grade_capability
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2738
+
+48) mod_assign\externallib_test::test_get_participant_no_participant
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2762
+
+49) mod_assign\externallib_test::test_get_participant_blind_marking
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2782
+
+50) mod_assign\externallib_test::test_get_participant_no_user
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2812
+
+51) mod_assign\externallib_test::test_get_participant_full_details
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2867
+
+52) mod_assign\externallib_test::test_get_participant_group_submission
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2897
+
+53) mod_assign\externallib_test::test_get_participant_relative_dates with data set "Student whose enrolment starts after the course start date, relative dates mode enabled" ([true, 1794503817], [1795713417], ['student', null, 'manual', 1794676617], [1795886217])
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2950
+
+54) mod_assign\externallib_test::test_get_participant_relative_dates with data set "Student whose enrolment starts before the course start date, relative dates mode enabled" ([true, 1794503817], [1795713417], ['student', null, 'manual', 1794331017], [1795713417])
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:2950
+
+55) mod_assign\externallib_test::test_list_participants_user_info_with_special_characters
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:3006
+
+56) mod_assign\externallib_test::test_list_participants_returns_user_property_types
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:3057
+
+57) mod_assign\externallib_test::test_participants_info_with_groups
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:3090
+
+58) mod_assign\externallib_test::test_view_assign
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:3136
+
+59) mod_assign\externallib_test::test_get_submission_status_without_grade_item with data set "No previous attempt" (false)
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:3179
+
+60) mod_assign\externallib_test::test_get_submission_status_without_grade_item with data set "Previous attempt with a grade record" (true)
+::get_participant is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/externallib_test.php:3179
+
+61) mod_assign\locallib_test::test_return_links
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:66
+
+62) mod_assign\locallib_test::test_get_feedback_plugins
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:80
+
+63) mod_assign\locallib_test::test_get_submission_plugins
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:94
+
+64) mod_assign\locallib_test::test_is_blind_marking
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:108
+
+65) mod_assign\locallib_test::test_get_assign_perpage with data set #0 (-1, [-1, 10, 20, 50])
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:195
+
+66) mod_assign\locallib_test::test_get_assign_perpage with data set #1 (15, [15, 10, 15, 15])
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:195
+
+67) mod_assign\locallib_test::test_gradingtable_filter_by_requiresgrading_no_grade
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:219
+
+68) mod_assign\locallib_test::test_gradingtable_extension_due_date
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:250
+
+69) mod_assign\locallib_test::test_gradingtable_extension_date_calculation_for_lateness
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:309
+
+70) mod_assign\locallib_test::test_gradingtable_status_rendering
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:374
+
+71) mod_assign\locallib_test::test_gradingtable_group_submissions_rendering
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:425
+
+72) mod_assign\locallib_test::test_show_intro
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:519
+
+73) mod_assign\locallib_test::test_has_submissions_or_grades
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:545
+
+74) mod_assign\locallib_test::test_delete_grades
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:580
+
+75) mod_assign\locallib_test::test_delete_instance
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:606
+
+76) mod_assign\locallib_test::test_reset_userdata
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:629
+
+77) mod_assign\locallib_test::test_plugin_settings
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:714
+
+78) mod_assign\locallib_test::test_update_calendar
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:734
+
+79) mod_assign\locallib_test::test_update_instance
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:822
+
+80) mod_assign\locallib_test::test_cannot_submit_empty
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:845
+
+81) mod_assign\locallib_test::test_cannot_submit_empty_no_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:867
+
+82) mod_assign\locallib_test::test_can_submit_with_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:892
+
+83) mod_assign\locallib_test::test_new_submission_empty with data set "With file and onlinetext" ([['user', 'draft', '/', 'not_a_virus.exe'], 'Balin Fundinul Uzbadkhazaddumu'], false)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:930
+
+84) mod_assign\locallib_test::test_list_participants
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:983
+
+85) mod_assign\locallib_test::test_list_participants_activeenrol
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1002
+
+86) mod_assign\locallib_test::test_list_participants_with_group_restriction
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1030
+
+87) mod_assign\locallib_test::test_count_participants_by_groups
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1057
+
+88) mod_assign\locallib_test::test_get_participant_user_not_exist
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1104
+
+89) mod_assign\locallib_test::test_get_participant_not_enrolled
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1112
+
+90) mod_assign\locallib_test::test_get_participant_no_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1121
+
+91) mod_assign\locallib_test::test_get_participant_granted_extension
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1135
+
+92) mod_assign\locallib_test::test_get_participant_with_ungraded_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1152
+
+93) mod_assign\locallib_test::test_get_participant_with_no_submission_no_capability
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1174
+
+94) mod_assign\locallib_test::test_get_participant_with_submission_no_capability
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1195
+
+95) mod_assign\locallib_test::test_get_participant_with_graded_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1221
+
+96) mod_assign\locallib_test::test_count_teams_no_active_non_group_allowed
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1249
+
+97) mod_assign\locallib_test::test_count_teams_non_group_allowed
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1272
+
+98) mod_assign\locallib_test::test_count_teams_no_active_group
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1308
+
+99) mod_assign\locallib_test::test_count_teams_groups_only
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1343
+
+100) mod_assign\locallib_test::test_submit_to_default_group
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1376
+
+101) mod_assign\locallib_test::test_count_submissions_no_draft
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1412
+
+102) mod_assign\locallib_test::test_count_submissions_draft
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1436
+
+103) mod_assign\locallib_test::test_count_submissions_submitted
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1460
+
+104) mod_assign\locallib_test::test_count_submissions_graded
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1486
+
+105) mod_assign\locallib_test::test_count_submissions_graded_group
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1512
+
+106) mod_assign\locallib_test::test_count_submissions_with_status_and_groups
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1546
+
+107) mod_assign\locallib_test::test_count_submissions_with_status_and_groups_team_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1609
+
+108) mod_assign\locallib_test::test_count_submissions_with_status_and_groups_unenrolled_users
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1677
+
+109) mod_assign\locallib_test::test_count_submissions_need_grading_with_groups
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1710
+
+110) mod_assign\locallib_test::test_count_submissions_need_grading_with_groups_team_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1765
+
+111) mod_assign\locallib_test::test_get_grading_userid_list_only_active
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1933
+
+112) mod_assign\locallib_test::test_get_grading_userid_list_all
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1955
+
+113) mod_assign\locallib_test::test_cron
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:1978
+
+114) mod_assign\locallib_test::test_cron_without_notifications
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2021
+
+115) mod_assign\locallib_test::test_cron_regraded
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2052
+
+116) mod_assign\locallib_test::test_markingworkflow_cron
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2094
+
+117) mod_assign\locallib_test::test_cron_message_includes_courseid
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2184
+
+118) mod_assign\locallib_test::test_is_graded
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2222
+
+119) mod_assign\locallib_test::test_can_grade
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2241
+
+120) mod_assign\locallib_test::test_can_view_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2271
+
+121) mod_assign\locallib_test::test_update_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2320
+
+122) mod_assign\locallib_test::test_update_submission_team
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2342
+
+123) mod_assign\locallib_test::test_update_submission_suspended
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2384
+
+124) mod_assign\locallib_test::test_update_submission_blind
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2406
+
+125) mod_assign\locallib_test::test_group_submissions_submit_for_marking_requireallteammemberssubmit
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2429
+
+126) mod_assign\locallib_test::test_group_submissions_submit_for_marking
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2483
+
+127) mod_assign\locallib_test::test_submissions_open
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2547
+
+128) mod_assign\locallib_test::test_submissions_open_user_override
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2607
+
+129) mod_assign\locallib_test::test_submissions_open_group_override
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2639
+
+130) mod_assign\locallib_test::test_get_graders
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2667
+
+131) mod_assign\locallib_test::test_get_graders_separate_groups
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2684
+
+132) mod_assign\locallib_test::test_get_notified_users
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2719
+
+133) mod_assign\locallib_test::test_get_notified_users_in_grouping
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2763
+
+134) mod_assign\locallib_test::test_group_members_only
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2814
+
+135) mod_assign\locallib_test::test_get_uniqueid_for_user
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2874
+
+136) mod_assign\locallib_test::test_show_student_summary
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2894
+
+137) mod_assign\locallib_test::test_show_student_summary_with_feedback
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:2965
+
+138) mod_assign\locallib_test::test_attempt_reopen_method_manual
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3041
+
+139) mod_assign\locallib_test::test_attempt_reopen_method_untilpass
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3139
+
+140) mod_assign\locallib_test::test_attempt_reopen_method_untilpass_passing
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3213
+
+141) mod_assign\locallib_test::test_attempt_reopen_method_untilpass_no_passing_requirement
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3256
+
+142) mod_assign\locallib_test::test_markingworkflow
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3361
+
+143) mod_assign\locallib_test::test_workflow_state_locked
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3464
+
+144) mod_assign\locallib_test::test_grading_locked
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3498
+
+145) mod_assign\locallib_test::test_grade_not_editable_once_released
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3528
+
+146) mod_assign\locallib_test::test_teacher_submit_for_student
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3568
+
+147) mod_assign\locallib_test::test_teacher_submit_for_student_with_capability
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3600
+
+148) mod_assign\locallib_test::test_disable_submit_after_cutoff_date
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3667
+
+149) mod_assign\locallib_test::test_submit_submission_after_cutoff
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3722
+
+150) mod_assign\locallib_test::test_submission_comment_plugin_settings with data set "CFG->usecomments true, empty config => Enabled by default" (true, [], true)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3763
+
+151) mod_assign\locallib_test::test_submission_comment_plugin_settings with data set "CFG->usecomments true, config enabled => Comments enabled" (true, [1], true)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3763
+
+152) mod_assign\locallib_test::test_submission_comment_plugin_settings with data set "CFG->usecomments true, config idisabled => Comments enabled" (true, [0], true)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3763
+
+153) mod_assign\locallib_test::test_submission_comment_plugin_settings with data set "CFG->usecomments false, empty config => Disabled by default" (false, [], false)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3763
+
+154) mod_assign\locallib_test::test_submission_comment_plugin_settings with data set "CFG->usecomments false, config enabled => Comments disabled" (false, [1], false)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3763
+
+155) mod_assign\locallib_test::test_submission_comment_plugin_settings with data set "CFG->usecomments false, config disabled => Comments disabled" (false, [0], false)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3763
+
+156) mod_assign\locallib_test::test_feedback_comment_commentinline
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3826
+
+157) mod_assign\locallib_test::test_feedback_plugin_settings with data set "No configuration => disabled" ([], false)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3906
+
+158) mod_assign\locallib_test::test_feedback_plugin_settings with data set "Actively disabled" ([0], false)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3906
+
+159) mod_assign\locallib_test::test_feedback_plugin_settings with data set "Actively enabled" ([1], true)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3906
+
+160) mod_assign\locallib_test::test_is_gradebook_feedback_enabled
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3944
+
+161) mod_assign\locallib_test::test_is_gradebook_feedback_disabled
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3969
+
+162) mod_assign\locallib_test::test_can_edit_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:3992
+
+163) mod_assign\locallib_test::test_can_edit_submission_with_editothersubmission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4017
+
+164) mod_assign\locallib_test::test_can_edit_submission_separategroups
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4048
+
+165) mod_assign\locallib_test::test_can_edit_submission_separategroups_with_editothersubmission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4086
+
+166) mod_assign\locallib_test::test_can_view_blind_details
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4153
+
+167) mod_assign\locallib_test::test_get_shared_group_members
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4186
+
+168) mod_assign\locallib_test::test_get_shared_group_members_override
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4239
+
+169) mod_assign\locallib_test::test_get_plugins_file_areas
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4300
+
+170) mod_assign\locallib_test::test_override_exists
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4383
+
+171) mod_assign\locallib_test::test_process_save_quick_grades
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4488
+
+172) mod_assign\locallib_test::test_process_save_quick_grades_workflow
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4565
+
+173) mod_assign\locallib_test::test_update_activity_completion_records_solitary_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4600
+
+174) mod_assign\locallib_test::test_update_activity_completion_records_team_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4642
+
+175) mod_assign\locallib_test::test_update_activity_completion_records_team_submission_new
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4693
+
+176) mod_assign\locallib_test::test_fix_null_grades with data set "Negative less than one is errant" (-0.64, null)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4768
+
+177) mod_assign\locallib_test::test_fix_null_grades with data set "Negative more than one is errant" (-30.18, null)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4768
+
+178) mod_assign\locallib_test::test_fix_null_grades with data set "Negative one exactly is not errant, but shouldn't be pushed to gradebook" (-1, null)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4768
+
+179) mod_assign\locallib_test::test_fix_null_grades with data set "Positive grade is not errant" (1, 1)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4768
+
+180) mod_assign\locallib_test::test_fix_null_grades with data set "Large grade is not errant" (100, 100)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4768
+
+181) mod_assign\locallib_test::test_fix_null_grades with data set "Zero grade is not errant" (0, 0)
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4768
+
+182) mod_assign\locallib_test::test_grade_submission_override
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4824
+
+183) mod_assign\locallib_test::test_get_filters
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4880
+
+184) mod_assign\locallib_test::test_assign_get_instance with data set "Teacher whose enrolment starts after the course start date, relative dates mode enabled" ([true, 1794503817], [1795713417], ['teacher', null, 'manual', 1794676617], [1795886217])
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4899
+
+185) mod_assign\locallib_test::test_assign_get_instance with data set "Teacher whose enrolment starts before the course start date, relative dates mode enabled" ([true, 1794503817], [1795713417], ['teacher', null, 'manual', 1794331017], [1795713417])
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4899
+
+186) mod_assign\locallib_test::test_assign_get_instance with data set "Teacher whose enrolment starts after the course start date, relative dates mode disabled" ([false, 1794503817], [1795713417], ['teacher', null, 'manual', 1794676617], [1795713417])
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4899
+
+187) mod_assign\locallib_test::test_assign_get_instance with data set "Student whose enrolment starts after the course start date, relative dates mode enabled" ([true, 1794503817], [1795713417], ['student', null, 'manual', 1794676617], [1795886217])
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4899
+
+188) mod_assign\locallib_test::test_assign_get_instance with data set "Student whose enrolment starts before the course start date, relative dates mode enabled" ([true, 1794503817], [1795713417], ['student', null, 'manual', 1794331017], [1795713417])
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4899
+
+189) mod_assign\locallib_test::test_assign_get_instance with data set "Student whose enrolment starts after the course start date, relative dates mode disabled" ([false, 1794503817], [1795713417], ['student', null, 'manual', 1794676617], [1795713417])
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4899
+
+190) mod_assign\locallib_test::test_assign_get_default_instance with data set "Teacher whose enrolment starts after the course start date, relative dates mode enabled" ([true, 1794503817], [1795713417], ['teacher', null, 'manual', 1794676617], [1795713417])
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4985
+
+191) mod_assign\locallib_test::test_assign_get_default_instance with data set "Teacher whose enrolment starts before the course start date, relative dates mode enabled" ([true, 1794503817], [1795713417], ['teacher', null, 'manual', 1794331017], [1795713417])
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4985
+
+192) mod_assign\locallib_test::test_assign_get_default_instance with data set "Teacher whose enrolment starts after the course start date, relative dates mode disabled" ([false, 1794503817], [1795713417], ['teacher', null, 'manual', 1794676617], [1795713417])
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4985
+
+193) mod_assign\locallib_test::test_assign_get_default_instance with data set "Student whose enrolment starts after the course start date, relative dates mode enabled" ([true, 1794503817], [1795713417], ['student', null, 'manual', 1794676617], [1795713417])
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:4985
+
+194) mod_assign\locallib_test::test_cron_use_task_api_to_get_lastruntime
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5052
+
+195) mod_assign\locallib_test::test_should_provide_intro_attachments_with_show_intro_disabled
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5102
+
+196) mod_assign\locallib_test::test_should_provide_intro_attachments_with_bypass_capability
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5115
+
+197) mod_assign\locallib_test::test_should_provide_intro_attachments_with_submissionattachments_disabled
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5128
+
+198) mod_assign\locallib_test::test_should_provide_intro_attachments_with_submissionattachments_enabled_and_submissions_closed
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5137
+
+199) mod_assign\locallib_test::test_should_provide_intro_attachments_submissionattachments_enabled_and_an_open_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5151
+
+200) mod_assign\locallib_test::test_is_attempt_in_progress_with_open_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5168
+
+201) mod_assign\locallib_test::test_is_attempt_in_progress_with_open_submission_and_no_timestarted
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5185
+
+202) mod_assign\locallib_test::test_is_attempt_in_progress_with_no_open_submission
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5198
+
+203) mod_assign\locallib_test::test_is_userid_filtered
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5283
+
+204) mod_assign\locallib_test::test_get_error_messages
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5348
+
+205) mod_assign\locallib_test::test_release_grade_anon
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5378
+
+206) mod_assign\locallib_test::test_view_assignment_without_grade_item
+::workflow_state_locked is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/locallib_test.php:5404
+
+207) mod_assign\penalty_test::test_penalty_support
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:81
+
+208) mod_assign\penalty_test::test_apply_penalty with data set #0 (50, 86400, 86400, null, null, null, ['Submission date: 86400', 'Due date: 86400'], 50)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:143
+
+209) mod_assign\penalty_test::test_apply_penalty with data set #1 (50, 86401, 86400, null, null, null, ['Submission date: 86401', 'Due date: 86400'], 30)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:143
+
+210) mod_assign\penalty_test::test_apply_penalty with data set #2 (50, 86401, 86400, 86401, null, null, ['Submission date: 86401', 'Due date: 86401'], 50)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:143
+
+211) mod_assign\penalty_test::test_apply_penalty with data set #3 (50, 86402, 86400, 86401, null, null, ['Submission date: 86402', 'Due date: 86401'], 30)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:143
+
+212) mod_assign\penalty_test::test_apply_penalty with data set #4 (50, 86401, 86400, null, 86401, null, ['Submission date: 86401', 'Due date: 86401'], 50)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:143
+
+213) mod_assign\penalty_test::test_apply_penalty with data set #5 (50, 86402, 86400, null, 86401, null, ['Submission date: 86402', 'Due date: 86401'], 30)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:143
+
+214) mod_assign\penalty_test::test_apply_penalty with data set #6 (50, 86401, 86400, 86401, 86402, null, ['Submission date: 86401', 'Due date: 86401'], 50)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:143
+
+215) mod_assign\penalty_test::test_apply_penalty with data set #7 (50, 86402, 86400, 86401, 86402, null, ['Submission date: 86402', 'Due date: 86401'], 30)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:143
+
+216) mod_assign\penalty_test::test_apply_penalty with data set #8 (50, 86403, 86400, 86401, 86402, 86403, ['Submission date: 86403', 'Due date: 86403'], 50)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:143
+
+217) mod_assign\penalty_test::test_apply_penalty with data set #9 (50, 86404, 86400, 86401, 86402, 86403, ['Submission date: 86404', 'Due date: 86403'], 30)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:143
+
+218) mod_assign\penalty_test::test_apply_penalty with data set #10 (0, 86400, 86400, null, null, null, [], 0)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:143
+
+219) mod_assign\penalty_test::test_apply_penalty with data set #11 (0, 86401, 86400, null, null, null, [], 0)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:143
+
+220) mod_assign\penalty_test::test_recalculate_penalty
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:225
+
+221) mod_assign\penalty_test::test_assign_grades_penalty_uses_rawgrade
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:285
+
+222) mod_assign\penalty_test::test_calculate_penalised_grade with data set "late submission: penalty and grade-item factors applied" (86401, ['Submission date: 86401', 'Due date: 86400'], 20.0, 70.0, 10.0)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:396
+
+223) mod_assign\penalty_test::test_calculate_penalised_grade with data set "on-time submission: only grade-item factors applied" (86399, ['Submission date: 86399', 'Due date: 86400'], 0.0, 85.0, 0.0)
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:396
+
+224) mod_assign\penalty_test::test_calculate_penalised_grade_applies_factors_for_verified_grade_while_frozen
+mod_assign\penalty\helper::apply_penalty_to_submission is not a valid target for code coverage
+
+/var/www/moodle/public/mod/assign/tests/penalty_test.php:490
+
+OK, but there were issues!
+Tests: 646, Assertions: 2887, PHPUnit Warnings: 224.
+
+Generating code coverage report in Clover XML format ... done [00:02.063]

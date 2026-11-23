@@ -1,0 +1,20 @@
+# Test variant of the Moodle image: adds PCOV (code coverage) and the PHPUnit dev dependencies.
+# Used only to measure test coverage (docs/kpi/maintainability/phpunit-coverage/README.md); never runs the web site.
+# Build: docker compose -f infra/docker-compose.yml -f infra/docker-compose.phpunit.yml build moodle-phpunit
+FROM fig-lms/moodle:5.3.1
+
+# PCOV (fast line coverage driver) is already in the base image but switched off (pcov.enabled=0).
+# Switch it on and point it at the Moodle code, so every PHPUnit run collects coverage data.
+RUN echo 'pcov.enabled=1' > /usr/local/etc/php/conf.d/zz-fig-pcov.ini \
+ && echo 'pcov.directory=/var/www/moodle' >> /usr/local/etc/php/conf.d/zz-fig-pcov.ini \
+ && php -r 'var_dump(ini_get("pcov.enabled"));'
+
+# Dev dependencies (PHPUnit, Behat, ...) that the normal image leaves out (`composer install --no-dev`).
+RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-interaction --no-progress \
+ && rm -rf /root/.composer /root/.cache/composer
+
+# Separate table prefix and data directory for PHPUnit, so the normal Moodle data is never touched.
+RUN sed -i "s#^require_once(__DIR__ . '/lib/setup.php');#\$CFG->phpunit_prefix = 'phpu_';\n\$CFG->phpunit_dataroot = '/var/www/phpunit_dataroot';\n\n&#" /var/www/moodle/config.php \
+ && grep -n phpunit_ /var/www/moodle/config.php \
+ && mkdir -p /var/www/phpunit_dataroot /results \
+ && chown -R www-data:www-data /var/www/phpunit_dataroot /results

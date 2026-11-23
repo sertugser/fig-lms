@@ -1,0 +1,25 @@
+# Adds a PHPUnit + coverage container next to the normal stack. See docs/kpi/maintainability/phpunit-coverage/README.md.
+#   docker compose -f infra/docker-compose.yml -f infra/docker-compose.phpunit.yml up -d --build moodle-phpunit
+services:
+  moodle-phpunit:
+    build:
+      context: ./moodle
+      dockerfile: Dockerfile.phpunit
+    image: fig-lms/moodle-phpunit:5.3.1
+    entrypoint: []                  # do not run the Moodle installer/web entrypoint
+    command: ["sleep", "infinity"]
+    environment:                    # same database as the normal stack; PHPUnit only uses tables with the prefix phpu_
+      MOODLE_DB_HOST: moodle-db
+      MOODLE_DB_NAME: moodle
+      MOODLE_DB_USER: moodle
+      MOODLE_DB_PASSWORD: ${MOODLE_DB_PASSWORD:?copy infra/.env.example to infra/.env}
+      MOODLE_WWWROOT: http://localhost:8000
+    volumes:
+      - phpunit-dataroot:/var/www/phpunit_dataroot
+      - ../docs/kpi/maintainability/results/phpunit:/results
+    depends_on:
+      moodle-db:
+        condition: service_healthy
+
+volumes:
+  phpunit-dataroot:

@@ -1,0 +1,18 @@
+module: advising
+exit code: 1 (0 or 1 is normal: 1 means PHPUnit printed warnings or a test failed, see the output below; 124 = stopped by the time limit)
+minutes: 1.9
+command: cd /var/www/moodle && timeout 10800 php vendor/bin/phpunit --configuration phpunit-advising.xml --do-not-cache-result --coverage-clover /results/advising-clover.xml --log-junit /results/advising-junit.xml
+
+--- end of PHPUnit output ---
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:2193
+
+62) completionlib_test::test_disabled_activities_are_not_returned
+"completion_can_view_data" is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/completionlib_test.php:2252
+
+OK, but there were issues!
+Tests: 314, Assertions: 1578, PHPUnit Warnings: 62, PHPUnit Deprecations: 10.
+
+Generating code coverage report in Clover XML format ... done [00:00.634]

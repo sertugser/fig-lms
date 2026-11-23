@@ -1,0 +1,667 @@
+Moodle 5.3.1 (Build: 20261112)
+Php: 8.3.37, pgsql: 17.12 (Debian 17.12-1.pgdg13+1), OS: Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.3.37 with PCOV 1.0.12
+Configuration: /var/www/moodle/phpunit-identity.xml
+
+.........SSSSSSSS.S............................................  63 / 952 (  6%)
+..................WWW.......................................... 126 / 952 ( 13%)
+............................................................... 189 / 952 ( 19%)
+.................S............................WWWWWW........... 252 / 952 ( 26%)
+............................................................... 315 / 952 ( 33%)
+............................................................... 378 / 952 ( 39%)
+.............................................................S. 441 / 952 ( 46%)
+............................................................... 504 / 952 ( 52%)
+............................................................... 567 / 952 ( 59%)
+............................................................... 630 / 952 ( 66%)
+...........................................N................... 693 / 952 ( 72%)
+............................................................... 756 / 952 ( 79%)
+...........................WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW 819 / 952 ( 86%)
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW 882 / 952 ( 92%)
+WWWWWWWWWWWWWWWWWWW............................................ 945 / 952 ( 99%)
+.......                                                         952 / 952 (100%)
+
+Time: 05:19.586, Memory: 153.00 MB
+
+127 tests triggered 127 PHPUnit warnings:
+
+1) auth_oauth2\auth_test::test_get_password_change_info
+::complete_login is not a valid target for code coverage
+
+/var/www/moodle/public/auth/oauth2/tests/auth_test.php:31
+
+2) auth_oauth2\auth_test::test_oauth2_complete_login
+::complete_login is not a valid target for code coverage
+
+/var/www/moodle/public/auth/oauth2/tests/auth_test.php:47
+
+3) auth_oauth2\auth_test::test_email_greetings
+::complete_login is not a valid target for code coverage
+
+/var/www/moodle/public/auth/oauth2/tests/auth_test.php:96
+
+4) profilefield_text\field_class_test::test_filter_display_data with data set "simple_string" ('Simple string', 'Simple string')
+"profilefield_text\profile_field_text" is not a valid target for code coverage
+
+/var/www/moodle/public/user/profile/field/text/tests/field_class_test.php:45
+
+5) profilefield_text\field_class_test::test_filter_display_data with data set "format_string" ('HTML & is escaped', 'HTML &amp; is escaped')
+"profilefield_text\profile_field_text" is not a valid target for code coverage
+
+/var/www/moodle/public/user/profile/field/text/tests/field_class_test.php:45
+
+6) profilefield_text\field_class_test::test_filter_display_data with data set "multilang_filter" ('<span class="multilang" lang=.../span>', 'English')
+"profilefield_text\profile_field_text" is not a valid target for code coverage
+
+/var/www/moodle/public/user/profile/field/text/tests/field_class_test.php:45
+
+7) profilefield_text\field_class_test::test_filter_display_data with data set "emoticons_filter" ('No emoticons filter :-(', 'No emoticons filter :-(')
+"profilefield_text\profile_field_text" is not a valid target for code coverage
+
+/var/www/moodle/public/user/profile/field/text/tests/field_class_test.php:45
+
+8) profilefield_text\field_class_test::test_edit_save_data_preprocess
+"profilefield_text\profile_field_text" is not a valid target for code coverage
+
+/var/www/moodle/public/user/profile/field/text/tests/field_class_test.php:76
+
+9) profilefield_text\field_class_test::test_convert_external_data
+"profilefield_text\profile_field_text" is not a valid target for code coverage
+
+/var/www/moodle/public/user/profile/field/text/tests/field_class_test.php:98
+
+10) accesslib_test::test_context_comparisons
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:137
+
+11) accesslib_test::test_accesslib_clear_all_caches
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:151
+
+12) accesslib_test::test_capabilities_mutation
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:168
+
+13) accesslib_test::test_get_role_access
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:182
+
+14) accesslib_test::test_get_guest_role
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:204
+
+15) accesslib_test::test_is_siteadmin
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:217
+
+16) accesslib_test::test_is_enrolled
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:259
+
+17) accesslib_test::test_isloggedin
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:309
+
+18) accesslib_test::test_isguestuser
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:323
+
+19) accesslib_test::test_is_safe_capability
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:350
+
+20) accesslib_test::test_get_context_info_array
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:360
+
+21) accesslib_test::test_has_coursecontact_role
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:427
+
+22) accesslib_test::test_create_role
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:451
+
+23) accesslib_test::test_assign_capability
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:483
+
+24) accesslib_test::test_unassign_capability
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:556
+
+25) accesslib_test::test_role_assign
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:606
+
+26) accesslib_test::test_role_unassign
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:661
+
+27) accesslib_test::test_role_unassign_all
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:705
+
+28) accesslib_test::test_get_roles_with_capability
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:760
+
+29) accesslib_test::test_delete_role
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:793
+
+30) accesslib_test::test_get_all_roles
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:846
+
+31) accesslib_test::test_get_all_roles_with_counts
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:901
+
+32) accesslib_test::test_get_roles_risk_counts
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:924
+
+33) accesslib_test::test_get_role_archetypes
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:962
+
+34) accesslib_test::test_get_archetype_roles
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:973
+
+35) accesslib_test::test_role_get_name
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:993
+
+36) accesslib_test::test_role_fix_names
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1044
+
+37) accesslib_test::test_get_default_role_archetype_allows
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1100
+
+38) accesslib_test::test_core_role_set_assign_allowed
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1149
+
+39) accesslib_test::test_core_role_set_override_allowed
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1178
+
+40) accesslib_test::test_core_role_set_switch_allowed
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1207
+
+41) accesslib_test::test_core_role_set_view_allowed
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1236
+
+42) accesslib_test::test_get_assignable_roles
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1265
+
+43) accesslib_test::test_get_assignable_roles_distinct_usercount
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1372
+
+44) accesslib_test::test_get_switchable_roles
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1405
+
+45) accesslib_test::test_get_overridable_roles
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1463
+
+46) accesslib_test::test_get_viewable_roles_course
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1556
+
+47) accesslib_test::test_get_viewable_roles_system
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1591
+
+48) accesslib_test::test_get_default_contextlevels
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1624
+
+49) accesslib_test::test_set_role_contextlevels
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1639
+
+50) accesslib_test::test_get_roles_for_contextlevels
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1663
+
+51) accesslib_test::test_get_default_enrol_roles
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1683
+
+52) accesslib_test::test_get_role_users
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1711
+
+53) accesslib_test::test_get_roles_used_in_context
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1814
+
+54) accesslib_test::test_get_user_roles_in_course
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1854
+
+55) accesslib_test::test_get_user_roles
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1920
+
+56) accesslib_test::test_has_capability_and_friends
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:1956
+
+57) accesslib_test::test_get_deprecated_capability_info
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2052
+
+58) accesslib_test::test_get_deprecated_capability_info_through_has_capability
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2070
+
+59) accesslib_test::test_get_deprecated_capability_info_through_get_user_capability_contexts
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2087
+
+60) accesslib_test::test_get_deprecated_capability_specific_cases with data set "capability missing" ('fake/access:missingcapability', ['Capability "fake/access:missi... code.'], false)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2109
+
+61) accesslib_test::test_get_deprecated_capability_specific_cases with data set "replacement no info" ('fake/access:replacementnoinfo', ['The capability 'fake/access:r...cated.'], true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2109
+
+62) accesslib_test::test_get_deprecated_capability_specific_cases with data set "replacement missing" ('fake/access:replacementmissing', ['The capability 'fake/access:r...ymore.'], true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2109
+
+63) accesslib_test::test_get_deprecated_capability_specific_cases with data set "replacement with non existing cap" ('fake/access:replacementwithwr...bility', ['Capability 'fake/access:repla...xist !', 'The capability 'fake/access:r...ilty'.'], true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2109
+
+64) accesslib_test::test_get_deprecated_capability_specific_cases with data set "replacement with existing" ('fake/access:replacementwithexisting', ['The capability 'fake/access:r...lity'.'], false)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2109
+
+65) accesslib_test::test_get_deprecated_capability_info_invalid_component
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2176
+
+66) accesslib_test::test_fake_capability
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2206
+
+67) accesslib_test::test_fake_capability_assign
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2255
+
+68) accesslib_test::test_fake_capability_unassign
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2278
+
+69) accesslib_test::test_role_definition_caching
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2302
+
+70) accesslib_test::test_get_user_capability_course
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2369
+
+71) accesslib_test::test_get_user_capability_contexts
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2554
+
+72) accesslib_test::test_guess_if_creator_will_have_course_capability
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2649
+
+73) accesslib_test::test_require_capability
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2774
+
+74) accesslib_test::test_get_enrolled_sql_different_course
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2809
+
+75) accesslib_test::test_get_enrolled_sql_role_only
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2840
+
+76) accesslib_test::test_get_enrolled_sql_multiple_enrolments
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2868
+
+77) accesslib_test::test_get_enrolled_sql_userswithgroups
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2917
+
+78) accesslib_test::test_get_enrolled_sql_userswithoutgroup
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2958
+
+79) accesslib_test::test_get_enrolled_sql_userswithhiddengroups
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:2992
+
+80) accesslib_test::test_get_enrolled_sql_course with data set #0 ([[true, true], [true, true]], [2, 2, 0])
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:3176
+
+81) accesslib_test::test_get_enrolled_sql_course with data set #1 ([[1, true, true]], [1, 0, 1])
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:3176
+
+82) accesslib_test::test_get_enrolled_sql_course with data set #2 ([[true, true], [1, true, true]], [2, 1, 1])
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:3176
+
+83) accesslib_test::test_get_enrolled_sql_course with data set #3 ([[86400, true, false, true]], [1, 0, 1])
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:3176
+
+84) accesslib_test::test_get_enrolled_sql_course with data set #4 ([[-86400, true, false, true]], [1, 0, 1])
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:3176
+
+85) accesslib_test::test_get_enrolled_sql_course with data set #5 ([[-86400, true, false, true], [86400, true, false, true]], [2, 0, 2])
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:3176
+
+86) accesslib_test::test_permission_evaluation
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:3240
+
+87) accesslib_test::test_context_module_caps_returned_by_get_capabilities_in_sys_context
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4084
+
+88) accesslib_test::test_context_module_caps_returned_by_get_capabilities_in_course_cat_context
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4097
+
+89) accesslib_test::test_context_module_caps_returned_by_get_capabilities_in_course_context
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4114
+
+90) accesslib_test::test_context_module_caps_returned_by_get_capabilities_mod_context
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4132
+
+91) accesslib_test::test_context_block_caps_returned_by_get_capabilities_block_context
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4151
+
+92) accesslib_test::test_context_user_caps_returned_by_get_capabilities_user_context
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4179
+
+93) accesslib_test::test_update_capabilities
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4203
+
+94) accesslib_test::test_update_capabilities_clone_existing
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4292
+
+95) accesslib_test::test_reset_role_capabilities
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4330
+
+96) accesslib_test::test_count_role_users
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4365
+
+97) accesslib_test::test_get_users_by_capability
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4403
+
+98) accesslib_test::test_get_with_capability_sql
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4452
+
+99) accesslib_test::test_get_with_capability_join_when_overrides_present with data set "no overrides" (true, [])
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4529
+
+100) accesslib_test::test_get_with_capability_join_when_overrides_present with data set "one override" (true, ['moodle/course:viewscales'])
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4529
+
+101) accesslib_test::test_get_with_capability_join_when_overrides_present with data set "both overrides" (false, ['moodle/course:viewscales', 'moodle/question:flag'])
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4529
+
+102) accesslib_test::test_get_profile_roles
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4573
+
+103) accesslib_test::test_is_parent_of with data set "includeself: true, testing self" ('/1/4/17/291/1001/17105', '/1/4/17/291/1001/17105', true, true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4775
+
+104) accesslib_test::test_is_parent_of with data set "includeself: false, testing self" ('/1/4/17/291/1001/17105', '/1/4/17/291/1001/17105', false, false)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4775
+
+105) accesslib_test::test_is_parent_of with data set "includeself: true; testing parent" ('/1/4/17/291/1001/17105', '/1/4/17/291/1001', true, false)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4775
+
+106) accesslib_test::test_is_parent_of with data set "includeself: false; testing parent" ('/1/4/17/291/1001/17105', '/1/4/17/291/1001', false, false)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4775
+
+107) accesslib_test::test_is_parent_of with data set "includeself: true; testing child" ('/1/4/17/291/1001', '/1/4/17/291/1001/17105', true, true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4775
+
+108) accesslib_test::test_is_parent_of with data set "includeself: false; testing child" ('/1/4/17/291/1001', '/1/4/17/291/1001/17105', false, true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4775
+
+109) accesslib_test::test_is_parent_of with data set "includeself: true; testing grandchild" ('/1', '/1/4/17/291/1001/17105', true, true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4775
+
+110) accesslib_test::test_is_parent_of with data set "includeself: false; testing grandchild" ('/1', '/1/4/17/291/1001/17105', false, true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4775
+
+111) accesslib_test::test_is_child_of with data set "includeself: true, testing self" ('/1/4/17/291/1001/17105', '/1/4/17/291/1001/17105', true, true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4875
+
+112) accesslib_test::test_is_child_of with data set "includeself: false, testing self" ('/1/4/17/291/1001/17105', '/1/4/17/291/1001/17105', false, false)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4875
+
+113) accesslib_test::test_is_child_of with data set "includeself: true; testing child" ('/1/4/17/291/1001/17105', '/1/4/17/291/1001', true, true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4875
+
+114) accesslib_test::test_is_child_of with data set "includeself: false; testing child" ('/1/4/17/291/1001/17105', '/1/4/17/291/1001', false, true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4875
+
+115) accesslib_test::test_is_child_of with data set "includeself: true; testing parent" ('/1/4/17/291/1001', '/1/4/17/291/1001/17105', true, false)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4875
+
+116) accesslib_test::test_is_child_of with data set "includeself: false; testing parent" ('/1/4/17/291/1001', '/1/4/17/291/1001/17105', false, false)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4875
+
+117) accesslib_test::test_is_child_of with data set "includeself: true; testing grandchild" ('/1/4/17/291/1001/17105', '/1', true, true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4875
+
+118) accesslib_test::test_is_child_of with data set "includeself: false; testing grandchild" ('/1/4/17/291/1001/17105', '/1', false, true)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4875
+
+119) accesslib_test::test_is_child_of with data set "includeself: true; testing grandparent" ('/1', '/1/4/17/291/1001/17105', true, false)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4875
+
+120) accesslib_test::test_is_child_of with data set "includeself: false; testing grandparent" ('/1', '/1/4/17/291/1001/17105', false, false)
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4875
+
+121) accesslib_test::test_get_parent_contexts_preload
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4904
+
+122) accesslib_test::test_get_with_capability_sql_locked
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:4945
+
+123) accesslib_test::test_get_users_by_capability_locked
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:5032
+
+124) accesslib_test::test_require_all_capabilities
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:5109
+
+125) accesslib_test::test_get_navigation_filter_context
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:5140
+
+126) accesslib_test::test_capabilities_deprecated_plugintype
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:5164
+
+127) accesslib_test::test_get_deprecated_capability_info_debugging
+::get_parent_contexts is not a valid target for code coverage
+
+/var/www/moodle/public/lib/tests/accesslib_test.php:5183
+
+OK, but there were issues!
+Tests: 952, Assertions: 14570, PHPUnit Warnings: 127, Notices: 1, Skipped: 11.
+
+Generating code coverage report in Clover XML format ... done [00:02.515]

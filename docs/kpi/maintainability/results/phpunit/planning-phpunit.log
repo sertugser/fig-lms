@@ -1,0 +1,19 @@
+Moodle 5.3.1 (Build: 20261112)
+Php: 8.3.37, pgsql: 17.12 (Debian 17.12-1.pgdg13+1), OS: Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
+PHPUnit 11.5.56 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.3.37 with PCOV 1.0.12
+Configuration: /var/www/moodle/phpunit-planning.xml
+
+....N..........................................................  63 / 306 ( 20%)
+............................................................... 126 / 306 ( 41%)
+............................................................... 189 / 306 ( 61%)
+............................................................... 252 / 306 ( 82%)
+...............................................S......          306 / 306 (100%)
+
+Time: 01:30.243, Memory: 147.00 MB
+
+OK, but there were issues!
+Tests: 306, Assertions: 2942, Notices: 1, Skipped: 1.
+
+Generating code coverage report in Clover XML format ... done [00:01.931]
