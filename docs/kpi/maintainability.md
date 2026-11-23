@@ -1,6 +1,6 @@
 # Maintainability KPIs: Moodle baseline
 
-Baseline for the Moodle code of our 6 modules (Moodle 5.3.1, `MOODLE_503_STABLE`, commit `1156a935`).
+Baseline for the Moodle code of our 6 modules (Moodle 5.3.1, tag `v5.3.1`, commit `cfe123f2`, the same version that `infra/` runs).
 At the end of the project the new system is measured the same way and compared against these numbers.
 
 ## Module to Moodle folder mapping
@@ -27,22 +27,22 @@ Shared core code (`lib/moodlelib.php`, `lib/dml`, forms, output) is not assigned
 | Module | PHP | JavaScript | Mustache | Other (CSS, XML, JSON, ...) | All languages | Files |
 |---|---:|---:|---:|---:|---:|---:|
 | Identity & access | 30,403 | 1,331 | 607 | 776 | 33,117 | 364 |
-| Courses & enrolment | 60,877 | 10,607 | 2,921 | 2,299 | 76,704 | 771 |
+| Courses & enrolment | 60,877 | 10,607 | 2,921 | 2,295 | 76,700 | 771 |
 | Advising | 7,591 | 1,215 | 10 | 295 | 9,111 | 94 |
 | Assignments | 31,693 | 4,841 | 647 | 2,410 | 39,591 | 371 |
 | Grading | 34,929 | 3,356 | 1,217 | 1,589 | 41,091 | 445 |
 | Study planner (ref.) | 16,494 | 4,733 | 1,871 | 271 | 23,369 | 206 |
-| **Total (first 5)** | **165,493** | | | | **199,614** | |
+| **Total (first 5)** | **165,493** | | | | **199,610** | |
 
 ### Tests and complexity (PHP)
 
 | Module | Test lines (PHP) | Test/code | Functions | Mean CCN | Median CCN | Max CCN | Functions with CCN > 10 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Identity & access | 19,251 | 0.63 | 1,484 | 3.31 | 2 | 43 | 86 (5.8%) |
-| Courses & enrolment | 50,408 | 0.83 | 2,889 | 3.59 | 2 | 67 | 174 (6.0%) |
-| Advising | 7,371 | 0.97 | 483 | 3.61 | 2 | 31 | 36 (7.5%) |
+| Courses & enrolment | 50,389 | 0.83 | 2,889 | 3.59 | 2 | 67 | 174 (6.0%) |
+| Advising | 7,366 | 0.97 | 483 | 3.61 | 2 | 31 | 36 (7.5%) |
 | Assignments | 18,010 | 0.57 | 1,534 | 3.86 | 1 | 91 | 113 (7.4%) |
-| Grading | 15,304 | 0.44 | 1,285 | 4.78 | 2 | 107 | 131 (10.2%) |
+| Grading | 15,308 | 0.44 | 1,285 | 4.78 | 2 | 107 | 131 (10.2%) |
 | Study planner (ref.) | 12,272 | 0.74 | 998 | 2.36 | 1 | 36 | 23 (2.3%) |
 
 Test/code = PHP test lines / PHP production lines. Behat acceptance test lines (`.feature`) are in `results/modules.csv` (`behat_feature_lines`) and are not part of the ratio.
@@ -72,8 +72,8 @@ File and line for each function: `maintainability/results/top5.csv`.
 Targets are proposals for discussion; they must also be realistic for Java/Spring (smaller methods are normal there).
 
 ## How it was measured (repeatable)
-1. `git clone --depth 1 -b MOODLE_503_STABLE https://github.com/moodle/moodle.git`
-2. `pip install lizard` and install cloc (`apt install cloc` or `brew install cloc`). Tested with lizard 1.26.1, cloc 1.98, Python 3.13 (line counts are identical to the team's cloc 2.06 table).
+1. `git clone --depth 1 -b v5.3.1 https://github.com/moodle/moodle.git`
+2. `pip install lizard` and install cloc (`apt install cloc` or `brew install cloc`). Tested with lizard 1.26.1, cloc 1.98, Python 3.13 (production PHP lines are identical to the team's cloc 2.06 table; that table was made on `MOODLE_503_STABLE` `1156a935`, which differs from `v5.3.1` by 4 non-PHP lines in courses and a few test lines).
 3. `python docs/kpi/maintainability/measure.py <moodle>/public docs/kpi/maintainability/results` (about 10 minutes on a laptop)
 
 Definitions used by the script:
