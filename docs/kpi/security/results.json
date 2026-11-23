@@ -1,0 +1,107 @@
+{
+  "measured_at": "2026-11-22",
+  "moodle": {
+    "release": "5.3.1",
+    "tag": "v5.3.1",
+    "commit": "cfe123f26fc7071981fe949cb16cd5a08a8234f1",
+    "database_version": 2026100501,
+    "environment": "Local Docker Compose; fresh database; sample data loaded"
+  },
+  "logins": {
+    "valid": {
+      "student1": "authenticated",
+      "teacher1": "authenticated",
+      "admin": "authenticated",
+      "student5": "authenticated"
+    },
+    "wrong_password_for_student1": "not authenticated"
+  },
+  "access_checks": [
+    {
+      "id": "SEC-01",
+      "request": "student5 GET /course/view.php?id=3 (CS201; student5 is not enrolled)",
+      "result": "HTTP 303 to /enrol/index.php?id=3; course content not served"
+    },
+    {
+      "id": "SEC-02",
+      "request": "student1 GET /course/view.php?id=2 (CS101; enrolled)",
+      "result": "HTTP 200; course page displayed"
+    },
+    {
+      "id": "SEC-03",
+      "request": "student1 GET /mod/assign/view.php?id=1&action=grading",
+      "result": "HTTP 404 in Apache access log; no grading page returned"
+    },
+    {
+      "id": "SEC-04",
+      "request": "teacher1 GET /mod/assign/view.php?id=1&action=grading",
+      "result": "HTTP 200; submissions page displayed"
+    },
+    {
+      "id": "SEC-04-manager",
+      "request": "teacher1 temporarily assigned manager in CS101; log in and GET /mod/assign/view.php?id=1&action=grading",
+      "result": "Login succeeded; HTTP 200; submissions page displayed; editingteacher role was restored"
+    },
+    {
+      "id": "SEC-11",
+      "request": "Authenticated student course search: search=' OR '1'='1",
+      "result": "HTTP 200; normal Search results page; no SQL/database error in response"
+    }
+  ],
+  "effective_capabilities": {
+    "student1": {
+      "role": "student",
+      "view_assignment": true,
+      "create_assignment": false,
+      "grade_assignment": false,
+      "enrol_users": false,
+      "assign_roles": false
+    },
+    "teacher1": {
+      "role": "editingteacher",
+      "view_assignment": true,
+      "create_assignment": true,
+      "grade_assignment": true,
+      "enrol_users": true,
+      "assign_roles": true
+    },
+    "manager_role_check": {
+      "account": "teacher1",
+      "scope": "CS101 course context",
+      "role": "manager",
+      "temporary_assignment": true,
+      "login": true,
+      "view_assignment": true,
+      "create_assignment": true,
+      "grade_assignment": true,
+      "enrol_users": true,
+      "assign_roles": true,
+      "course_page_http_status": 200,
+      "grading_page_http_status": 200,
+      "original_role_restored": "editingteacher"
+    },
+    "admin": {
+      "role_assignment": "none; special site administrator",
+      "site_admin": true,
+      "view_assignment": true,
+      "create_assignment": true,
+      "grade_assignment": true,
+      "enrol_users": true,
+      "assign_roles": true
+    }
+  },
+  "settings": {
+    "sessiontimeout_seconds": 28800,
+    "lockoutthreshold": 0,
+    "lockoutwindow_seconds": 1800,
+    "lockoutduration_seconds": 1800,
+    "passwordpolicy": 1,
+    "minpasswordlength": 8,
+    "minpassworddigits": 1,
+    "minpasswordlower": 1,
+    "minpasswordupper": 1,
+    "minpasswordnonalphanum": 1,
+    "passwordpolicycheckonlogin": 0
+  },
+  "zap_baseline_scan": "not run (optional in issue #17)"
+}
