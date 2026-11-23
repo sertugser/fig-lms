@@ -1,0 +1,14 @@
+{
+  "completed" : false,
+  "course" : "CS201",
+  "criteria" : [ {
+    "complete" : true,
+    "criteria" : "Introduction to Programming",
+    "type" : "Completion of other courses"
+  }, {
+    "complete" : false,
+    "criteria" : "Teacher",
+    "type" : "Manual completion by others"
+  } ],
+  "username" : "student2"
+}

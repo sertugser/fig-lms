@@ -1,0 +1,5 @@
+[
+  {"id": 1, "shortname": "Fig LMS", "fullname": "Fig LMS site", "idnumber": "", "format": "site", "startdate": 0, "enddate": 0, "visible": 1},
+  {"id": 3, "shortname": "CS201", "fullname": "Data Structures", "idnumber": "", "format": "topics", "startdate": 1790553600, "enddate": 1801094400, "visible": 1, "timemodified": 1},
+  {"id": 2, "shortname": "CS101", "fullname": "Introduction to Programming", "idnumber": "", "format": "topics", "startdate": 1790553600, "enddate": 1801094400, "visible": 1, "timemodified": 2}
+]

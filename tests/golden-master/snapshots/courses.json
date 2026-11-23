@@ -1,0 +1,27 @@
+{
+  "courses" : [ {
+    "enddate" : 1800576000,
+    "format" : "topics",
+    "fullname" : "Introduction to Programming",
+    "idnumber" : "CS101",
+    "shortname" : "CS101",
+    "startdate" : 1790550000,
+    "visible" : true
+  }, {
+    "enddate" : 1800576000,
+    "format" : "topics",
+    "fullname" : "Data Structures",
+    "idnumber" : "CS201",
+    "shortname" : "CS201",
+    "startdate" : 1790550000,
+    "visible" : true
+  }, {
+    "enddate" : 1800576000,
+    "format" : "topics",
+    "fullname" : "Discrete Mathematics",
+    "idnumber" : "MATH101",
+    "shortname" : "MATH101",
+    "startdate" : 1790550000,
+    "visible" : true
+  } ]
+}

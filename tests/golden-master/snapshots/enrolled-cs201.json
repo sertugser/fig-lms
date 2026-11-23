@@ -1,0 +1,20 @@
+{
+  "course" : "CS201",
+  "users" : [ {
+    "fullname" : "Ali Demir",
+    "roles" : [ "student" ],
+    "username" : "student1"
+  }, {
+    "fullname" : "Zeynep Celik",
+    "roles" : [ "student" ],
+    "username" : "student2"
+  }, {
+    "fullname" : "Can Sahin",
+    "roles" : [ "student" ],
+    "username" : "student3"
+  }, {
+    "fullname" : "Ayse Yilmaz",
+    "roles" : [ "editingteacher" ],
+    "username" : "teacher1"
+  } ]
+}

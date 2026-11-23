@@ -1,0 +1,6 @@
+{"completionstatus": {"completed": false, "aggregation": 1, "completions": [
+  {"type": 8, "title": "Course", "status": "Not yet started", "complete": true, "timecompleted": 5,
+   "details": {"type": "Course", "criteria": "<a href=\"http://localhost:8000/course/view.php?id=2\">Introduction to Programming</a>", "requirement": "x", "status": "y"}},
+  {"type": 2, "title": "Manual", "status": "Pending", "complete": false, "timecompleted": null,
+   "details": {"type": "Marked complete by teacher", "criteria": "Teacher", "requirement": "x", "status": "y"}}
+], "warnings": []}}
