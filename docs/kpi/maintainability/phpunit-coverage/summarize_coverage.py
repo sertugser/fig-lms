@@ -5,7 +5,7 @@ Usage:
     python docs/kpi/maintainability/phpunit-coverage/summarize_coverage.py <path-to-moodle-public-folder>
 
 Needs `pip install lizard` (measure.py is imported, so the file set is exactly the one of the other KPIs).
-Reads  docs/kpi/maintainability/results/phpunit/<module>-clover.xml and <module>-junit.xml,
+Reads  docs/kpi/maintainability/results/phpunit/<module>-clover.xml (or the gzipped <module>-clover.xml.gz) and <module>-junit.xml,
 writes docs/kpi/maintainability/results/phpunit/coverage.csv and prints one row per module.
 
 Line coverage = covered executable lines / executable lines (PHPUnit "statements"), over the production PHP files of the
@@ -13,6 +13,7 @@ module (no tests, no language packs, no third-party code). Files that are in the
 not measured and are reported separately.
 """
 import csv
+import gzip
 import importlib.util
 import re
 import sys
@@ -32,7 +33,10 @@ spec.loader.exec_module(measure)
 
 def clover_files(path):
     out = {}
-    for f in ET.parse(path).getroot().iter("file"):
+    opener = gzip.open if str(path).endswith(".gz") else open
+    with opener(path, "rb") as fh:
+        root = ET.parse(fh).getroot()
+    for f in root.iter("file"):
         m = f.find("metrics")
         name = f.get("name", "")
         if m is not None and name.startswith(PREFIX):
@@ -61,6 +65,8 @@ def main():
     rows = []
     for mod, paths in measure.MODULES.items():
         clover = RESULTS / f"{mod}-clover.xml"
+        if not clover.exists():
+            clover = RESULTS / f"{mod}-clover.xml.gz"
         if not clover.exists():
             rows.append({"module": mod, "status": "not measured"})
             continue

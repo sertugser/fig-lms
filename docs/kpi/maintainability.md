@@ -60,11 +60,11 @@ Test/code = PHP test lines / PHP production lines. Behat acceptance test lines (
 | **Total (first 5)** | 1,462 | 114,201 | 35,222 | **30.8%** | 4,638 | 1 | 24 | 32.6 |
 
 Measured on 2026-11-22 with Moodle `v5.3.1` (`cfe123f2`), PHP 8.3, PHPUnit 11.5.56 and PCOV 1.0.12 in Docker 29.1.2 (7.6 GB memory for Docker),
-on a Windows 11 laptop (Intel Core i5-13420H, 16 GB). Numbers are in `results/phpunit/coverage.csv`; the raw reports (clover XML, JUnit XML, PHPUnit output, run time) are in `results/phpunit/`.
+on a Windows 11 laptop (Intel Core i5-13420H, 16 GB). Numbers are in `results/phpunit/coverage.csv`; the raw reports (clover XML, gzipped as `*-clover.xml.gz`; JUnit XML, PHPUnit output, run time) are in `results/phpunit/`.
 How to repeat: [phpunit-coverage/README.md](maintainability/phpunit-coverage/README.md).
 
 - Coverage counts the executable lines of the module's production PHP files (same file set as the line counts above) that the module's own tests run. Files that no test loads count as not covered.
-- The one failed test is `reportlib_test::test_blank_hidden_total_and_adjust_bounds` (Grading). It is counted in the numbers and was not investigated.
+- The one failed test is `reportlib_test::test_blank_hidden_total_and_adjust_bounds` (Grading, `grade/tests/reportlib_test.php:133`). The test hides one of two graded activities and expects the course total to be blanked when the report setting is "hide totals if they contain hidden items"; Moodle returned the full total (120) instead of an empty grade. This is the same symptom as check G14 in [grading.md](../srs/modules/grading.md) (the total still includes the hidden item). Whether it is a Moodle 5.3.1 bug or caused by the test environment is not known yet. The test is counted in the numbers.
 - Skipped tests are the ones Moodle skips itself (for example tests that need an external service).
 - Only the module's own tests are run. Tests of other parts of Moodle also run this code (for example the assignment tests use the grade code), so these numbers are a **lower bound** of what the whole Moodle test suite covers.
 - Behat (browser) tests and JavaScript tests are not included.
@@ -89,11 +89,11 @@ File and line for each function: `maintainability/results/top5.csv`.
 | MAINT-02 Max complexity | Highest CCN of any single method | CCN | 31 to 107 per module | <= 15 for every method (enforced in CI) |
 | MAINT-03 Complex-function share | Share of functions with CCN > 10 | % | 5.8 to 10.2% (planner ref. 2.3%) | <= 2% |
 | MAINT-04 Test size ratio | Test code lines / production code lines | ratio | 0.44 to 0.97 | >= 0.8 per module |
-| MAINT-05 Test coverage | Line coverage of the module's production PHP code by the PHPUnit tests in the module's own folders | % | 24.3 to 60.3% per module (5 modules together 30.8%; planner ref. 50.9%) | >= 80% line coverage per module (see decision below) |
+| MAINT-05 Test coverage | Line coverage of the module's production PHP code by the PHPUnit tests in the module's own folders | % | 24.3 to 60.3% per module (5 modules together 30.8%; planner ref. 50.9%) | >= 80% line coverage per module (decided, see below) |
 
 Targets are proposals for discussion; they must also be realistic for Java/Spring (smaller methods are normal there).
 
-**MAINT-05 target (proposal):** keep **>= 80% line coverage** for the new system. It is far above Moodle's 24 to 60% (30.8% over the five modules), but the new code is small and written together with its tests. The Moodle numbers are a baseline to compare with, not a target. If the team finds 80% too strict for code such as controllers, a fallback is "at least 80% for each `api` and `internal` service class, at least Moodle's baseline for the module as a whole". The decision belongs to the team.
+**MAINT-05 target (decided 2026-11-23 by the team lead):** keep **>= 80% line coverage** for the new system. It is far above Moodle's 24 to 60% (30.8% over the five modules), but the new code is small and written together with its tests. The Moodle numbers are a baseline to compare with, not a target. If the team finds 80% too strict for code such as controllers, a fallback is "at least 80% for each `api` and `internal` service class, at least Moodle's baseline for the module as a whole". The 80% target was accepted; the fallback stays documented in case it proves too strict for controllers.
 
 ## How it was measured (repeatable)
 1. `git clone --depth 1 -b v5.3.1 https://github.com/moodle/moodle.git`

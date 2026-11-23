@@ -26,6 +26,9 @@ python docs/kpi/maintainability/phpunit-coverage/run_coverage.py planning   # al
 
 # 4. Compute the coverage per module (needs a clone of Moodle v5.3.1 and `pip install lizard`)
 python docs/kpi/maintainability/phpunit-coverage/summarize_coverage.py <moodle>/public
+
+# 5. Compress the clover reports before committing (they are several MB each); step 4 reads both .xml and .xml.gz
+gzip -9 -n docs/kpi/maintainability/results/phpunit/*-clover.xml
 ```
 On Windows with Git Bash, put `MSYS_NO_PATHCONV=1` in front of the `docker compose ... exec` command, otherwise paths like `public/admin/...` are rewritten.
 
