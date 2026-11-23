@@ -18,14 +18,30 @@ Moodle bugs fixed in the new system: MDL-87490, MDL-85503.
 - **Tasks:** all work is tracked on the [project board](https://github.com/users/sertugser/projects/3) and grouped by [milestone](https://github.com/sertugser/fig-lms/milestones). Filter issues with `assignee:<your-username>`. If an issue is temporarily assigned to someone else, the real owner is in the **Owner** row at the top of the issue.
 - **Moodle source:** we analyse Moodle 5.3.1. Paths in issues are relative to its `public/` folder.
   ```bash
-  git clone --depth 1 -b MOODLE_503_STABLE https://github.com/moodle/moodle.git
+  git clone --depth 1 -b v5.3.1 https://github.com/moodle/moodle.git   # same version as infra/
   ```
 - **How to contribute:** see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Quick start
+Requires Docker (Docker Desktop on macOS/Windows). Run from the repository root:
 ```bash
-docker compose -f infra/docker-compose.yml up -d   # Moodle 5.3.1 + new system + PostgreSQL
+cp infra/.env.example infra/.env                # once; edit the passwords if you like
+docker compose -f infra/docker-compose.yml up -d  # Moodle 5.3.1 + PostgreSQL 17
+./infra/sample-data/load.sh                     # sample courses, users, assignment, grades
 ```
+- Moodle: http://localhost:8000. Log in as `admin` with `MOODLE_ADMIN_PASSWORD` from `infra/.env`.
+- The first start builds the image and installs Moodle (about 5 minutes). Wait until `docker compose -f infra/docker-compose.yml logs moodle` shows `MOODLE_WS_TOKEN=...`.
+- REST token for the golden master tests: see [infra/README.md](infra/README.md#rest-api-token).
+
+Details, sample data contents and troubleshooting: [infra/README.md](infra/README.md).
+
+### Backend (new system)
+Requires Java 21 (Maven is downloaded by the wrapper):
+```bash
+cd backend
+./mvnw verify      # build, tests and the module boundary check (ModularityTest)
+```
+Windows: use `mvnw.cmd verify`. CI runs the same command on every pull request. The backend gets its own PostgreSQL service in the Compose file once the first module stores data (#6).
 
 ## Repository layout
 ```

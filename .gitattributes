@@ -1,0 +1,12 @@
+# Keep LF line endings for files that run inside Linux containers,
+# so Windows checkouts (core.autocrlf=true) do not break them.
+* text=auto
+*.sh text eol=lf
+*.php text eol=lf
+Dockerfile text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+.env.example text eol=lf
+mvnw text eol=lf
+*.cmd text eol=crlf
+*.java text eol=lf
