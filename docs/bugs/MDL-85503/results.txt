@@ -1,0 +1,15 @@
+MDL-85503 on Moodle http://localhost:8000 (student1 is enrolled in CS101 and CS201; admin is the site administrator)
+
+1. Default permission (allowed), Combo list
+  student1  front page section: Engineering, Introduction to Programming, Data Structures, Discrete Mathematics /course/index.php: Engineering
+  admin     front page section: Engineering, Introduction to Programming, Data Structures, Discrete Mathematics /course/index.php: Engineering
+
+2. viewcourselist prevented for authenticated users, Combo list
+  student1  front page section: (section not shown)                                            /course/index.php: HTTP 404
+  admin     front page section: Engineering, Introduction to Programming, Data Structures, Discrete Mathematics /course/index.php: Engineering
+
+3. viewcourselist prevented for authenticated users, List of categories
+  student1  front page section: (section not shown)                                            /course/index.php: HTTP 404
+  admin     front page section: Engineering                                                    /course/index.php: Engineering
+
+Settings restored to: {"enablemyhome": "0", "defaulthomepage": "1", "frontpageloggedin": "6", "viewcourselist_override": 1}
