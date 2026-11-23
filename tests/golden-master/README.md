@@ -28,6 +28,12 @@ converters.
 
 ## 2. Fetch snapshots from Moodle
 Start Moodle and load the sample data first ([infra/README.md](../../infra/README.md)), and make sure `MOODLE_WS_TOKEN` is set in `infra/.env`.
+
+Then let Moodle calculate course completion once. Right after the sample data is loaded, `core_completion_get_course_completion_status` still reports the CS201 criterion "Completion of other courses: CS101" as not complete for `student1` and `student2`, although both completed CS101. Moodle updates it in the scheduled task `completion_regular_task`. The `moodle-cron` container runs it within about a minute; to be sure, run it by hand (from the repository root):
+```bash
+docker compose -f infra/docker-compose.yml exec -T -u www-data moodle php admin/cli/scheduled_task.php --execute='\core\task\completion_regular_task'
+```
+Then fetch (in `tests/golden-master/`):
 ```bash
 ./mvnw compile exec:java
 ```

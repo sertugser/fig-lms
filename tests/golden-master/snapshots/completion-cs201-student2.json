@@ -2,7 +2,7 @@
   "completed" : false,
   "course" : "CS201",
   "criteria" : [ {
-    "complete" : false,
+    "complete" : true,
     "criteria" : "Introduction to Programming",
     "type" : "Completion of other courses"
   }, {
