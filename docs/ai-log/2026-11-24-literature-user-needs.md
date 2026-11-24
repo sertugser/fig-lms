@@ -1,3 +1,0 @@
-| Date | Member | Module | Task | AI used | Model/version | Context | Outcome | Changes | Time (h) | Review defects |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026-11-24 | sertugser | docs | #20 — literature table (10 sources), existing tools, originality statement, survey questions and results template | yes | Claude Opus 5.5 | Issue #20, ADR-0001, the papers' abstract pages and the Amazon Q documentation, `docs/srs/` | pending | Numbers taken only from the linked abstracts and documentation pages. The survey itself has not been sent; no answers are invented | 0.75 (estimated) | pending |

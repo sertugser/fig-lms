@@ -8,7 +8,7 @@ Read on 2026-11-24. Numbers are quoted from the abstracts or documentation pages
 
 ## 1. Literature
 
-Topics asked for in #20: legacy modernization with LLMs, behaviour-preserving migration (golden master / characterization tests) and AI-assisted code translation.
+Topics asked for in #20: legacy modernization with LLMs, behaviour-preserving migration (golden master / characterization tests) and AI-assisted code translation. The user needs survey from step 4 of #20 is out of scope (team decision).
 
 | # | Source | What they did | How they validated | What is missing for our case |
 |---|---|---|---|---|
