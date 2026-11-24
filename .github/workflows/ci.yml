@@ -20,3 +20,42 @@ jobs:
           cache: maven
       # Build, unit tests and the module boundary check (ModularityTest runs ApplicationModules.verify()).
       - run: ./mvnw -B verify
+
+  golden-master:
+    # Golden master tests: the helper tests, then #13 against the running backend and the saved Moodle snapshots.
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: fig
+          POSTGRES_USER: fig
+          POSTGRES_PASSWORD: ci-only-password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U fig -d fig"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    env:
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: "5432"
+      POSTGRES_DB: fig
+      POSTGRES_USER: fig
+      POSTGRES_PASSWORD: ci-only-password
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+      # Builds and starts the backend, runs all golden master tests (#13 fails if the backend is not up), stops it.
+      - name: Golden master tests, Moodle vs new system
+        working-directory: tests/golden-master
+        run: ./run-prerequisite-golden-master.sh --all
+      - name: Comparison table
+        if: always()
+        working-directory: tests/golden-master
+        run: cat target/golden-master/prerequisite.md >> "$GITHUB_STEP_SUMMARY" || true
