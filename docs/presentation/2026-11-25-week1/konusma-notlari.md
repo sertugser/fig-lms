@@ -1,108 +1,137 @@
-# Konuşma notları: 1. hafta sunumu (25 Kasım 2026)
+# Konuşma notları: 1. hafta (25 Kasım 2026)
 
-Slaytlar: [slides.md](slides.md) (Marp). PDF almak için: `npx @marp-team/marp-cli slides.md --allow-local-files --pdf`.
+Slaytlar: [slides.md](slides.md). PDF için: `npx @marp-team/marp-cli slides.md --html --allow-local-files --pdf`
 
-Toplam hedef süre: yaklaşık 15 dakika + sorular. Her modül sahibi kendi slaytını anlatır (slaytın sağ üstünde isim var).
+## Nasıl anlatacağız
 
-| # | Slayt | Konuşan | Süre |
-|---|---|---|---|
-| 1–7 | Giriş, kapsam, mimari, literatür, yöntem, SRS | Sertug | 4 dk |
-| 8 | Kimlik ve yetki | Hasan | 1 dk |
-| 9 | Ders ve kayıt | Efekan | 1 dk |
-| 10 | Danışmanlık ve MDL-22648 | Sertug | 1 dk |
-| 11–12 | Ödev ve MDL-87490 | Sercan | 1,5 dk |
-| 13 | Değerlendirme ve MDL-85503 | Oğuz | 1 dk |
-| 14 | KPI baseline | Sertug (her satırı sahibi bir cümleyle) | 1,5 dk |
-| 15 | İlk kod + canlı demo | Sertug | 2 dk |
-| 16 | Golden master | Oğuz | 1 dk |
-| 17–19 | YZ kaydı, eksikler, kapanış | Sertug | 1 dk |
+- **Tek ana fikir:** "YZ ile yeniden yazmak kolay, aynı davrandığını kanıtlamak zor. Bu hafta o kanıtın altyapısını kurduk." Hoca başka hiçbir şey hatırlamasa bunu hatırlasın.
+- **Okumak yok.** Slaytta yazanı tekrar etmeyin, slayt sizin söylediğinizin kanıtı. Notlarda her slayt için sadece ilk cümle yazılı (onu ezberleyin), gerisi anahtar kelime.
+- **Örnekle başlayın, genel bilgiyle değil.** student3 hikâyesi tüm sunumun ipi: başta soruyoruz, demoda cevaplıyoruz.
+- **Devir teslim:** kimse "Merhaba ben X, şimdi Y'yi anlatacağım" demesin. Bir önceki kişi bir cümleyle bağlayıp adını söylesin. Aşağıda her geçiş yazılı.
+- **Konuşmayan da sunumda:** sıra sizde değilken telefona bakmayın, konuşana bakın.
+- **Sonda "Teşekkürler" yok.** Son slayt "Bu hafta / Sıradaki / Sizin görüşünüz" ekranı, sorular boyunca o açık kalır. Kapanış cümlesi aşağıda.
+- **Yedek slaytlar** (kapsam tablosu, tüm KPI'lar, mimari, YZ kaydı) sunumda gösterilmez; soru gelirse açılır.
+- **Bir kez birlikte, süre tutarak prova edin**, geçişler dahil. Hedef 13 dakika, 2 dakika pay.
 
-## 1. Başlık
-"Projemiz Moodle'ın seçilmiş alt fonksiyonlarını yapay zekâ desteğiyle yeni bir dil ve mimaride yeniden yazmak ve bunu ölçülebilir kanıtlarla yapmak. Bugün ilk haftanın çıktılarını gösteriyoruz."
+## Akış ve süre
 
-## 2. Bu hafta ne yaptık?
-- Proje dokümanındaki iş paketlerine bağla: bu hafta WBS-1 bitti, WBS-2 başladı.
-- Vurgu: "Her kuralı sadece kaynak koddan okumadık, çalışan Moodle'da denedik." ve "KPI'ları geliştirmeye başlamadan ölçtük."
-- Frontend sorulursa: bu hafta bilerek analiz ve ölçüme odaklandık.
+| Slayt | Kim | Süre |
+|---|---|---|
+| 1–5 Açılış, problem, yöntem, Java | Sertug | 3,5 dk |
+| 6 Şifre denemesi | Hasan | 1 dk |
+| 7 CS101 / cs101 | Efekan | 1 dk |
+| 8 Taslağa geri al | Sercan | 1,5 dk |
+| 9 Kategori 404 | Oğuz | 1 dk |
+| 10 KPI | Efekan | 1 dk |
+| 11 Demo | Sertug | 2 dk |
+| 12 5/5 | Oğuz | 1 dk |
+| 13 Kapanış | Sertug | 1 dk |
 
-## 3. Kapsam
-- Sürümü sabitledik: 5.3.1, tek commit. Tüm analiz ve ölçümler aynı sürümde.
-- Proje dokümanındaki modül listesinden geliyor; dosya yönetimi ödev modülündeki dosya teslimi olarak kapsamda.
-- 165 bin satır PHP: bu yüzden kapsamı akışlarla sınırladık.
+---
 
-## 4. Mimari kararı
-- Üç gerekçe: YZ ajanları Java'da daha başarılı, tip sistemi YZ hatalarını derlemede yakalıyor, modül sınırları CI'da otomatik kontrol ediliyor.
-- Kendi sınırlılığımızı söyle: benchmark hata düzeltmeyi ölçüyor; iddiamız ölçülü.
-- Detay: `docs/adr/0001-language-and-architecture.md`.
+### 1. Başlık (Sertug)
+> "Hocam, projemizin zor kısmı kodu yazmak değil. Asıl zor kısım, yazdığımız şeyin Moodle ile aynı şekilde çalıştığını kanıtlamak. Bu hafta bunun için ne yaptığımızı anlatacağız."
 
-## 5. Literatür ve özgünlük
-- Mesaj: "YZ ile çeviri tek başına güvenilir değil, literatür de bunu söylüyor. Bizim farkımız davranışı çalışan eski sisteme karşı kanıtlamak."
-- Kaynak: `docs/methodology/literature.md`.
+Hemen ikinci slayta geç. Ekip tanıtımı yok, isimler slaytta.
 
-## 6. Yöntem
-- Bir kuralın yolculuğunu anlat: Moodle'da bul → REQ ID ver → YZ ile yaz → arkadaşın review etsin → golden master ile Moodle'a karşı test et → KPI ile ölç.
-- "Uzman kontrol noktası" proje dokümanındaki ifade: bizde her PR'ın bir ekip arkadaşı onayı.
+### 2. student3 (Sertug)
+> "Size örnek verilerimizden bir öğrenciyi göstereyim: student3."
 
-## 7. SRS
-- 41 modül gereksinimi + 5 kalite gereksinimi. ISO/IEC/IEEE 29148 yapısı.
-- Eğitim planı gereksinimleri boş, açıkça söyle (son slaytta da var).
+- CS101'den 40 almış, geçme notu 50. Ama Moodle onu CS201'e kaydetmiş.
+- Bu bir hata değil, Moodle'da böyle bir özellik hiç yok. 2012'den beri isteniyor, 99 oy almış, hâlâ yapılmamış.
+- Soru olarak bırak: "Biz bunu nasıl düzelttik ve düzeltirken geri kalan her şeyi bozmadığımızı nasıl gösteriyoruz? Sunumun sonunda göstereceğiz."
 
-## 8. Kimlik ve yetki (Hasan)
-- Moodle'ın rolleri bizim üç rolümüze nasıl eşlendi.
-- Bulgu: hesap kilitleme kapalı, oturum 8 saat; bunlar yeni sistemde güvenlik hedefi.
+### 3. YZ çevirisi (Sertug)
+> "Literatüre baktığımızda gördüğümüz şey şu: yapay zekâ kodu çeviriyor ama çoğu zaman yanlış çeviriyor."
 
-## 9. Ders ve kayıt (Efekan)
-- 45 kontrol canlı Moodle'da geçti.
-- İlginç bulgular: `cs101` / `CS101` kabul ediliyor; bitişi başlangıçtan önce olan kayıt kaydediliyor ama hiç aktif olmuyor; tekillik veritabanında değil.
+- Doğru çeviri oranı yüzde 2 ile 47 arasında. Depo düzeyinde en iyi araçlar bile kodun yaklaşık dörtte birini doğrulayabiliyor.
+- Bizim farkımız: davranışı çalışan Moodle'a karşı kanıtlamak.
 
-## 10. Danışmanlık ve MDL-22648 (Sertug)
-- "Moodle'da danışmanlık yok; ön koşul özelliği 2012'den beri bekliyor, 99 oy."
-- Neden yapılamadığı: kayıt eklentilere dağılmış. Bizde kural tek modülde, herkes API'den çağırıyor.
+### 4. Yöntem (Sertug)
+> "O yüzden sırayı tersine çevirdik: önce Moodle'ı ölçüyoruz, sonra yazıyoruz."
 
-## 11–12. Ödev ve MDL-87490 (Sercan)
-- Hatayı adım adım anlat, sonra ekran görüntüsünü göster: geri almadan sonra 2. deneme açılmış.
-- Kök neden tek cümle: "otomatik yeniden açma" not verilip verilmediğine bakmıyor.
-- Canlı demo istenirse adımlar `docs/bugs/MDL-87490.md` "Live demo" bölümünde (1–2 dk).
+- Dört adımı soldan sağa göster, her birine bir cümle.
+- Bu hafta 41 kural, hepsi canlı Moodle'da denendi.
+- YZ kaydı: her kullanımda model, bağlam, ne kadarını değiştirdiğimiz, süre. Proje dokümanı bunu istiyor.
 
-## 13. Değerlendirme ve MDL-85503 (Oğuz)
-- Ağırlıklı ortalama örneği: 80 ve 40, ağırlık 1 ve 3 → 50.
-- MDL-85503 bir komutla yeniden üretiliyor; hatanın aslında kategori/ders modülüne ait olduğunu söyle.
+### 5. Java (Sertug)
+> "Dil seçerken tek bir soruyu sorduk: yapay zekânın yaptığı hatayı kim yakalayacak?"
 
-## 14. KPI'lar
-- 26 KPI, dört kategori, hepsinin Moodle değeri var. Hedefler yazılı.
-- Sınırlılıkları kendimiz söyleyelim: performans tek makine ve küçük veri; ZAP yapılmadı; FLOW-05 insan ölçümü eksik.
+- Java'da YZ ajanları TypeScript'in iki katı hata çözüyor.
+- Derleyici ve modül sınırı testi, arkadaşımızın review'undan önce iki ayrı kontrol.
+- **Geçiş:** "Kuralları çıkarırken Moodle'da beklemediğimiz şeyler de bulduk. İlki Hasan'dan."
 
-## 15. İlk kod + demo (Sertug)
-Demo öncesi hazırlık (sunumdan önce):
-```bash
-docker compose -f infra/docker-compose.yml up -d      # Moodle
-./infra/sample-data/load.sh
-cd backend && ./mvnw spring-boot:run                    # POSTGRES_* ve SAMPLE_USER_PASSWORD ayarlı olmalı
-```
-Demo akışı:
-1. Moodle'da CS201 katılımcı listesini aç: student3 kayıtlı (CS101'den 40 aldı, geçme notu 50). Yedek: örnek veri bunu bilerek kuruyor (`infra/sample-data/load.php`, "student3 is enrolled in CS201 although CS101 is not completed").
-2. Terminalde slayttaki `curl` komutunu çalıştır: `allowed:false`, eksik `CS101`.
-3. Karşılaştırma için `student1` ile aynı komut: `allowed:true`.
-- Endpoint 21 testle geliyor. Demo çalışmazsa slayttaki JSON çıktısı yedek.
+### 6. Şifre (Hasan)
+> "Moodle'da yanlış şifreyi istediğiniz kadar deneyebiliyorsunuz."
 
-## 16. Golden master (Oğuz)
-- Aynı girdi iki sisteme gidiyor, 5/5 aynı sonuç. Sistem bilerek bozulunca test farkı satır satır gösterdi.
-- Dürüst not: "Yetkisiz" senaryosunda Moodle tarafı canlı çağrı değil, kaynak koddaki kural; test token'ı admin'e ait.
-- Moodle tarafı Moodle çalışmıyorsa snapshot'lardan okunuyor; rapor hangisinin kullanıldığını yazıyor.
-- Durum: PR #43 ile main'e merge edildi; CI her PR'da çalıştırıp tabloyu job özetinde gösteriyor.
-- Tek komut: `tests/golden-master/run-prerequisite-golden-master.sh`.
+- Kilitleme eşiği sıfır, yani kilit kapalı. Hedefimiz 15 dakikada 5 hatalı denemede kilit.
+- Oturum boşta 8 saat açık kalıyor. Hedef en fazla 2 saat.
+- İyi haber de var: yetkiler doğru. Öğrenci URL'yi değiştirip başka derse giremedi.
+- **Geçiş:** "Güvenlik tarafı böyle. Efekan ders kayıtlarında daha garip bir şey buldu."
 
-## 17. YZ kullanım kaydı
-- Proje dokümanı YZ katkısının kaydedilmesini istiyor: model, bağlam, düzeltmeler, emek. Hepsi kayıtta.
-- Kabul oranını henüz vermiyoruz çünkü bazı kayıtlar "pending"; bunu açıkça söyle.
+### 7. CS101 / cs101 (Efekan)
+> "Moodle'a göre CS101 ve küçük harfle cs101 iki farklı ders."
 
-## 18. Eksikler ve sonraki adımlar
-- Eksikleri biz söyleyelim, hoca sormadan.
-- Sonraki hafta: modül modül geliştirme, her korunan kural için golden master, iki hata için önce başarısız test.
+- 45 kuralın hepsi canlı Moodle'da doğrulandı.
+- Tekillik veritabanında değil, sadece PHP kodunda. Bitişi başlangıçtan önce olan kayıt bile kabul ediliyor.
+- Yeni sistemde bu kurallar veritabanında.
+- **Geçiş:** "Bunlar tasarım zayıflıkları. Sercan gerçek bir Moodle hatasını yeniden üretti."
+
+### 8. Taslağa geri al (Sercan)
+> "Öğretmen bir teslimi taslağa geri aldığında, öğrenci fazladan bir deneme hakkı kazanıyor."
+
+- Önce beklenen: öğrenci aynı denemeyi düzenleyip tekrar göndermeli.
+- Ekran görüntüsünü göster: 2. deneme açılmış, dosya eski denemede kalmış.
+- Neden: geri alma işlemi not güncellemesini tetikliyor, "otomatik yeniden aç" kuralı not verilip verilmediğine bakmıyor.
+- **Geçiş:** "Oğuz da ikinci hatayı buldu, bu sefer öğrenci tarafında."
+
+### 9. Kategori 404 (Oğuz)
+> "Bir yönetici 'öğrenciler tüm dersleri gezmesin' dediğinde, öğrenciler kendi derslerini de göremiyor."
+
+- Aynı ayarla öğrenci 404 alıyor, admin her şeyi görüyor.
+- Tek komutla yeniden üretiliyor.
+- Not hesaplamada 18 kural doğrulandı (ağırlıklı ortalama örneği sorulursa: 80 ve 40, ağırlık 1 ve 3 → 50).
+- **Geçiş:** "Bunların hepsini düzelteceğiz. Ama 'düzelttik' dediğimizde neye göre? Efekan."
+
+### 10. KPI (Efekan)
+> "Yeni sistemi neyle kıyaslayacağımızı, tek satır kod yazmadan önce ölçtük."
+
+- Üç sayı: Moodle'ın test kapsamı yüzde 31, hedefimiz 80. Giriş 116 ms, daha yavaş olmayacağız. Ödev oluşturma 8 tık, hedef 6.
+- Toplam 26 ölçüt, dört kategori. Detay yedek slaytta.
+- Dürüst ol: performans tek makinede ve küçük veriyle ölçüldü.
+- **Geçiş:** "Şimdi baştaki soruya dönelim. Sertug."
+
+### 11. Demo (Sertug)
+> "student3'e geri dönelim. Aynı soruyu bizim sisteme soruyorum."
+
+Sunumdan önce hazırla: Moodle (`docker compose -f infra/docker-compose.yml up -d`, `./infra/sample-data/load.sh`) ve backend (`cd backend && ./mvnw spring-boot:run`, `POSTGRES_*` ve `SAMPLE_USER_PASSWORD` ayarlı). Terminal yazısını büyüt.
+
+- Komutu çalıştır: `allowed: false`, eksik CS101.
+- Aynı komutu student1 ile çalıştır: `allowed: true`.
+- Kural tek yerde, kayıt ve ders planı aynı yeri çağırıyor. 21 testle geliyor.
+- Demo çalışmazsa slayttaki çıktıyı göster ve devam et. Özür dileyip uzatma.
+- **Geçiş:** "Peki bu cevabın doğru olduğunu nereden biliyoruz? Oğuz."
+
+### 12. 5/5 (Oğuz)
+> "Aynı beş durumu hem Moodle'a hem bizim sisteme sorduk."
+
+- Beşinde de cevap Moodle'ın kendi tamamlama verisiyle tutarlı. Test main'de, her PR'da CI'da çalışıyor.
+- Güven veren kısım: sistemi bilerek bozduk, test farkı satır satır yakaladı.
+- Dürüst not: "başkasını soruyor" durumunda Moodle tarafı canlı çağrı değil, kaynak koddaki kural, çünkü test token'ı admin'in.
+- **Geçiş:** "Sertug toparlıyor."
+
+### 13. Kapanış (Sertug)
+> "Kısacası: kanıtlama altyapısı hazır, şimdi modülleri tek tek yazmaya geçiyoruz."
+
+- Sol kutu bir cümle, sağ kutu bir cümle. Okuma.
+- Hocaya soru: "YZ destekli ve manuel geliştirmeyi karşılaştırmak için hangi alt fonksiyonu seçmemizi önerirsiniz?" Sonra sus ve bekle.
+- Eksikleri biz söyleyelim: eğitim planı gereksinimleri, arayüz, bir kullanılabilirlik ölçümü ve ZAP taraması henüz yok.
+- Bitiş: "Sorularınızı alabiliriz." Slayt açık kalır.
 
 ## Olası sorular
-- **Neden Java?** Slayt 4; ADR-0001'deki kanıtlar.
-- **YZ'nin yazdığı koda nasıl güveniyorsunuz?** Derleyici + modül sınırı testi + arkadaş review'u + golden master (çalışan Moodle'a karşı).
-- **Performans sayıları neden bu kadar küçük?** Küçük örnek veri, sıcak önbellek, tek makine; yalnızca aynı koşulda yeni sistemle karşılaştırmak için.
-- **Danışman onayı, kredi sınırı?** Moodle'da karşılığı yok, yeni gereksinim olarak sonra yazılacak.
-- **Eğitim planı modülü?** Ön koşul kontrolünü kullanacak; gereksinimleri henüz yazılmadı.
+
+- **Neden Java?** Derleyici + modül sınırı testi; yedek slayt "Mimari kararı".
+- **YZ'nin yazdığı koda nasıl güveniyorsunuz?** Derleyici, modül testi, arkadaş review'u, sonra çalışan Moodle'a karşı golden master.
+- **Performans sayıları neden bu kadar küçük?** Küçük veri, tek makine; sadece aynı koşulda yeni sistemle kıyaslamak için.
+- **YZ kabul oranınız ne?** Kayıtların bir kısmı henüz "pending", haftalık raporda vereceğiz.
+- **Danışman onayı, kredi sınırı, ders planı?** Moodle'da karşılığı yok; yeni gereksinim olarak sırada. Ders planı ön koşul kontrolünü kullanacak.
