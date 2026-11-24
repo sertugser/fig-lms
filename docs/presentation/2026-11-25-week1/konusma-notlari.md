@@ -131,6 +131,7 @@ Sunumdan önce hazırla: Moodle (`docker compose -f infra/docker-compose.yml up 
 
 ## Olası sorular
 
+- **Bu çalışmalardaki "testler" ne?** Eski kodun kendi testleri; çeviriyi aynı testlerle sınamışlar. Test olmayan yer kanıtlanamıyor (AlphaTrans'ta %25'in nedeni). Biz Moodle'ın testlerine (kapsam ~%31) güvenmiyoruz, aynı girdiyi çalışan Moodle'a ve yeni sisteme verip karşılaştırıyoruz.
 - **Neden Java?** Derleyici + modül sınırı testi; yedek slayt "Mimari kararı".
 - **YZ'nin yazdığı koda nasıl güveniyorsunuz?** Derleyici, modül testi, arkadaş review'u, sonra çalışan Moodle'a karşı golden master.
 - **Performans sayıları neden bu kadar küçük?** Küçük veri, tek makine; sadece aynı koşulda yeni sistemle kıyaslamak için.
