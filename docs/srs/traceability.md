@@ -47,7 +47,7 @@ Status on 2026-11-24: requirements written for five modules (41 requirements), f
 | REQ-ADV-06 | preserved | #4 | | |
 | REQ-ADV-07 | preserved | #4 | | |
 | REQ-ADV-08 | preserved | #4 | | |
-| REQ-ADV-09 | new | #4, #6 | `advising.api.PrerequisiteService`, `advising.internal.PrerequisiteController` | `PrerequisiteServiceTest`, `PrerequisiteControllerTest`; golden master #13 |
+| REQ-ADV-09 | new | #4, #6 | `advising.api.PrerequisiteService`, `advising.internal.PrerequisiteController` | `PrerequisiteServiceTest`, `PrerequisiteControllerTest`; golden master `PrerequisiteGoldenMasterTest` (#13) |
 
 ## Assignments
 

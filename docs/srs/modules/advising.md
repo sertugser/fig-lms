@@ -52,6 +52,8 @@ Moodle cannot answer "may student X enrol in CS201?". The comparable Moodle fact
 
 Note the deliberate difference: Moodle lets student3 into CS201 anyway (REQ-ADV-08), the new system says no.
 
+Automated in `tests/golden-master/src/test/java/com/figlms/goldenmaster/advising/PrerequisiteGoldenMasterTest.java` (#13), with student5 (did not submit) as the "not completed" case. The unauthorized row is compared with the Moodle rule above, not a live call, because the harness token belongs to `admin`.
+
 ### Preserved restriction rules
 
 | Requirement | Normal | Boundary | Invalid input | Unauthorized access |
