@@ -1,0 +1,36 @@
+{
+  "mode": "load",
+  "run": "1",
+  "finished": "2026-11-22T14:09:50.667Z",
+  "base_url": "http://localhost:8000",
+  "metrics": {
+    "perf_login": null,
+    "perf_course_page": null,
+    "perf_assign_page": null,
+    "perf_gradebook": null,
+    "perf_rest_get_courses": null,
+    "perf_load_course_page": {
+      "p(90)": 129.1003,
+      "p(95)": 148.64515,
+      "max": 247.562,
+      "count": 1098,
+      "min": 37.306,
+      "med": 73.8175,
+      "avg": 82.55985428051
+    },
+    "perf_load_requests": {
+      "count": 1098,
+      "rate": 17.982763079389315
+    },
+    "perf_errors": {
+      "rate": 0,
+      "passes": 0,
+      "fails": 1118
+    },
+    "http_req_failed": {
+      "rate": 0,
+      "passes": 0,
+      "fails": 1179
+    }
+  }
+}

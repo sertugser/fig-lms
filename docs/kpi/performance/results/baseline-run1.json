@@ -1,0 +1,65 @@
+{
+  "mode": "baseline",
+  "run": "1",
+  "finished": "2026-11-22T14:08:39.209Z",
+  "base_url": "http://localhost:8000",
+  "metrics": {
+    "perf_login": {
+      "min": 85.16300000000001,
+      "med": 90.0875,
+      "avg": 95.3625,
+      "p(90)": 112.29129999999999,
+      "p(95)": 121.61249999999998,
+      "max": 127.83,
+      "count": 30
+    },
+    "perf_course_page": {
+      "min": 35.241,
+      "med": 36.7395,
+      "avg": 37.27616666666667,
+      "p(90)": 39.9967,
+      "p(95)": 40.39675,
+      "max": 42.318,
+      "count": 30
+    },
+    "perf_assign_page": {
+      "min": 47.862,
+      "med": 51.666,
+      "avg": 54.30933333333333,
+      "p(90)": 65.9684,
+      "p(95)": 71.1703,
+      "max": 73.846,
+      "count": 30
+    },
+    "perf_gradebook": {
+      "max": 57.234,
+      "count": 30,
+      "min": 44.375,
+      "med": 46.3315,
+      "avg": 47.177533333333336,
+      "p(90)": 49.5892,
+      "p(95)": 51.098749999999995
+    },
+    "perf_rest_get_courses": {
+      "avg": 13.761366666666666,
+      "p(90)": 13.731200000000001,
+      "p(95)": 15.25665,
+      "max": 60.02,
+      "count": 30,
+      "min": 11.204,
+      "med": 11.7955
+    },
+    "perf_load_course_page": null,
+    "perf_load_requests": null,
+    "perf_errors": {
+      "rate": 0,
+      "passes": 0,
+      "fails": 177
+    },
+    "http_req_failed": {
+      "fails": 289,
+      "rate": 0,
+      "passes": 0
+    }
+  }
+}
