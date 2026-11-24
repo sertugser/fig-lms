@@ -1,0 +1,43 @@
+REQ-ADV verification against Moodle 5.3.1 (Build: 20261112)
+----------------------------------------------------------------------------------------------------
+PASS | REQ-ADV-01 | normal       | no restriction: available to student5 | actual: available
+PASS | REQ-ADV-01 | normal       | AND(Assignment 1 complete, from yesterday): student1 | actual: available
+PASS | REQ-ADV-01 | normal       | AND(Assignment 1 complete, from yesterday): student3 | actual: not available (Not available unless: The activity Assignment 1 is marked complete)
+PASS | REQ-ADV-01 | normal       | OR(grade >= 80, Assignment 1 incomplete): student1 (85) | actual: available
+PASS | REQ-ADV-01 | normal       | OR(grade >= 80, Assignment 1 incomplete): student2 (72, passed) | actual: not available (Not available unless any of: You achieve higher than a certain score in Assignment 1 The activity Assignment 1 is incomplete )
+PASS | REQ-ADV-01 | boundary     | OR(...): student3 (40, failed counts as incomplete) | actual: available
+PASS | REQ-ADV-01 | boundary     | NOT(Assignment 1 complete): student1 | actual: not available (Not available unless: The activity Assignment 1 is incomplete)
+PASS | REQ-ADV-01 | boundary     | NOT(Assignment 1 complete): student4 | actual: available
+PASS | REQ-ADV-01 | invalid      | tree with unknown operator is rejected | actual: coding_exception: Coding error detected, it must be fixed by a programmer: Invalid availability structure (unknown ->op)
+PASS | REQ-ADV-02 | normal       | requires complete: student1 (complete and passed) | actual: available
+PASS | REQ-ADV-02 | boundary     | requires complete: student3 (complete but failed) | actual: not available (Not available unless: The activity Assignment 1 is marked complete)
+PASS | REQ-ADV-02 | boundary     | requires complete: student4 (submitted, not graded) | actual: not available (Not available unless: The activity Assignment 1 is marked complete)
+PASS | REQ-ADV-02 | normal       | requires complete and failed: student3 | actual: available
+PASS | REQ-ADV-02 | normal       | requires complete and failed: student1 | actual: not available (Not available unless: The activity Assignment 1 is complete and failed)
+PASS | REQ-ADV-02 | invalid      | condition on a missing activity: student1 | actual: not available (Not available unless: The activity (Missing activity) is marked complete)
+PASS | REQ-ADV-02 | invalid      | NOT(condition on a missing activity): still not available | actual: not available (Not available unless: The activity (Missing activity) is incomplete)
+PASS | REQ-ADV-03 | boundary     | from T at T | actual: available
+PASS | REQ-ADV-03 | normal       | from T at T-1s | actual: not available (Available from 1 December 2026, 9:00 AM)
+PASS | REQ-ADV-03 | normal       | until T at T-1s | actual: available
+PASS | REQ-ADV-03 | boundary     | until T at T | actual: not available (Available until 1 December 2026, 9:00 AM)
+PASS | REQ-ADV-04 | normal       | grade >= 72%: student1 (85) | actual: available
+PASS | REQ-ADV-04 | boundary     | grade >= 72%: student2 (exactly 72) | actual: available
+PASS | REQ-ADV-04 | boundary     | grade < 72%: student2 (exactly 72) | actual: not available (Not available unless: You achieve lower than a certain score in Assignment 1)
+PASS | REQ-ADV-04 | normal       | grade < 72%: student3 (40) | actual: available
+PASS | REQ-ADV-04 | invalid      | grade >= 0%: student4 has no grade | actual: not available (Not available unless: You achieve higher than a certain score in Assignment 1)
+PASS | REQ-ADV-05 | normal       | CS201 overall aggregation method | actual: ALL
+PASS | REQ-ADV-05 | normal       | "Completion of other courses: CS101" met for student1 | actual: met
+PASS | REQ-ADV-05 | boundary     | "Completion of other courses: CS101" met for student3 | actual: not met
+PASS | REQ-ADV-05 | boundary     | CS201 not complete for student1: CS101 done, teacher has not marked it | actual: not complete
+PASS | REQ-ADV-05 | invalid      | course completion disabled: no criteria evaluated | actual: disabled
+PASS | REQ-ADV-06 | normal       | shown restriction: student3 sees the name and the reason | actual: uservisible=false, on course page=true, text: Not available unless: The activity Assignment 1 is marked complete
+PASS | REQ-ADV-06 | boundary     | hidden restriction (eye icon): student3 does not see the item at all | actual: uservisible=false, on course page=false, text: ''
+PASS | REQ-ADV-07 | normal       | teacher1 has moodle/course:ignoreavailabilityrestrictions in CS101 | actual: true
+PASS | REQ-ADV-07 | unauthorized | student3 does not have moodle/course:ignoreavailabilityrestrictions | actual: false
+PASS | REQ-ADV-07 | normal       | teacher1 can open the hidden restricted item | actual: uservisible=true
+PASS | REQ-ADV-07 | unauthorized | student3 cannot open the restricted item by its URL (require_login) | actual: require_login_exception: Course or activity not accessible.
+PASS | REQ-ADV-08 | gap          | student3 is enrolled in CS201 although CS101 is not complete | actual: enrolled in CS201=true, CS101 complete=false
+PASS | REQ-ADV-08 | gap          | self enrolment into CS201 is offered to student4 (CS101 not complete) | actual: can self enrol
+PASS | REQ-ADV-08 | gap          | no core availability condition can refer to another course | actual: installed conditions: completion, date, grade, group, grouping, profile
+----------------------------------------------------------------------------------------------------
+39 scenarios: 39 passed, 0 failed
