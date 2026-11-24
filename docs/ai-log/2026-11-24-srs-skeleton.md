@@ -1,0 +1,3 @@
+| Date | Member | Module | Task | AI used | Model/version | Context | Outcome | Changes | Time (h) | Review defects |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11-24 | sertugser | docs | #3 / REQ-NFR-01..05 — SRS skeleton (ISO/IEC/IEEE 29148 sections), requirement ID convention and row format, traceability matrix for the 41 written requirements, KPI table with the maintainability, security and usability baselines, empty `planning.md` | yes | Claude Opus 5.5 | Issue #3, the module files under `docs/srs/modules/`, `docs/kpi/*.md`, README, CONTRIBUTING, ADR-0001 | pending | Checked every KPI value against `docs/kpi/` and every issue number against the merged PRs | 0.75 (estimated) | pending |
