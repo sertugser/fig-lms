@@ -97,7 +97,7 @@ Hemen ikinci slayta geç. Ekip tanıtımı yok, isimler slaytta.
 ### 10. KPI (Efekan)
 > "Yeni sistemi neyle kıyaslayacağımızı, tek satır kod yazmadan önce ölçtük."
 
-- Üç sayı: Moodle'ın test kapsamı yüzde 31, hedefimiz 80. Giriş 116 ms, daha yavaş olmayacağız. Ödev oluşturma 8 tık, hedef 6.
+- Üç sayı: Moodle'ın testlerinin hepsi geçiyor ama kodun sadece yüzde 31'ine dokunuyor; bizim hedefimiz 80. Giriş 116 ms, daha yavaş olmayacağız. Ödev oluşturma 8 tık, hedef 6.
 - Toplam 26 ölçüt, dört kategori. Detay yedek slaytta.
 - Dürüst ol: performans tek makinede ve küçük veriyle ölçüldü.
 - **Geçiş:** "Şimdi baştaki soruya dönelim. Sertug."
@@ -131,7 +131,7 @@ Sunumdan önce hazırla: Moodle (`docker compose -f infra/docker-compose.yml up 
 
 ## Olası sorular
 
-- **Bu çalışmalardaki "testler" ne?** Eski kodun kendi testleri; çeviriyi aynı testlerle sınamışlar. Test olmayan yer kanıtlanamıyor (AlphaTrans'ta %25'in nedeni). Biz Moodle'ın testlerine (kapsam ~%31) güvenmiyoruz, aynı girdiyi çalışan Moodle'a ve yeni sisteme verip karşılaştırıyoruz.
+- **Bu çalışmalardaki "testler" ne?** Eski kodun kendi testleri; çeviriyi aynı testlerle sınamışlar. Test olmayan yer kanıtlanamıyor (AlphaTrans'ta %25'in nedeni). Moodle'ın testleri geçiyor ama kodun sadece ~%31'ine dokunuyor; bu yüzden onlarla yetinmiyoruz, aynı girdiyi çalışan Moodle'a ve yeni sisteme verip karşılaştırıyoruz.
 - **Neden Java?** Derleyici + modül sınırı testi; yedek slayt "Mimari kararı".
 - **YZ'nin yazdığı koda nasıl güveniyorsunuz?** Derleyici, modül testi, arkadaş review'u, sonra çalışan Moodle'a karşı golden master.
 - **Performans sayıları neden bu kadar küçük?** Küçük veri, tek makine; sadece aynı koşulda yeni sistemle kıyaslamak için.
