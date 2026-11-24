@@ -198,7 +198,7 @@ Kural tek yerde, danışmanlık modülünde. Kayıt ve ders planı onu çağır�
 
 <div class="who">Oğuz</div>
 
-# Kararımız Moodle'ın kendi verisiyle 5 senaryonun 5'inde tutarlı
+# "CS101'i tamamladı mı?" sorusuna Moodle ile 5 durumun 5'inde aynı cevabı veriyoruz
 
 <div class="row">
 <div class="card" style="flex:0 0 32%"><div class="big green">5 / 5</div><p>senaryo aynı sonuç<br>main'de, her PR'da CI'da</p></div>

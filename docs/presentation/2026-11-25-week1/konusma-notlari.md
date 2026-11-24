@@ -116,6 +116,8 @@ Sunumdan önce hazırla: Moodle (`docker compose -f infra/docker-compose.yml up 
 ### 12. 5/5 (Oğuz)
 > "Aynı beş durumu hem Moodle'a hem bizim sisteme sorduk."
 
+- Önce farkı netleştir: Moodle "CS101'i tamamladı mı?" bilgisini biliyor ama kayıtta buna hiç bakmıyor, o yüzden student3'ü alıyor. Biz kapıda bakıyoruz. Golden master, kapıda baktığımız bilginin Moodle'ınkiyle aynı olduğunu kanıtlıyor: Moodle "tamamlamadı" diyorsa biz "kaydolamaz", "tamamladı" diyorsa "kaydolabilir" diyoruz.
+
 - Beşinde de cevap Moodle'ın kendi tamamlama verisiyle tutarlı. Test main'de, her PR'da CI'da çalışıyor.
 - Güven veren kısım: sistemi bilerek bozduk, test farkı satır satır yakaladı.
 - Dürüst not: "başkasını soruyor" durumunda Moodle tarafı canlı çağrı değil, kaynak koddaki kural, çünkü test token'ı admin'in.
