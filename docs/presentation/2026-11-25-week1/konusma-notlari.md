@@ -42,11 +42,11 @@ Hemen ikinci slayta geç. Ekip tanıtımı yok, isimler slaytta.
 - Soru olarak bırak: "Biz bunu nasıl düzelttik ve düzeltirken geri kalan her şeyi bozmadığımızı nasıl gösteriyoruz? Sunumun sonunda göstereceğiz."
 
 ### 3. YZ çevirisi (Sertug)
-> "Literatüre baktık: yapay zekâ kodu başka bir dile çeviriyor, kod çoğu zaman derleniyor da, ama doğru çalışmıyor."
+> "Yapay zekâ kodu başka bir dile çevirebiliyor. Ama çevirdiği kod gerçekten doğru çalışıyor mu? Literatüre baktık."
 
-- Sol kutu: bir çalışmada 1.700 kod parçasını farklı dillere çevirmişler. En iyi durumda bile çevirilerin ancak yarısı testleri geçmiş, kötü durumda yüzde 2'si. Kalan çevirilerde 1.748 hata bulmuşlar, 15 türe ayırmışlar.
-- Sağ kutu: bütün bir projeyi çevirdiklerinde kodun yüzde 96'sı derleniyor. Ama doğru çalıştığını gösterebildikleri kısım sadece yüzde 25. Gerisi yanlış değil, kanıtlanamamış.
-- Mesaj: "Derleniyor" ile "doğru çalışıyor" aynı şey değil. Bizim farkımız davranışı çalışan Moodle'a karşı kanıtlamak.
+- **Sol kutu:** "Bir çalışmada araştırmacılar yapay zekâya 1.700 küçük programı başka dillere çevirtmiş, sonra programların testlerini çalıştırmışlar. En iyi durumda bile 100 çeviriden sadece 47'si doğru çalışmış. En kötü durumda 100'de 2."
+- **Sağ kutu:** "Başka bir çalışmada bütün bir projeyi Java'dan Python'a çevirmişler. Kodun yüzde 96'sı hatasız derleniyor, yani ilk bakışta sorun yok gibi. Ama doğru çalıştığını kanıtlayabildikleri kısım sadece yüzde 25."
+- **Bağla:** "Yani derleniyor olması, doğru çalıştığı anlamına gelmiyor. Bu yüzden bizim için asıl soru şu: yeni sistemin Moodle ile aynı davrandığını nasıl kanıtlarız?"
 
 ### 4. Yöntem (Sertug)
 > "O yüzden sırayı tersine çevirdik: önce Moodle'ı ölçüyoruz, sonra yazıyoruz."

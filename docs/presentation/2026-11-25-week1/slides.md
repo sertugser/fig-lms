@@ -59,7 +59,7 @@ style: |
 # Yapay zekânın başka dile çevirdiği kod çoğu zaman derleniyor ama doğru çalışmıyor
 
 <div class="row">
-<div class="card"><div class="mid">En fazla %47</div><p>Çevirinin testleri geçtiği oran. Kalanında hata var; çalışma 1.748 hatayı 15 türde sınıflandırmış.<br><span class="muted">1.700 örnek, 5 dil, birkaç LLM (Pan vd., ICSE 2024)</span></p></div>
+<div class="card"><div class="mid">100'de en fazla 47</div><p>çeviri doğru çalıştı (en iyi model ve dil çiftinde). En kötüsünde 100'de 2.<br><span class="muted">1.700 örnek, 5 dil, birkaç LLM (Pan vd., ICSE 2024)</span></p></div>
 <div class="card"><div class="mid">%96 → %25</div><p>Bütün bir projeyi çevirince kodun %96'sı derleniyor, ama ancak %25'inin doğru çalıştığı kanıtlanabiliyor.<br><span class="muted">10 Java projesi → Python (AlphaTrans, FSE 2025)</span></p></div>
 </div>
 
