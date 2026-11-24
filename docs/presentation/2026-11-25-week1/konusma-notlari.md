@@ -89,7 +89,7 @@ Demo akışı:
 - Aynı girdi iki sisteme gidiyor, 5/5 aynı sonuç. Sistem bilerek bozulunca test farkı satır satır gösterdi.
 - Dürüst not: "Yetkisiz" senaryosunda Moodle tarafı canlı çağrı değil, kaynak koddaki kural; test token'ı admin'e ait.
 - Moodle tarafı Moodle çalışmıyorsa snapshot'lardan okunuyor; rapor hangisinin kullanıldığını yazıyor.
-- Durum: PR #43. Sunumdan önce merge edilip edilmediğini kontrol et; edilmediyse "review'da" de.
+- Durum: PR #43 ile main'e merge edildi; CI her PR'da çalıştırıp tabloyu job özetinde gösteriyor.
 - Tek komut: `tests/golden-master/run-prerequisite-golden-master.sh`.
 
 ## 17. YZ kullanım kaydı

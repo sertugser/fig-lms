@@ -288,7 +288,7 @@ curl -u student3:$SAMPLE_USER_PASSWORD \
 | Sınır | student4 → CS201 (notlanmadı) | tamamlanmadı | izin yok, eksik CS101 | AYNI |
 | Yetkisiz | student3, student1'i soruyor | `cannotviewreport` | 403 | AYNI |
 
-**5/5 senaryo aynı sonucu veriyor** (PR #43). Sistem bilerek bozulunca fark satır satır yakalandı (ör. `$.allowed: expected false but was true`).
+**5/5 senaryo aynı sonucu veriyor**; test main'de ve her PR'da CI'da çalışıyor (PR #43). Sistem bilerek bozulunca fark satır satır yakalandı (ör. `$.allowed: expected false but was true`).
 
 *Dürüst not: "Yetkisiz" senaryosunda Moodle tarafı canlı çağrı değil, Moodle kaynak kodundaki kural; test token'ı admin'e ait. Bilinçli fark: Moodle student3'ü CS201'e alıyor, yeni sistem almıyor.*
 
