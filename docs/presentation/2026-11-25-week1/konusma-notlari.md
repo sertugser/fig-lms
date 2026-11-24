@@ -52,7 +52,7 @@ Hemen ikinci slayta geç. Ekip tanıtımı yok, isimler slaytta.
 > "O yüzden sırayı tersine çevirdik: önce Moodle'ı ölçüyoruz, sonra yazıyoruz."
 
 - Dört adımı soldan sağa göster, her birine bir cümle.
-- Bu hafta 41 kural, hepsi canlı Moodle'da denendi.
+- Bu hafta 5 modülde Moodle'ın 41 kuralını yazdık. Örnek ver: "Bitiş tarihi başlangıçtan önce olan ders açılamaz" bir kural. Bunu Docker'da kurduğumuz Moodle'da gerçekten denedik: script o dersi açmaya çalıştı, Moodle reddetti, kural doğrulandı.
 - YZ kaydı: her kullanımda model, bağlam, ne kadarını değiştirdiğimiz, süre. Proje dokümanı bunu istiyor.
 
 ### 5. Java (Sertug)

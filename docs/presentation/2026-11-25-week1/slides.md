@@ -85,7 +85,7 @@ Bu yüzden bizim için asıl soru şu: **yeni sistemin Moodle ile aynı davrand�
 
 <br>
 
-Bu hafta: Moodle 5.3.1'i Docker'da kurduk, 5 modülde **41 kural** çıkardık, hepsini canlı Moodle'da denedik.
+Bu hafta: Moodle 5.3.1'i Docker'da kurduk, 5 modülde Moodle'ın **41 kuralını** yazıya döktük ve çalışan Moodle'da denedik (ör. ders ve kayıtta 45 kontrol, hepsi geçti).
 Her YZ kullanımı kayıt altında: model, verilen bağlam, ne kadarını değiştirdik, ne kadar sürdü.
 
 ---
@@ -224,7 +224,7 @@ Kural tek yerde, danışmanlık modülünde. Kayıt ve ders planı onu çağır�
 # Kanıt altyapısı hazır, şimdi modülleri yazmaya geçiyoruz
 
 <div class="row">
-<div class="card"><p><strong>Bu hafta</strong></p><p>41 kural canlı Moodle'da doğrulandı<br>26 KPI'ın başlangıç değeri ölçüldü<br>İlk endpoint ve ilk golden master testi: 5/5</p></div>
+<div class="card"><p><strong>Bu hafta</strong></p><p>Moodle'ın 41 kuralı yazıya döküldü ve denendi<br>26 KPI'ın başlangıç değeri ölçüldü<br>İlk endpoint ve ilk golden master testi: 5/5</p></div>
 <div class="card"><p><strong>Sıradaki</strong></p><p>Ön koşulu kayıt akışına bağlamak<br>Her korunan kurala bir golden master testi<br>İki Moodle hatası için önce başarısız test, sonra düzeltme</p></div>
 </div>
 
