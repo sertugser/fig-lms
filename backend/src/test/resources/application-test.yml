@@ -1,8 +1,13 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:fig;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    url: jdbc:h2:mem:fig;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
     username: sa
     password: ""
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      # Flyway creates the schema (src/main/resources/db/migration), as in production.
+      ddl-auto: validate
+
+fig:
+  sample-users:
+    password: test-password

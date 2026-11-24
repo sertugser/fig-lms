@@ -43,6 +43,14 @@ cd backend
 ```
 Windows: use `mvnw.cmd verify`. CI runs the same command on every pull request. The backend gets its own PostgreSQL service in the Compose file once the first module stores data (#6).
 
+The database schema comes from Flyway migrations in `backend/src/main/resources/db/migration` (tests use H2 in PostgreSQL mode).
+To run the backend locally against PostgreSQL, set `POSTGRES_*` and `SAMPLE_USER_PASSWORD` from `.env.example`, then `./mvnw spring-boot:run`.
+Until the identity module has real accounts, the API uses HTTP Basic with the sample users (`student1`..`student5`, `teacher1`, `teacher2`, `admin`) and the password `SAMPLE_USER_PASSWORD`:
+```bash
+curl -u student3:$SAMPLE_USER_PASSWORD "http://localhost:8080/api/advising/prerequisite-check?student=student3&course=CS201"
+# {"student":"student3","course":"CS201","allowed":false,"reason":"PREREQUISITES_MISSING","missingPrerequisites":["CS101"]}
+```
+
 ## Repository layout
 ```
 backend/             Spring Boot application (modules: identity, course, advising, assignment, grading, planning)
