@@ -87,6 +87,6 @@ Status on 2026-11-24: requirements written for five modules (41 requirements), f
 |---|---|---|---|---|
 | REQ-NFR-01 Maintainability | NFR | #18, #26 | | `docs/kpi/maintainability/measure.py` on the new code |
 | REQ-NFR-02 Security | NFR | #17 | | SEC checks of `docs/kpi/security.md` on the new system |
-| REQ-NFR-03 Performance | NFR | #15 | | |
+| REQ-NFR-03 Performance | NFR | #15 | | k6 script `docs/kpi/performance/moodle-perf.js` on the new system |
 | REQ-NFR-04 Usability | NFR | #16 | | Playwright click counts (`tests/e2e/`) |
 | REQ-NFR-05 Modularity | NFR | #5 | all modules | `ModularityTest` |

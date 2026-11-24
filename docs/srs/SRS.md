@@ -105,7 +105,7 @@ Non-functional requirements use the `REQ-NFR-<NN>` IDs below. Each one points to
 |---|---|---|---|
 | REQ-NFR-01 | Maintainability | The new code is less complex and better tested than the Moodle code it replaces, measured the same way. | MAINT-01…05 |
 | REQ-NFR-02 | Security | Access control, authentication and configuration meet the targets of the OWASP-aligned checks. | SEC-01…11 |
-| REQ-NFR-03 | Performance | The main flows respond at least as fast as Moodle under the same load. | PERF (#15, pending) |
+| REQ-NFR-03 | Performance | The main flows respond at least as fast as Moodle under the same load. | PERF-01…06 |
 | REQ-NFR-04 | Usability | The main flows need no more clicks, steps, page loads and form fields than the targets. | USAB click, step, page load and form field counts |
 | REQ-NFR-05 | Modularity | Modules use each other only through their `api` package; CI fails otherwise (`ModularityTest`). | MAINT-02 (CI rule) |
 

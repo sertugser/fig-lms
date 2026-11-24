@@ -26,10 +26,15 @@ Baselines were measured on 2026-11-22/23 on Moodle `v5.3.1` (`cfe123f2`) with th
 | USAB-02 Step count | Usability | actions per flow | 7, 2, 9, 8, pending | 7, 2, 7, 6, 4 | Human-operated runs | @SercanFurkan |
 | USAB-03 Page loads | Usability | documents per flow | 6, 2, 4, 4, pending | 5, 2, 2, 3, 3 | Human-operated runs, browser network log | @SercanFurkan |
 | USAB-04 Form fields | Usability | controls per flow | 1, 0, 1, 1, pending | 1, 0, 1, 1, 1 | Human-operated runs | @SercanFurkan |
-| PERF-xx Performance | Performance | — | **pending (#15)** | — | — | @efekanegeli2 |
+| PERF-01 Login time | Performance | ms (median / p95) | 90.1 / 115.8 | p95 ≤ 115 ms | k6, [`moodle-perf.js`](../kpi/performance/moodle-perf.js): login POST + redirect to the dashboard; median over 3 runs | @efekanegeli2 |
+| PERF-02 Course page | Performance | ms (median / p95) | 37.6 / 40.4 | p95 ≤ 40 ms | k6, [`moodle-perf.js`](../kpi/performance/moodle-perf.js): course page, enrolled student; median over 3 runs | @efekanegeli2 |
+| PERF-03 Assignment page | Performance | ms (median / p95) | 49.9 / 59.2 | p95 ≤ 60 ms | k6, [`moodle-perf.js`](../kpi/performance/moodle-perf.js): submission status page, student; median over 3 runs | @efekanegeli2 |
+| PERF-04 Gradebook | Performance | ms (median / p95) | 46.9 / 51.1 | p95 ≤ 50 ms | k6, [`moodle-perf.js`](../kpi/performance/moodle-perf.js): grader report, teacher; median over 3 runs | @efekanegeli2 |
+| PERF-05 REST call | Performance | ms (median / p95) | 12.0 / 15.6 | p95 ≤ 15 ms | k6, [`moodle-perf.js`](../kpi/performance/moodle-perf.js): `core_course_get_courses`; median over 3 runs | @efekanegeli2 |
+| PERF-06 Course page under load | Performance | ms (median / p95) | 80.3 / 158.5, 0 % errors | p95 ≤ 160 ms, 0 % errors | k6, [`moodle-perf.js`](../kpi/performance/moodle-perf.js): 20 concurrent students for 60 s; median over 3 runs | @efekanegeli2 |
 
 Notes:
 - **MAINT:** the advising baseline (Moodle `availability`, `completion`, `lib/completionlib.php`) is 9,111 lines, mean CCN 3.61, max 31, coverage 60.3 %. Per-module numbers: [maintainability.md](../kpi/maintainability.md).
 - **SEC:** development baselines on the local Docker instance, not a security certification. The optional ZAP scan was not run.
 - **USAB:** FLOW-05 is still pending a completed human run; the URL-assisted run gave 4 / 6 / 4 / 1. Usability IDs `USAB-01`…`04` are given here; [usability.md](../kpi/usability.md) names them by their names (click count, …).
-- **PERF:** #15 is still open. Its rows are added when the baseline is merged.
+- **PERF:** from [performance.md](../kpi/performance.md) (#41, measured 2026-11-22 on an Apple M2 laptop). Server response time only, warm cache, very small dataset; only comparable on the same machine with the same data. Targets: the new system must not be slower than Moodle.
