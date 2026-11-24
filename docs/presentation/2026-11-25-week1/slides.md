@@ -59,8 +59,8 @@ style: |
 # Yapay zekânın başka dile çevirdiği kod hatasız görünüyor ama çoğu zaman doğru çalışmıyor
 
 <div class="row">
-<div class="card"><div class="mid">100'de en fazla 47</div><p>çeviri doğru çalıştı (en iyi model ve dil çiftinde). En kötüsünde 100'de 2.<br><span class="muted">1.700 örnek, 5 dil, birkaç LLM (Pan vd., ICSE 2024)</span></p></div>
-<div class="card"><div class="mid">%96 → %25</div><p>Kod parçalarının %96'sında yazım hatası yok, ama sadece %25'inin doğru çalıştığı testle gösterilebildi.<br><span class="muted">10 Java projesi → Python, 17.874 parça (AlphaTrans, FSE 2025)</span></p></div>
+<div class="card"><p><strong>Çalışma 1 · küçük programlar</strong></p><div class="mid">47 / 100</div><p>En iyi durumda bile 100 çeviriden 47'si doğru çalıştı.<br><span class="muted">1.700 program, 5 dil (Pan vd., ICSE 2024)</span></p></div>
+<div class="card"><p><strong>Çalışma 2 · gerçek projeler</strong></p><div class="mid">%25</div><p>Kodun %96'sı düzgün görünüyordu, ama sadece %25'inin doğru çalıştığı gösterilebildi.<br><span class="muted">10 Java projesi → Python (AlphaTrans, FSE 2025)</span></p></div>
 </div>
 
 <br>

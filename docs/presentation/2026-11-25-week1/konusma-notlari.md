@@ -44,8 +44,8 @@ Hemen ikinci slayta geç. Ekip tanıtımı yok, isimler slaytta.
 ### 3. YZ çevirisi (Sertug)
 > "Yapay zekâ kodu başka bir dile çevirebiliyor. Ama çevirdiği kod gerçekten doğru çalışıyor mu? Literatüre baktık."
 
-- **Sol kutu:** "Bir çalışmada araştırmacılar yapay zekâya 1.700 küçük programı başka dillere çevirtmiş, sonra programların testlerini çalıştırmışlar. En iyi durumda bile 100 çeviriden sadece 47'si doğru çalışmış. En kötü durumda 100'de 2."
-- **Sağ kutu:** "Başka bir çalışmada 10 Java projesini parça parça Python'a çevirmişler. Parçaların yüzde 96'sında yazım hatası yok, yani kod ilk bakışta düzgün görünüyor. Ama doğru çalıştığını testle gösterebildikleri kısım sadece yüzde 25. Gerisini iki geliştirici proje başına yaklaşık 20 saatte elle düzeltmiş."
+- **Sol kutu (küçük programlar):** "Bir çalışmada araştırmacılar yapay zekâya 1.700 küçük programı başka dillere çevirtmiş, sonra programların testlerini çalıştırmışlar. En iyi durumda bile 100 çeviriden sadece 47'si doğru çalışmış. En kötü durumda 100'de 2."
+- **Sağ kutu (gerçek projeler):** "Bu küçük programlardı. Gerçek projelerde ne oluyor? Başka bir çalışmada 10 Java projesini parça parça Python'a çevirmişler. Parçaların yüzde 96'sında yazım hatası yok, yani kod ilk bakışta düzgün görünüyor. Ama doğru çalıştığını testle gösterebildikleri kısım sadece yüzde 25. Gerisini iki geliştirici proje başına yaklaşık 20 saatte elle düzeltmiş."
 - **Bağla:** "Yani kodun düzgün görünmesi, doğru çalıştığı anlamına gelmiyor. Bu yüzden bizim için asıl soru şu: yeni sistemin Moodle ile aynı davrandığını nasıl kanıtlarız?"
 
 ### 4. Yöntem (Sertug)
