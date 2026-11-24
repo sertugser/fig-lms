@@ -167,7 +167,7 @@ MDL-85503 tek komutla yeniden üretiliyor. Not hesaplama tarafında da **18 kura
 # Yeni sistemi neyle kıyaslayacağımızı yazmaya başlamadan ölçtük
 
 <div class="row">
-<div class="card"><div class="mid">%30,8</div><p>Moodle kodunun testlerin hiç çalıştırdığı kısmı (kapsam)<br>Hedef: ≥ %80</p></div>
+<div class="card"><div class="mid">%30,8</div><p>Moodle kodunun testlerin çalıştırdığı kısmı (kapsam)<br>Hedef: ≥ %80</p></div>
 <div class="card"><div class="mid">115,8 ms</div><p>Giriş, p95<br>Hedef: daha yavaş olmamak</p></div>
 <div class="card"><div class="mid">8 tık</div><p>Ödev oluşturma<br>Hedef: 6</p></div>
 </div>
