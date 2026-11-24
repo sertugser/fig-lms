@@ -42,10 +42,11 @@ Hemen ikinci slayta geç. Ekip tanıtımı yok, isimler slaytta.
 - Soru olarak bırak: "Biz bunu nasıl düzelttik ve düzeltirken geri kalan her şeyi bozmadığımızı nasıl gösteriyoruz? Sunumun sonunda göstereceğiz."
 
 ### 3. YZ çevirisi (Sertug)
-> "Literatüre baktığımızda gördüğümüz şey şu: yapay zekâ kodu çeviriyor ama çoğu zaman yanlış çeviriyor."
+> "Literatüre baktık: yapay zekâ kodu başka bir dile çeviriyor, kod çoğu zaman derleniyor da, ama doğru çalışmıyor."
 
-- Doğru çeviri oranı yüzde 2 ile 47 arasında. Depo düzeyinde en iyi araçlar bile kodun yaklaşık dörtte birini doğrulayabiliyor.
-- Bizim farkımız: davranışı çalışan Moodle'a karşı kanıtlamak.
+- Sol kutu: bir çalışmada 1.700 kod parçasını farklı dillere çevirmişler. En iyi durumda bile çevirilerin ancak yarısı testleri geçmiş, kötü durumda yüzde 2'si. Kalan çevirilerde 1.748 hata bulmuşlar, 15 türe ayırmışlar.
+- Sağ kutu: bütün bir projeyi çevirdiklerinde kodun yüzde 96'sı derleniyor. Ama doğru çalıştığını gösterebildikleri kısım sadece yüzde 25. Gerisi yanlış değil, kanıtlanamamış.
+- Mesaj: "Derleniyor" ile "doğru çalışıyor" aynı şey değil. Bizim farkımız davranışı çalışan Moodle'a karşı kanıtlamak.
 
 ### 4. Yöntem (Sertug)
 > "O yüzden sırayı tersine çevirdik: önce Moodle'ı ölçüyoruz, sonra yazıyoruz."
