@@ -1,330 +1,303 @@
 ---
 marp: true
-paginate: true
 size: 16:9
-title: Fig LMS - 1. hafta sunumu
+title: Fig LMS - 1. hafta
 style: |
-  section { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: 24px; padding: 48px 64px; color: #1f2933; }
-  h1 { font-size: 40px; color: #0b3d62; margin-bottom: 12px; }
-  h2 { font-size: 30px; color: #0b3d62; }
-  table { font-size: 19px; border-collapse: collapse; }
+  section { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: 30px; padding: 56px 72px; color: #1f2933; background: #fff; justify-content: flex-start; }
+  h1 { font-size: 44px; line-height: 1.2; color: #0b3d62; margin: 0 0 28px 0; }
+  h2 { font-size: 30px; color: #52606d; font-weight: 400; }
+  strong { color: #0b3d62; }
+  code { font-size: 0.8em; }
+  pre { font-size: 22px; }
+  table { font-size: 22px; border-collapse: collapse; }
   th { background: #0b3d62; color: #fff; }
-  td, th { padding: 4px 10px; }
-  code { font-size: 0.9em; }
-  em { color: #52606d; }
-  section.lead h1 { font-size: 52px; }
-  section.small { font-size: 20px; }
-  section.small table { font-size: 17px; }
-  .who { position: absolute; top: 18px; right: 64px; font-size: 16px; color: #7b8794; }
-  footer { font-size: 14px; color: #9aa5b1; }
-footer: Fig LMS · Moodle 5.3.1 modernizasyonu · 1. hafta
+  td, th { padding: 6px 14px; }
+  .big { font-size: 120px; font-weight: 700; color: #0b3d62; line-height: 1; }
+  .mid { font-size: 64px; font-weight: 700; color: #0b3d62; line-height: 1.05; }
+  .red { color: #b42318; }
+  .green { color: #1a7f37; }
+  .muted { color: #7b8794; font-size: 22px; }
+  .row { display: flex; gap: 32px; align-items: stretch; }
+  .card { flex: 1; border: 2px solid #d9e2ec; border-radius: 14px; padding: 22px 24px; }
+  .card p { margin: 8px 0 0 0; font-size: 24px; }
+  .step { flex: 1; background: #f0f4f8; border-radius: 12px; padding: 18px; font-size: 24px; text-align: center; }
+  .arrow { align-self: center; font-size: 40px; color: #9aa5b1; }
+  .who { position: absolute; top: 20px; right: 72px; font-size: 18px; color: #9aa5b1; }
+  section.title { justify-content: center; }
+  section.title h1 { font-size: 60px; }
+  section.backup h1 { font-size: 34px; }
+  section.backup { font-size: 22px; }
+  section.backup::after { content: "Yedek"; position: absolute; top: 20px; right: 72px; font-size: 18px; color: #9aa5b1; }
 ---
 
-<!-- _class: lead -->
-<!-- _paginate: false -->
+<!-- _class: title -->
 
-# Fig LMS
+# Moodle'ı yapay zekâyla yeniden yazmak kolay.<br>Aynı şekilde çalıştığını kanıtlamak zor.
 
-## Moodle alt fonksiyonlarının yapay zekâ desteğiyle modernizasyonu
+## Fig LMS · 1. hafta · 25 Kasım 2026
 
-1. hafta sunumu · 25 Kasım 2026
-
-Sertug · Hasan · Efekan · Sercan · Oğuz
-
----
-
-# Bu hafta ne yaptık?
-
-İlk haftanın hedefi **WBS-1** (kapsam ve mevcut sistem analizi) ve **WBS-2'nin başı** (hedef mimari, izlenebilirlik, yapay zekâ kullanım yaklaşımı).
-
-- **Kapsam ve sürüm sabitlendi:** Moodle `v5.3.1` (`cfe123f2`), 6 modül
-- **Tekrarlanabilir ortam:** Docker Compose ile Moodle 5.3.1 + PostgreSQL 17 ve örnek veri
-- **İş kuralları çıkarıldı:** 5 modül, **41 gereksinim**, her kural çalışan Moodle'da denendi
-- **2 Moodle hatası yeniden üretildi:** MDL-87490, MDL-85503 (+ MDL-22648 eksik özellik analizi)
-- **SRS ve KPI tablosu:** 26 KPI için Moodle baseline'ı, geliştirmeden **önce** ölçüldü
-- **Mimari kararı:** ADR-0001 (Java 21 + Spring Boot 3, modüler monolit)
-- **İlk kod ve ilk golden master testi:** ders ön koşulu kontrolü
-
-*Frontend henüz yok; bu hafta analiz ve ölçüm haftasıydı.*
+<p class="muted">Sertug · Hasan · Efekan · Sercan · Oğuz</p>
 
 ---
 
-# Kapsam
+<div class="who">Sertug</div>
 
-| Modül | Kapsamdaki akışlar |
-|---|---|
-| Kimlik ve yetki | Giriş, 3 rol (öğrenci, öğretmen, yönetici), ders düzeyinde yetki |
-| Ders ve kayıt | Ders oluşturma, kategoriler, öğretmen atama, kayıt |
-| Danışmanlık | Ders ön koşulu (MDL-22648), danışman onayı, kredi sınırı |
-| Ödev ve teslim | Tarihler, dosya teslimi, geç teslim, taslak ve deneme hakkı |
-| Değerlendirme | Not verme, ağırlıklı ortalama, öğrencinin kendi notunu görmesi |
-| Eğitim planı (yeni) | Ön koşul ve kredi sınırından dönem dönem ders planı |
+# student3 CS101'den kaldı. Moodle onu yine de CS201'e kaydetti.
 
-**Düzeltilecek Moodle hataları:** MDL-87490 (ödev), MDL-85503 (ders kategorileri).
-**Kapsam dışı:** forum, sınav, mesajlaşma ve yukarıdaki akışlar dışındaki eklentiler.
+<div class="row">
+<div class="card"><div class="mid red">40</div><p>CS101 notu<br>(geçme notu 50)</p></div>
+<div class="card"><div class="mid red">Kayıtlı</div><p>CS201'de, Moodle 5.3.1</p></div>
+<div class="card"><div class="mid">2012</div><p>Ön koşul isteği o yıldan beri açık<br>(MDL-22648, 99 oy)</p></div>
+</div>
 
-*Analiz edilen Moodle kodu (ilk 5 modül): 165.493 satır PHP, 1.462 üretim dosyası.*
+<p class="muted">Kaynak: infra/sample-data, docs/srs/modules/advising.md</p>
 
 ---
 
-# Mimari kararı: ADR-0001
+<div class="who">Sertug</div>
 
-**Java 21 + Spring Boot 3, modüler monolit (Spring Modulith), PostgreSQL, React**
+# Yapay zekânın başka dile çevirdiği kod hatasız görünüyor ama çoğu zaman doğru çalışmıyor
 
-| Kanıt | Kaynak |
-|---|---|
-| YZ ajanlarının çözdüğü gerçek hata oranı: Java %23,44 · TypeScript %11,61 · JavaScript %5,06 | Multi-SWE-bench (Zan vd., 2025) |
-| Tip sistemi LLM çıktısındaki derleme hatalarını yarıdan fazla azaltıyor | Mündler vd., PLDI 2025 |
-| Modül sınırları otomatik doğrulanabiliyor (`ApplicationModules.verify()`) | Spring Modulith |
-| 5 kişi, 7 hafta: mikroservis altyapısı yerine ölçüme zaman | Fowler, *Monolith First* |
+<div class="row">
+<div class="card"><p><strong>Çalışma 1 · küçük programlar</strong></p><div class="mid">47 / 100</div><p>En iyi durumda bile 100 çeviriden 47'si doğru çalıştı.<br><span class="muted">1.700 program, 5 dil (Pan vd., ICSE 2024)</span></p></div>
+<div class="card"><p><strong>Çalışma 2 · gerçek projeler</strong></p><div class="mid">%25</div><p>Kodun %96'sı düzgün görünüyordu, ama sadece %25'inin doğru çalıştığı gösterilebildi.<br><span class="muted">10 Java projesi → Python (AlphaTrans, FSE 2025)</span></p></div>
+</div>
 
-- Her PR'da CI: derleme, testler ve **modül sınırı testi** (`ModularityTest`)
-- Sınırlılık: benchmark hata düzeltmeyi ölçüyor, sıfırdan yeniden yazmayı değil. İddiamız "kanıtlar Java'yı destekliyor", "en iyi dil Java" değil.
+<br>
 
----
-
-# Literatür ve özgünlük
-
-- YZ ile kod çevirisi kısmen çalışıyor: doğru çeviri oranı **%2,1 – %47,3** (Pan vd., ICSE 2024); depo düzeyinde araçlar kodun yaklaşık **dörtte birinin** davranışını doğrulayabiliyor (AlphaTrans, FSE 2025)
-- İlgili çalışmalarda davranış kontrolü: mevcut birim testleri, üretilmiş testler veya tek başına programların fuzzing'i
-- Endüstri (Google, Amazon Q): büyük göçler, ama tahmini kazanç ve yalnızca Java'dan Java'ya
-
-**Bizim yöntemimizde yeni olan:**
-1. Her YZ destekli değişiklik Moodle kaynağından çıkarılmış bir gereksinim ID'sine (`REQ-<MODÜL>-<NN>`) bağlı ve sonucuyla `docs/ai-log/`'a kaydediliyor
-2. Korunan kurallar **çalışan Moodle 5.3.1**'e karşı golden master testiyle kontrol ediliyor (veri durumu, roller, sınır durumları dahil)
-3. YZ destekli ve manuel çalışma süre ve review hatası üzerinden; Moodle ve yeni sistem KPI'larla karşılaştırılıyor
+Bu yüzden bizim için asıl soru şu: **yeni sistemin Moodle ile aynı davrandığını nasıl kanıtlarız?**
 
 ---
 
-# Yöntem: bir kural nasıl taşınıyor?
+<div class="who">Sertug</div>
 
-**Moodle kaynağı + çalışan Moodle → gereksinim (REQ ID) → YZ destekli yazım → review → golden master → KPI**
+# Her kuralı önce Moodle'da deniyoruz, sonra yeni sistemde aynı sonucu arıyoruz
 
-| Adım | Bu haftaki somut çıktı |
-|---|---|
-| Ortam | `infra/`: Moodle 5.3.1 + PostgreSQL 17, tek komutla örnek veri (5 öğrenci, 2 öğretmen, CS101, CS201, MATH101) |
-| Kural çıkarma | Her modülde `verify_rules.php`: kuralları Moodle'ın kendi fonksiyonlarıyla canlı çalıştırıyor |
-| Gereksinim | ISO/IEC/IEEE 29148 yapısında SRS, modül başına bir dosya |
-| İzlenebilirlik | Gereksinim → issue → kod → test matrisi (`docs/srs/traceability.md`) |
-| Uzman kontrol noktası | Her PR en az bir ekip arkadaşının onayıyla merge ediliyor |
-| YZ kaydı | Model, verilen bağlam, kabul / değişiklik / ret, süre, review hatası |
+<p class="muted">Kural: Moodle'ın bir durumda ne yaptığı. Örnek: "Bitişi başlangıcından önce olan bir ders açılamaz."</p>
+
+<div class="row" style="gap:10px">
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>1. Moodle'da dene</strong><br>Bir betikle (script) Moodle'da böyle bir ders açmayı denedik. Moodle dersi açmadı.</div>
+<div class="arrow" style="font-size:28px">→</div>
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>2. Listeye ekle</strong><br>Kuralı numara verip yapılacaklar listemize yazdık: <code>REQ-CRS-02</code>. Yeni sistem bu listeye uymak zorunda.</div>
+<div class="arrow" style="font-size:28px">→</div>
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>3. Yeni sistemde kodla</strong><br>Kodu yapay zekâ yazıyor. Ekipten biri inceleyip onaylıyor.</div>
+<div class="arrow" style="font-size:28px">→</div>
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>4. Karşılaştır</strong><br>Aynı isteği Moodle'a ve yeni sisteme gönderiyoruz. Cevaplar aynı olmalı.</div>
+</div>
+
+<div style="height:20px"></div>
+
+**Bu hafta:** İlk iki adımı 5 modülde yaptık ve **41 kural** yazdık.
+Son iki adımı şimdilik tek bir kuralda, ders ön koşulunda yaptık.
 
 ---
 
-# SRS ve izlenebilirlik
+<div class="who">Sertug</div>
 
-| Modül | Gereksinim | Sahibi |
-|---|---:|---|
-| Kimlik ve yetki (`IDN`) | 7 | Hasan |
-| Ders ve kayıt (`CRS`) | 9 | Efekan |
-| Danışmanlık (`ADV`) | 9 | Sertug |
-| Ödev ve teslim (`ASG`) | 8 | Sercan |
-| Değerlendirme (`GRD`) | 8 | Oğuz |
-| Eğitim planı (`PLN`) | henüz yok | Sertug |
-| **Toplam** | **41** + 5 kalite (NFR) | |
+# Yeni sistemi Java ile yazıyoruz, çünkü derleyici yapay zekânın hatalarını erken yakalıyor
 
-Her gereksinim **korunan / hata düzeltmesi / yeni** olarak ayrılıyor; Moodle kaynak yolu ve kabul kriteri yazılı.
-İlk uygulanan gereksinim: `REQ-ADV-09` (ders ön koşulu).
+Bir araştırmada yapay zekâya gerçek projelerdeki hatalar verilmiş. Çözebildiği hataların oranı:
+
+<div class="row">
+<div class="card"><div class="mid">%23,4</div><p>Java</p></div>
+<div class="card"><div class="mid" style="color:#7b8794">%11,6</div><p>TypeScript</p></div>
+<div class="card"><div class="mid" style="color:#9aa5b1">%5,1</div><p>JavaScript</p></div>
+</div>
+
+<p class="muted">Kaynak: Multi-SWE-bench (Zan vd., 2025)</p>
+
+Java'da derleyici, birçok hatayı kod daha çalışmadan bulur. Sistemi modüllere ayırdık: Bir modül başka bir modülün iç koduna erişirse **otomatik kontrol hata verir**.
 
 ---
 
 <div class="who">Hasan</div>
 
-# Kimlik ve yetki
+<p class="muted" style="margin:0">Moodle'ı incelerken bulduklarımız 1/4 · Kimlik ve yetki modülü</p>
 
-**Üç proje rolü:** öğrenci → `student` · öğretmen → `editingteacher` · yönetici → `manager`
+# Kurduğumuz Moodle'da yanlış şifre kaç kez girilirse girilsin hesap kilitlenmiyor
 
-| Ders işlemi | Öğrenci | Öğretmen | Yönetici |
-|---|:---:|:---:|:---:|
-| Kayıtlı olduğu dersi görme | Evet | Evet | Evet |
-| Ödev oluşturma | Hayır | Evet | Evet |
-| Ödev notlama | Hayır | Evet | Evet |
-| Derse kullanıcı kaydetme | Hayır | Evet | Evet |
+<div class="row">
+<div class="card"><div class="mid red">Kapalı</div><p>Hesap kilitleme ayarı<br><strong>Hedefimiz:</strong> 15 dakikada 5 yanlış şifreden sonra hesabı kilitlemek</p></div>
+<div class="card"><div class="mid">8 saat</div><p>Hiçbir şey yapmayan kullanıcının oturumu bu kadar açık kalıyor<br><strong>Hedefimiz:</strong> en fazla 2 saat</p></div>
+</div>
 
-**Güvenlik baseline'ı:** kayıtlı olmayan öğrenci CS201'i URL ile açınca kayıt sayfasına yönlendirildi; öğrenci notlama URL'sinde 404 aldı; yanlış şifre oturum açmadı.
-**Mevcut ayarlar:** şifre politikası açık (8 karakter + 4 karakter sınıfı), **hesap kilitleme kapalı** (eşik 0), oturum zaman aşımı **8 saat**.
+<br>
 
-*Yeni sistem kuralı: yetki her istekte ders/etkinlik bağlamında kontrol edilir, yalnızca arayüzde değil.*
+Yetkiler ise doğru çalışıyor. Öğrenci olarak giriş yapıp adres çubuğundaki dersi elle değiştirdik: Kayıtlı olmadığımız derse giremedik, not verme sayfası da açılmadı.
 
 ---
-
-<!-- _class: small -->
 
 <div class="who">Efekan</div>
 
-# Ders ve kayıt
+<p class="muted" style="margin:0">Moodle'ı incelerken bulduklarımız 2/4 · Ders ve kayıt modülü</p>
 
-**Kayıt = üyelik + rol.** Erişim için kaydın **aktif** olması gerekir: askıda değil, yöntem açık, başlangıç geçmiş, bitiş gelmemiş.
+# Moodle, "CS101" varken "cs101" kodlu ikinci bir dersin açılmasına izin veriyor
 
-| Kural | Moodle sonucu |
-|---|---|
-| Aynı kısa ad `CS101` | reddedildi |
-| `CS101` yanında `cs101` | **kabul edildi** (büyük/küçük harf duyarlı) |
-| Bitiş tarihi başlangıçtan önce | reddedildi; eşitlik kabul |
-| Öğretmen kayıt yapıyor | *öğrenci* veya *düzenleme yetkisiz öğretmen* verebilir, *düzenleyen öğretmen* veremez |
-| Kendi kendine kayıt, limit 2, üçüncü kullanıcı | reddedildi |
-| Bitişi başlangıçtan önce olan kayıt | **kabul edildi, ama hiç aktif olmuyor** |
+<div class="row">
+<div class="card"><div class="mid">45 / 45</div><p>Ders ve ders kaydı kurallarını bir betikle çalışan Moodle'da denedik. 45 kontrolün 45'inde Moodle, yazdığımız kurallara uydu.</p></div>
+<div class="card"><p><strong>Bu sırada bulduğumuz iki zayıflık</strong></p><p>1. Ders kodunun tekrar etmemesi veritabanında değil, yalnızca PHP kodunda kontrol ediliyor.</p><p>2. Bitiş tarihi başlangıcından önce olan bir ders kaydı kabul ediliyor, ama hiçbir zaman geçerli olmuyor.</p></div>
+</div>
 
-**Canlı Moodle'da 45 kontrol, hepsi geçti.**
-**Bulunan boşluklar → REQ-CRS-09:** kısa ad tekilliği yalnızca PHP'de, veritabanında değil; kayıtta ön koşul kontrolü yok (student3 CS101'i geçmeden CS201'de).
+<br>
 
----
-
-<!-- _class: small -->
-
-<div class="who">Sertug</div>
-
-# Danışmanlık ve MDL-22648
-
-**Moodle'da danışmanlık modülü yok.** En yakın karşılıklar: erişim kısıtları (etkinlik/bölüm koşulları) ve ders tamamlama. 8 korunan kural, **39 senaryo canlı Moodle'da, hepsi geçti.**
-
-**MDL-22648** "Ön koşul ders tamamlanmadan derse erişimi kısıtla": 2012'de açıldı, hâlâ çözülmedi, **99 oy**, sahibi yok.
-
-Neden hâlâ yok?
-1. "Course prerequisites" adı vardı ama yalnızca *tamamlanmayı* etkiliyordu; adı değiştirildi (MDL-22259)
-2. Erişim kısıtları ders sınırında duruyor; hiçbir koşul başka bir derse bakamıyor
-3. Kayıt eklentilere dağılmış; hiçbiri tamamlanmaya bakmıyor. 2012–2014 topluluk yaması yarım kaldı
-
-**Bizim çözümümüz (REQ-ADV-09):** kural tek yerde, danışmanlık modülünde. Kayıt ve eğitim planı modülü `advising.api` üzerinden çağırıyor. "Tamamlandı" Moodle'daki anlamıyla aynı.
+Yeni sistemde bu iki kuralı **veritabanı da** zorunlu tutacak. Büyük-küçük harf konusuna ekipçe karar vereceğiz.
 
 ---
 
 <div class="who">Sercan</div>
 
-# Ödev ve MDL-87490
+<p class="muted" style="margin:0">Moodle'ı incelerken bulduklarımız 3/4 · Ödev modülü</p>
 
-7 korunan kural: teslim penceresi, son tarih ve gecikme, uygunluk ve kilitler, taslak ve son teslim, dosya teslimi, deneme limiti, notlamadan sonra yeniden açma. 1 hata düzeltmesi: **REQ-ASG-08**.
+# Öğretmen bir ödev teslimini "taslağa geri alınca" öğrenciye fazladan bir deneme hakkı açılıyor
 
-**MDL-87490:** öğretmen notlanmamış bir teslimi **taslağa geri alınca** öğrenciye fazladan bir deneme hakkı veriliyor. Moodle 5.3.1'de yeniden üretildi.
+<div class="row">
+<div style="flex:0 0 46%">
 
-| Adım | Beklenen | Moodle 5.3.1'de görülen |
-|---|---|---|
-| Öğrenci 1. denemeyi teslim eder | Notlanmayı bekliyor | Notlanmayı bekliyor |
-| Öğretmen "taslağa geri al" der | 1. deneme düzenlenebilir taslak kalır | **2. deneme "Reopened"** açıldı, dosya eski denemede kaldı |
+![h:360](../../bugs/evidence/MDL-87490-03-student-extra-attempt.png)
 
-**Neden:** geri alma `update_grade()` çağırıyor; not yokken `grade = -1` yer tutucu oluşuyor ve "otomatik" yeniden açma kuralı not verilip verilmediğine bakmıyor.
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18px">
+<div class="card"><p><strong>Beklenen</strong></p><p>Öğrenci 1. denemesini düzeltir ve yeniden gönderir.</p></div>
+<div class="card"><p><strong class="red">Moodle'da olan</strong></p><p>2. deneme açıldı. Dosya 1. denemede kaldı ve öğrenci onu düzenleyemiyor.</p></div>
+</div>
+</div>
 
----
-
-<div class="who">Sercan</div>
-
-# MDL-87490: ekran görüntüsü
-
-![h:430](../../bugs/evidence/MDL-87490-03-student-extra-attempt.png)
-
-*Geri almadan sonra öğrenci görünümü: 2. deneme açılmış, orijinal dosya "Previous attempts" altında. Tüm adımlar ve kanıt: `docs/bugs/MDL-87490.md`.*
+<p class="muted">Bu, Moodle'ın bilinen ve hâlâ açık bir hatası (MDL-87490). Moodle 5.3.1'de tarayıcıda adım adım tekrarladık; ekran görüntüsü öğrencinin sayfasından.</p>
 
 ---
-
-<!-- _class: small -->
 
 <div class="who">Oğuz</div>
 
-# Değerlendirme ve MDL-85503
+<p class="muted" style="margin:0">Moodle'ı incelerken bulduklarımız 4/4 · Ders kategorileri</p>
 
-**Ağırlıklı ortalama:** toplam = Σ(ağırlık × not) / Σ(ağırlık), notlar önce 0..1'e ölçeklenir. A=80 (ağırlık 1), B=40 (ağırlık 3) → **50**.
+# Ders listeleme izni kapatılınca öğrenci, kayıtlı olduğu derslerin kategorisini de göremiyor
 
-| Kural | Moodle sonucu |
-|---|---|
-| Boş not hariç (varsayılan) / 0 sayılır | 50 / 33,3 (ağırlıklı ortalama) |
-| En düşük 1 notu at | 80 |
-| Maksimumun üstünde / minimumun altında not | maksimum / minimum olarak saklanır |
-| Öğrenci başka öğrencinin notunu istiyor | reddedildi (`nopermissiontoviewgrades`) |
+<div class="row">
+<div class="card"><p><strong>student1</strong> (CS101 ve CS201'e kayıtlı öğrenci)</p><div class="mid red">404 hatası</div><p>Kategori sayfası açılmıyor. Beklenen: kendi derslerini ve kategorisini görmesi.</p></div>
+<div class="card"><p><strong>admin</strong> (yönetici)</p><div class="mid green">Hepsi</div><p>Tüm kategorileri ve dersleri görüyor.</p></div>
+</div>
 
-**Canlı Moodle'da 18 kontrol, hepsi geçti.**
+<br>
 
-**MDL-85503:** `moodle/category:viewcourselist` kapatılınca öğrenci **hiç kategori görmüyor** (HTTP 404), yönetici hepsini görüyor. Kayıtlı olduğu derslerin kategorisi de gizleniyor. Tek komutla yeniden üretiliyor: `python docs/bugs/MDL-85503/reproduce.py`. *Not: hata ders kategorileriyle ilgili, notlarla değil.*
+Bu da Moodle'ın bilinen ve hâlâ açık bir hatası (MDL-85503). Yazdığımız betik hatayı tek komutla tekrarlıyor.
 
----
-
-<!-- _class: small -->
-
-# KPI'lar: geliştirmeden önce Moodle baseline'ı
-
-| Kategori | KPI sayısı | Moodle 5.3.1 baseline (örnek) | Hedef | Sahibi |
-|---|---:|---|---|---|
-| Bakım yapılabilirlik | 5 | Ortalama karmaşıklık 3,3–4,8; en yüksek 31–107; test kapsamı %24,3–60,3 (5 modül: %30,8) | ortalama ≤ 3,0; her metot ≤ 15; kapsam ≥ %80 | Oğuz |
-| Güvenlik | 11 | Yetkisiz URL erişimi reddedildi; hesap kilitleme kapalı; oturum 8 saat | %100 red; 15 dk'da 5 hata → kilit; oturum ≤ 2 saat | Hasan |
-| Performans | 6 | Giriş p95 **115,8 ms**; ders sayfası p95 40,4 ms; 20 eşzamanlı kullanıcıda p95 158,5 ms, %0 hata | Moodle'dan yavaş olmamak | Efekan |
-| Kullanılabilirlik | 4 | Tıklama: ödev teslimi 6, not görme 2, ödev oluşturma 8, notlama 7 | 6, 2, 6, 5 | Sercan |
-
-- Ölçüm araçları: lizard + cloc, PHPUnit + PCOV, k6 (3 tekrar, medyan), Moodle'ın kendi yetki fonksiyonları, insan tarafından yapılan akış sayımı
-- **Sınırlılıklar:** performans tek makinede ve küçük veriyle (yalnızca aynı koşulda karşılaştırılabilir); güvenlik bir sertifikasyon değil, ZAP taraması yapılmadı; kendi kendine kayıt akışının (FLOW-05) insan ölçümü eksik
+<p class="muted">Not hesaplama kurallarını da çalışan Moodle'da bir betikle denedik: 18 kontrolün 18'i geçti.</p>
 
 ---
 
-<div class="who">Sertug</div>
+<div class="who">Efekan</div>
 
-# İlk kod: ders ön koşulu kontrolü (REQ-ADV-09)
+# Yeni sistemi kıyaslayabilmek için önce Moodle'ın bugünkü değerlerini ölçtük
 
-`GET /api/advising/prerequisite-check?student=…&course=…` · Java 21 / Spring Boot · **21 test**, CI yeşil
+<div class="row">
+<div class="card"><div class="mid">%30,8</div><p>Moodle'ın kendi testleri, incelediğimiz kodun bu kadarını çalıştırıyor.<br><strong>Hedefimiz:</strong> en az %80</p></div>
+<div class="card"><div class="mid">115,8 ms</div><p>Giriş süresi: Girişlerin %95'i bundan kısa sürdü.<br><strong>Hedefimiz:</strong> Moodle'dan yavaş olmamak</p></div>
+<div class="card"><div class="mid">8 tık</div><p>Öğretmenin bir ödev oluşturmak için yaptığı tıklama sayısı.<br><strong>Hedefimiz:</strong> 6 tık</p></div>
+</div>
+
+<br>
+
+Toplam **26 ölçüt (KPI)** belirledik: bakım kolaylığı, güvenlik, hız ve kullanım kolaylığı.
+<p class="muted">Hızı tek bilgisayarda ve az veriyle ölçtük. Bu sayılar yalnızca aynı koşulda ölçülen yeni sistemle karşılaştırılabilir.</p>
+
+---
+
+<div class="who">Sertug · canlı demo</div>
+
+# Aynı öğrenciyi yeni sisteme sorduk: "CS201'e kaydolamaz, önce CS101'i geçmeli"
+
+Yazdığımız ilk kod tek bir soruyu cevaplıyor: **"Bu öğrenci bu derse kaydolabilir mi?"** student3 ve CS201 için soruyoruz:
 
 ```bash
-curl -u student3:$SAMPLE_USER_PASSWORD \
-  "http://localhost:8080/api/advising/prerequisite-check?student=student3&course=CS201"
+curl -u student3:*** ".../api/advising/prerequisite-check?student=student3&course=CS201"
 ```
 ```json
-{"student":"student3","course":"CS201","allowed":false,
- "reason":"PREREQUISITES_MISSING","missingPrerequisites":["CS101"]}
+{ "allowed": false,                      ← kaydolamaz
+  "reason": "PREREQUISITES_MISSING",
+  "missingPrerequisites": ["CS101"] }    ← eksik ön koşul dersi
 ```
 
-| | Moodle 5.3.1 | Yeni sistem |
-|---|---|---|
-| student3, CS101'den 40 aldı (geçme notu 50) | **CS201'e kayıtlı** | **reddedildi**, eksik: CS101 |
-| Bilinmeyen ders / öğrenci | — | 404 `UNKNOWN_COURSE` / `UNKNOWN_STUDENT` |
-| student3 başkası adına soruyor / giriş yok | — | 403 / 401 |
+Bu kontrolü **21 otomatik test** sınıyor. Henüz derse kayıt işlemine bağlı değil; sıradaki işimiz bu.
 
 ---
 
 <div class="who">Oğuz</div>
 
-# İlk golden master testi: Moodle ile yeni sistem aynı girdiyle
+# Beş durumun beşinde yeni sistemin kararı, Moodle'daki bilgiyle uyuşuyor
 
-| Senaryo | Girdi | Moodle 5.3.1 | Yeni sistem | Sonuç |
-|---|---|---|---|---|
-| Tamamlandı | student1 → CS201 (CS101: 85) | CS101 tamamlandı | izin var | AYNI |
-| Tamamlanmadı | student5 → CS201 (teslim yok) | tamamlanmadı | izin yok, eksik CS101 | AYNI |
-| Sınır | student3 → CS201 (40 < 50) | tamamlanmadı | izin yok, eksik CS101 | AYNI |
-| Sınır | student4 → CS201 (notlanmadı) | tamamlanmadı | izin yok, eksik CS101 | AYNI |
-| Yetkisiz | student3, student1'i soruyor | `cannotviewreport` | 403 | AYNI |
+<p style="font-size:25px">Moodle, öğrencinin CS101'i tamamlayıp tamamlamadığını kaydediyor, ama derse kayıtta buna bakmıyor. Testimiz Moodle'daki bu bilgiyi yeni sistemin kararıyla karşılaştırıyor.</p>
 
-**5/5 senaryo aynı sonucu veriyor**; test main'de ve her PR'da CI'da çalışıyor (PR #43). Sistem bilerek bozulunca fark satır satır yakalandı (ör. `$.allowed: expected false but was true`).
+<style scoped>table { font-size: 24px; }</style>
 
-*Dürüst not: "Yetkisiz" senaryosunda Moodle tarafı canlı çağrı değil, Moodle kaynak kodundaki kural; test token'ı admin'e ait. Bilinçli fark: Moodle student3'ü CS201'e alıyor, yeni sistem almıyor.*
+| Öğrencinin durumu | Moodle'daki bilgi | Yeni sistemin kararı |
+|---|---|---|
+| CS101'i 85 ile geçti | tamamladı | CS201'e kaydolabilir |
+| CS101 ödevini teslim etmedi | tamamlamadı | kaydolamaz |
+| CS101'den 40 aldı (geçme notu 50) | tamamlamadı | kaydolamaz |
+| Teslim etti, notu henüz verilmedi | tamamlamadı | kaydolamaz |
+| Başka bir öğrenciyi soruyor | bilgi verilmez * | cevap verilmez |
 
----
-
-# Yapay zekâ kullanım kaydı
-
-- Her YZ destekli PR için `docs/ai-log/` altında bir kayıt: model ve sürüm, verilen bağlam, **kabul / değiştirildi / reddedildi**, aktif süre, review'da bulunan hata
-- Bu hafta **18 görev kaydı** açıldı. Karar verilenlerde çoğunluk "değiştirildi": YZ taslak üretti, kurallar canlı Moodle'da denenip düzeltildi. Bir kısmı hâlâ "pending", bu yüzden **kabul oranını henüz vermiyoruz**
-- Ölçüm kuralları önceden yazıldı (`docs/ai-log/README.md`): bekleme süresi sayılmaz, "YZ kabul oranı" formülü sabit
-- PR şablonunda zorunlu YZ bölümü; YZ çıktısı review olmadan merge edilmiyor
-
-**Neden önemli:** WBS-3'teki YZ destekli ve manuel geliştirme karşılaştırmasının (emek, hata, yeniden çalışma) verisi buradan gelecek.
+<p class="muted">* Bu satırda Moodle'a canlı sormadık; Moodle'ın kaynak kodundaki kuralı esas aldık.<br>Test, her kod değişikliğinde otomatik çalışıyor. Sistemi bilerek bozduğumuzda farkı satır satır gösterdi.</p>
 
 ---
 
-# Eksikler ve sonraki adımlar
+<div class="who">Sertug</div>
 
-**Eksik / açık kalanlar**
-- Eğitim planı modülünün gereksinimleri henüz yazılmadı
-- Danışman onayı ve kredi sınırı: Moodle karşılığı yok, gereksinimleri sonra
-- Frontend yok; FLOW-05 insan ölçümü ve ZAP taraması yapılmadı
+# Karşılaştırma düzeni hazır, sıra modülleri yazmakta
 
-**Sonraki adımlar (WBS-2 → WBS-3)**
-- Ön koşul kuralını ders modülünün kayıt akışına bağlamak; öğretmen / danışman istisnası
-- Modül modül yeniden geliştirme: her korunan kural için golden master testi
-- MDL-87490 ve MDL-85503 için önce Moodle davranışında başarısız olan test, sonra düzeltme
-- İlk YZ destekli ve manuel karşılaştırma için alt fonksiyon seçimi
+<div class="row">
+<div class="card"><p><strong>Bu hafta yaptıklarımız</strong></p><p>Moodle'ın 41 kuralını yazdık, çoğunu çalışan Moodle'da denedik.</p><p>26 ölçüt belirledik, Moodle'daki değerlerini ölçtük (biri eksik).</p><p>İlk kodu yazıp Moodle ile karşılaştırdık: 5 durumun 5'i uyuşuyor.</p></div>
+<div class="card"><p><strong>Sıradaki işler</strong></p><p>Ön koşul kontrolünü derse kayıt işlemine bağlamak.</p><p>Koruduğumuz her kural için bir karşılaştırma testi yazmak.</p><p>İki Moodle hatasını düzeltmek: önce hatayı gösteren test, sonra düzeltme.</p></div>
+</div>
+
+<div style="height:20px"></div>
+
+**Size sorumuz:** Yapay zekâ destekli geliştirme ile elle geliştirmeyi hangi alt fonksiyonda karşılaştıralım?
+
+<p class="muted">Henüz yapmadıklarımız: eğitim planı gereksinimleri, arayüz, "derse kendi kendine kayıt" akışının kullanılabilirlik ölçümü, ZAP güvenlik taraması.</p>
 
 ---
 
-<!-- _class: lead -->
-<!-- _paginate: false -->
+<!-- _class: backup -->
 
-# Teşekkürler
+# Kapsam: 6 modül
 
-Sorular?
+| Modül | Kapsamdaki akışlar | Gereksinim | Sahibi |
+|---|---|---:|---|
+| Kimlik ve yetki | Giriş, 3 rol, ders düzeyinde yetki | 7 | Hasan |
+| Ders ve kayıt | Ders, kategori, öğretmen atama, kayıt | 9 | Efekan |
+| Danışmanlık | Ön koşul (MDL-22648), danışman onayı, kredi sınırı | 9 | Sertug |
+| Ödev ve teslim | Tarihler, dosya teslimi, geç teslim, deneme hakkı | 8 | Sercan |
+| Değerlendirme | Not verme, ağırlıklı ortalama, kendi notunu görme | 8 | Oğuz |
+| Eğitim planı (yeni) | Ön koşul ve kredi sınırından dönem planı | henüz yok | Sertug |
 
-Depo: `github.com/sertugser/fig-lms` · SRS: `docs/srs/` · KPI: `docs/srs/kpi.md` · Hatalar: `docs/bugs/`
+Moodle sürümü `v5.3.1` (`cfe123f2`). Analiz edilen kod (ilk 5 modül): 165.493 satır PHP. SRS ISO/IEC/IEEE 29148 yapısında, gereksinim → issue → kod → test izlenebilirlik matrisi `docs/srs/traceability.md`.
+
+---
+
+<!-- _class: backup -->
+
+# KPI baseline (Moodle 5.3.1)
+
+| Kategori | KPI | Moodle | Hedef |
+|---|---:|---|---|
+| Bakım yapılabilirlik | 5 | Ort. karmaşıklık 3,3–4,8; en yüksek 31–107; test kapsamı %24,3–60,3 (5 modül %30,8) | ort. ≤ 3,0; her metot ≤ 15; kapsam ≥ %80 |
+| Güvenlik | 11 | Yetkisiz URL reddedildi; kilit kapalı; oturum 8 saat | %100 red; 15 dk'da 5 hata → kilit; oturum ≤ 2 saat |
+| Performans | 6 | Giriş p95 115,8 ms; ders sayfası p95 40,4 ms; 20 eşzamanlı kullanıcı p95 158,5 ms, %0 hata | Moodle'dan yavaş olmamak |
+| Kullanılabilirlik | 4 | Tık: ödev teslimi 6, not görme 2, ödev oluşturma 8, notlama 7 | 6, 2, 6, 5 |
+
+Araçlar: lizard, cloc, PHPUnit + PCOV, k6 (3 tekrar, medyan), Moodle'ın yetki fonksiyonları, insan tarafından yapılan akış sayımı. Güvenlik bir sertifikasyon değil; ZAP taraması yapılmadı. Tüm tablo: `docs/srs/kpi.md`.
+
+---
+
+<!-- _class: backup -->
+
+# Mimari kararı ve YZ kullanım kaydı
+
+**ADR-0001:** Java 21 + Spring Boot 3, modüler monolit (Spring Modulith), PostgreSQL, React.
+- Tip sistemi LLM çıktısındaki derleme hatalarını yarıdan fazla azaltıyor (Mündler vd., PLDI 2025)
+- `ApplicationModules.verify()` her PR'da modül sınırlarını kontrol ediyor
+- 5 kişi, 7 hafta: mikroservis yerine tek parça (Fowler, *Monolith First*)
+- Sınırlılık: benchmark hata düzeltmeyi ölçüyor, sıfırdan yazmayı değil
+
+**YZ kaydı (`docs/ai-log/`):** bu hafta 18 görev kaydı. Her kayıtta model, bağlam, kabul / değiştirildi / reddedildi, süre ve review hatası var. Bazı kayıtlar hâlâ "pending" olduğu için kabul oranını henüz vermiyoruz.
