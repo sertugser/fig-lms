@@ -71,22 +71,24 @@ Bu yüzden bizim için asıl soru şu: **yeni sistemin Moodle ile aynı davrand�
 
 <div class="who">Sertug</div>
 
-# Önce Moodle'ı ölçüyoruz, sonra yazıyoruz, sonra aynı girdiyle karşılaştırıyoruz
+# Moodle'daki her kuralı 4 adımda taşıyoruz
 
-<div class="row">
-<div class="step"><strong>1</strong><br>Kuralı çalışan Moodle'da dene</div>
-<div class="arrow">→</div>
-<div class="step"><strong>2</strong><br>Gereksinim yaz<br><code>REQ-ADV-09</code></div>
-<div class="arrow">→</div>
-<div class="step"><strong>3</strong><br>YZ ile yaz, arkadaşın incelesin</div>
-<div class="arrow">→</div>
-<div class="step"><strong>4</strong><br>Aynı girdiyi iki sisteme ver, karşılaştır</div>
+<p class="muted">Örnek kural: "Bitiş tarihi başlangıçtan önce olan bir ders açılamaz."</p>
+
+<div class="row" style="gap:10px">
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>1. Moodle'da dene</strong><br>Moodle'a böyle bir ders açtırmayı denedik. Moodle reddetti.</div>
+<div class="arrow" style="font-size:28px">→</div>
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>2. Kural olarak yaz</strong><br>Bulduğumuzu gereksinim belgesine yazdık: <code>REQ-CRS-02</code></div>
+<div class="arrow" style="font-size:28px">→</div>
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>3. Yeni sistemde kodla</strong><br>Kodu yapay zekâ yazar, bir ekip arkadaşı kontrol eder.</div>
+<div class="arrow" style="font-size:28px">→</div>
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>4. Karşılaştır</strong><br>Aynı dersi iki sisteme ver. İkisi de reddetmeli.</div>
 </div>
 
 <br>
 
-Bu hafta: Moodle 5.3.1'i Docker'da kurduk, 5 modülde Moodle'ın **41 kuralını** yazıya döktük ve çalışan Moodle'da denedik (ör. ders ve kayıtta 45 kontrol, hepsi geçti).
-Her YZ kullanımı kayıt altında: model, verilen bağlam, ne kadarını değiştirdik, ne kadar sürdü.
+**Bu hafta:** 1. ve 2. adımı 5 modülde yaptık, **41 kural** çıktı.
+3. ve 4. adımı ilk kez bir kuralda (ders ön koşulu) yaptık, birazdan göstereceğiz.
 
 ---
 

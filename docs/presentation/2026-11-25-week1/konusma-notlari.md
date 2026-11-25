@@ -49,11 +49,14 @@ Hemen ikinci slayta geç. Ekip tanıtımı yok, isimler slaytta.
 - **Bağla:** "Yani kodun düzgün görünmesi, doğru çalıştığı anlamına gelmiyor. Bu yüzden bizim için asıl soru şu: yeni sistemin Moodle ile aynı davrandığını nasıl kanıtlarız?"
 
 ### 4. Yöntem (Sertug)
-> "O yüzden sırayı tersine çevirdik: önce Moodle'ı ölçüyoruz, sonra yazıyoruz."
+> "Peki biz nasıl yapıyoruz? Moodle'daki her kuralı dört adımda taşıyoruz. Bir örnekle anlatayım."
 
-- Dört adımı soldan sağa göster, her birine bir cümle.
-- Bu hafta 5 modülde Moodle'ın 41 kuralını yazdık. Örnek ver: "Bitiş tarihi başlangıçtan önce olan ders açılamaz" bir kural. Bunu Docker'da kurduğumuz Moodle'da gerçekten denedik: script o dersi açmaya çalıştı, Moodle reddetti, kural doğrulandı.
-- YZ kaydı: her kullanımda model, bağlam, ne kadarını değiştirdiğimiz, süre. Proje dokümanı bunu istiyor.
+- Örnek kural: bitiş tarihi başlangıçtan önce olan ders açılamaz.
+- 1: Önce Moodle'da denedik, Moodle reddetti. Yani kodu okuyup tahmin etmiyoruz, çalışan sistemde görüyoruz.
+- 2: Bunu gereksinim olarak yazdık, numarası REQ-CRS-02.
+- 3: Yeni sistemde kodu yapay zekâ yazıyor, ama bir ekip arkadaşı kontrol etmeden birleşmiyor. Her yapay zekâ kullanımını da kaydediyoruz.
+- 4: En son aynı girdiyi iki sisteme veriyoruz, cevaplar aynı olmalı.
+- Bağla: "Bu hafta ilk iki adımı beş modülde bitirdik, 41 kural çıktı. Son iki adımı da bir kuralda baştan sona yaptık, birazdan göstereceğiz."
 
 ### 5. Java (Sertug)
 > "Dil seçerken tek bir soruyu sorduk: yapay zekânın yaptığı hatayı kim yakalayacak?"
