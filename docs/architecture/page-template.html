@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Moodle ve Fig LMS mimarisi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: one reading column of large diagram "boards", grouped old -> new -> side by side; projector-sized type. */
+:root {
+  --bg: #f3f5f7;
+  --ink: #18222c;
+  --muted: #55636f;
+  --line: #d3dae1;
+  --paper: #ffffff;
+  --old: #b4531a;
+  --old-soft: #fbeee4;
+  --new: #0f766e;
+  --new-soft: #e2f3f1;
+  --say: #fff7df;
+  --say-line: #e2c56b;
+  --code-bg: #17212b;
+  --code-fg: #e5edf3;
+  --display: "Segoe UI Semibold", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --body: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Cascadia Mono", Consolas, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12181e; --ink: #e6ecf1; --muted: #9aa8b4; --line: #2c3742; --paper: #f7f9fb;
+  --old: #f08a4b; --old-soft: #2d1f16; --new: #3fc1b4; --new-soft: #12302d;
+  --say: #2a2516; --say-line: #8a7433; --code-bg: #0b1015; --code-fg: #dce6ee; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12181e; --ink: #e6ecf1; --muted: #9aa8b4; --line: #2c3742; --paper: #f7f9fb;
+  --old: #f08a4b; --old-soft: #2d1f16; --new: #3fc1b4; --new-soft: #12302d;
+  --say: #2a2516; --say-line: #8a7433; --code-bg: #0b1015; --code-fg: #dce6ee; color-scheme: dark }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 18px/1.55 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 4rem;
+}
+.wrap { max-width: 1180px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; line-height: 1.2; margin: 0; }
+code { font-family: var(--mono); font-size: .86em; background: color-mix(in srgb, var(--line) 55%, transparent); padding: .05em .3em; border-radius: 4px; }
+
+.top { padding-block: 2.5rem 1.5rem; display: grid; gap: 1rem; }
+.top h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+.top h1 .o { color: var(--old); } .top h1 .n { color: var(--new); }
+.lead { color: var(--muted); max-width: 62ch; margin: 0; font-size: 1.05rem; }
+.legend { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; font-size: .9rem; color: var(--muted); margin: 0; padding: 0; list-style: none; }
+
+nav.toc { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: .5rem; margin-block: 1rem 2rem; }
+nav.toc a { display: flex; gap: .7rem; align-items: baseline; padding: .6rem .8rem; border-radius: 8px; text-decoration: none; color: var(--ink); background: var(--paper); border: 1px solid var(--line); font-size: .95rem; line-height: 1.3; }
+:root[data-theme="dark"] nav.toc a { color: #18222c; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) nav.toc a { color: #18222c; } }
+nav.toc a span { font-family: var(--display); font-variant-numeric: tabular-nums; min-width: 1.4em; }
+nav.toc a.nav-eski span { color: #b4531a; } nav.toc a.nav-yeni span { color: #0f766e; } nav.toc a.nav-karsilastirma span { color: #3d5a80; }
+nav.toc a:hover, nav.toc a:focus-visible { outline: 2px solid var(--new); outline-offset: 1px; }
+
+.part { display: grid; gap: 3rem; margin-top: 3rem; }
+.part-title { font-size: 1rem; text-transform: uppercase; letter-spacing: .08em; padding: .5rem .9rem; border-radius: 6px; width: fit-content; }
+.part-eski .part-title { background: var(--old-soft); color: var(--old); }
+.part-yeni .part-title { background: var(--new-soft); color: var(--new); }
+.part-karsilastirma .part-title { background: color-mix(in srgb, var(--line) 60%, transparent); color: var(--ink); }
+
+.diagram { display: grid; gap: 1rem; scroll-margin-top: 1rem; }
+.diagram header { display: grid; gap: .2rem; }
+.num { font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
+.part-eski .num { color: var(--old); } .part-yeni .num { color: var(--new); }
+.diagram h3 { font-size: clamp(1.35rem, 2.6vw, 1.8rem); }
+.board { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 1.25rem; overflow-x: auto; }
+.board svg { display: block; margin: 0 auto; min-width: 640px; max-width: 100% !important; height: auto; }
+
+.say { background: var(--say); border: 1px solid var(--say-line); border-radius: 10px; padding: 1rem 1.25rem; display: grid; gap: .6rem; min-width: 0; }
+.say p { margin: 0; max-width: 75ch; }
+.say-label { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+.output { display: grid; gap: .5rem; min-width: 0; }
+.output pre { margin: 0; background: var(--code-bg); color: var(--code-fg); padding: 1rem 1.2rem; border-radius: 10px; overflow-x: auto; font: .8rem/1.5 var(--mono); }
+.evidence { font-size: .92rem; color: var(--muted); }
+.evidence summary { cursor: pointer; font-weight: 600; color: var(--ink); width: fit-content; }
+.evidence summary:focus-visible { outline: 2px solid var(--new); outline-offset: 2px; }
+.evidence ul { margin: .6rem 0 0; padding-left: 1.2rem; display: grid; gap: .35rem; }
+footer { margin-top: 4rem; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1><span class="o">Moodle</span> bugün nasıl çalışıyor, <span class="n">Fig LMS</span> neyi farklı yapıyor?</h1>
+    <p class="lead">Aynı soru iki sisteme: "CS101'i bitirmemiş öğrenci CS201'e girebilir mi?" Moodle bilgileri Moodle 5.3.1 kaynak kodundan, yeni sistem bilgileri bu repodaki çalışan backend'den alındı.</p>
+    <ul class="legend">
+      <li>✅ kodda doğrulandı / çalışıyor</li>
+      <li>📏 kendi script'imizle sayıldı</li>
+      <li>🟡 geçici çözüm</li>
+      <li>⬜ sadece iskelet</li>
+      <li>🔜 planlandı, henüz yok</li>
+      <li>⚠️ doğrulanmadı</li>
+    </ul>
+  </header>
+  <nav class="toc" aria-label="Diyagramlar">
+{{NAV}}
+  </nav>
+{{CONTENT}}
+  <footer>Kaynak dosyalar: <code>docs/architecture/01-moodle.md</code>, <code>02-yeni-sistem.md</code>, <code>03-karsilastirma.md</code>, canlı demo adımları <code>04-canli-demo.md</code>. Bu sayfa <code>docs/architecture/build_page.py</code> ile üretildi; diyagramı değiştirmek için .md dosyasını düzenleyip script'i yeniden çalıştırın.</footer>
+</div>
+</body>
+</html>
