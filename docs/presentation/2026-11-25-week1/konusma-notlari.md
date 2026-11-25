@@ -140,6 +140,7 @@ Sunumdan önce hazırla: Moodle (`docker compose -f infra/docker-compose.yml up 
 ## Olası sorular
 
 - **Bu çalışmalardaki "testler" ne?** Eski kodun kendi testleri; çeviriyi aynı testlerle sınamışlar. Test olmayan yer kanıtlanamıyor (AlphaTrans'ta %25'in nedeni). Moodle'ın testleri geçiyor ama kodun sadece ~%31'ine dokunuyor; bu yüzden onlarla yetinmiyoruz, aynı girdiyi çalışan Moodle'a ve yeni sisteme verip karşılaştırıyoruz.
+- **Script nedir, nasıl çalışır?** "Script, elle tıklamak yerine denemeleri otomatik yapan küçük bir program. İçinde bir deneme listesi var: her denemede Moodle'a ne vereceğimizi ve ne cevap beklediğimizi yazdık. Script Moodle'ın kendi fonksiyonlarını bu girdilerle çağırıyor, gelen cevabı beklenenle karşılaştırıyor, her deneme için PASS ya da FAIL yazıyor. Sonunda yaptığı her şeyi geri alıyor. Ders ve kayıt kurallarında 45 deneme vardı, 45'i de PASS."
 - **Neden Java?** Derleyici + modül sınırı testi; yedek slayt "Mimari kararı".
 - **YZ'nin yazdığı koda nasıl güveniyorsunuz?** Derleyici, modül testi, arkadaş review'u, sonra çalışan Moodle'a karşı golden master.
 - **Performans sayıları neden bu kadar küçük?** Küçük veri, tek makine; sadece aynı koşulda yeni sistemle kıyaslamak için.
