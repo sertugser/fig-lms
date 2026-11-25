@@ -112,6 +112,8 @@ Java'da derleyici, birçok hatayı kod daha çalışmadan bulur. Sistemi modüll
 
 <div class="who">Hasan</div>
 
+<p class="muted" style="margin:0">Moodle'ı incelerken bulduklarımız 1/4 · Kimlik ve yetki modülü</p>
+
 # Kurduğumuz Moodle'da yanlış şifre kaç kez girilirse girilsin hesap kilitlenmiyor
 
 <div class="row">
@@ -127,6 +129,8 @@ Yetkiler ise doğru çalışıyor. Öğrenci olarak giriş yapıp adres çubuğu
 
 <div class="who">Efekan</div>
 
+<p class="muted" style="margin:0">Moodle'ı incelerken bulduklarımız 2/4 · Ders ve kayıt modülü</p>
+
 # Moodle, "CS101" varken "cs101" kodlu ikinci bir dersin açılmasına izin veriyor
 
 <div class="row">
@@ -141,6 +145,8 @@ Yeni sistemde bu iki kuralı **veritabanı da** zorunlu tutacak. Büyük-küçü
 ---
 
 <div class="who">Sercan</div>
+
+<p class="muted" style="margin:0">Moodle'ı incelerken bulduklarımız 3/4 · Ödev modülü</p>
 
 # Öğretmen bir ödev teslimini "taslağa geri alınca" öğrenciye fazladan bir deneme hakkı açılıyor
 
@@ -161,6 +167,8 @@ Yeni sistemde bu iki kuralı **veritabanı da** zorunlu tutacak. Büyük-küçü
 ---
 
 <div class="who">Oğuz</div>
+
+<p class="muted" style="margin:0">Moodle'ı incelerken bulduklarımız 4/4 · Ders kategorileri</p>
 
 # Ders listeleme izni kapatılınca öğrenci, kayıtlı olduğu derslerin kategorisini de göremiyor
 
