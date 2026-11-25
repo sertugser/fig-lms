@@ -78,7 +78,7 @@ Bu yüzden bizim için asıl soru şu: **yeni sistemin Moodle ile aynı davrand�
 <div class="row" style="gap:10px">
 <div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>1. Moodle'da dene</strong><br>Bir betikle (script) Moodle'da böyle bir ders açmayı denedik. Moodle dersi açmadı.</div>
 <div class="arrow" style="font-size:28px">→</div>
-<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>2. Kuralı yaz</strong><br>Gördüğümüzü gereksinim belgesine bir numarayla yazdık: <code>REQ-CRS-02</code></div>
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>2. Listeye ekle</strong><br>Kuralı numara verip yapılacaklar listemize yazdık: <code>REQ-CRS-02</code>. Yeni sistem bu listeye uymak zorunda.</div>
 <div class="arrow" style="font-size:28px">→</div>
 <div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>3. Yeni sistemde kodla</strong><br>Kodu yapay zekâ yazıyor. Ekipten biri inceleyip onaylıyor.</div>
 <div class="arrow" style="font-size:28px">→</div>
