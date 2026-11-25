@@ -71,30 +71,32 @@ Bu yüzden bizim için asıl soru şu: **yeni sistemin Moodle ile aynı davrand�
 
 <div class="who">Sertug</div>
 
-# Moodle'daki her kuralı 4 adımda taşıyoruz
+# Her kuralı önce Moodle'da deniyoruz, sonra yeni sistemde aynı sonucu arıyoruz
 
-<p class="muted">Örnek kural: "Bitiş tarihi başlangıçtan önce olan bir ders açılamaz."</p>
+<p class="muted">Kural: Moodle'ın bir durumda ne yaptığı. Örnek: "Bitişi başlangıcından önce olan bir ders açılamaz."</p>
 
 <div class="row" style="gap:10px">
-<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>1. Moodle'da dene</strong><br>Moodle'a böyle bir ders açtırmayı denedik. Moodle reddetti.</div>
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>1. Moodle'da dene</strong><br>Bir betikle (script) Moodle'da böyle bir ders açmayı denedik. Moodle dersi açmadı.</div>
 <div class="arrow" style="font-size:28px">→</div>
-<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>2. Kural olarak yaz</strong><br>Bulduğumuzu gereksinim belgesine yazdık: <code>REQ-CRS-02</code></div>
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>2. Kuralı yaz</strong><br>Gördüğümüzü gereksinim belgesine bir numarayla yazdık: <code>REQ-CRS-02</code></div>
 <div class="arrow" style="font-size:28px">→</div>
-<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>3. Yeni sistemde kodla</strong><br>Kodu yapay zekâ yazar, bir ekip arkadaşı kontrol eder.</div>
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>3. Yeni sistemde kodla</strong><br>Kodu yapay zekâ yazıyor. Ekipten biri inceleyip onaylıyor.</div>
 <div class="arrow" style="font-size:28px">→</div>
-<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>4. Karşılaştır</strong><br>Aynı dersi iki sisteme ver. İkisi de reddetmeli.</div>
+<div class="step" style="text-align:left;font-size:23px;padding:16px"><strong>4. Karşılaştır</strong><br>Aynı isteği Moodle'a ve yeni sisteme gönderiyoruz. Cevaplar aynı olmalı.</div>
 </div>
 
-<br>
+<div style="height:20px"></div>
 
-**Bu hafta:** 1. ve 2. adımı 5 modülde yaptık, **41 kural** çıktı.
-3. ve 4. adımı ilk kez bir kuralda (ders ön koşulu) yaptık, birazdan göstereceğiz.
+**Bu hafta:** İlk iki adımı 5 modülde yaptık ve **41 kural** yazdık.
+Son iki adımı şimdilik tek bir kuralda, ders ön koşulunda yaptık.
 
 ---
 
 <div class="who">Sertug</div>
 
-# Java seçtik, çünkü derleyici YZ'nin hatalarını bizden önce yakalıyor
+# Yeni sistemi Java ile yazıyoruz, çünkü derleyici yapay zekânın hatalarını erken yakalıyor
+
+Bir araştırmada yapay zekâya gerçek projelerdeki hatalar verilmiş. Çözebildiği hataların oranı:
 
 <div class="row">
 <div class="card"><div class="mid">%23,4</div><p>Java</p></div>
@@ -102,139 +104,149 @@ Bu yüzden bizim için asıl soru şu: **yeni sistemin Moodle ile aynı davrand�
 <div class="card"><div class="mid" style="color:#9aa5b1">%5,1</div><p>JavaScript</p></div>
 </div>
 
-<p class="muted">YZ ajanlarının gerçek hataları çözme oranı, Multi-SWE-bench (Zan vd., 2025)</p>
+<p class="muted">Kaynak: Multi-SWE-bench (Zan vd., 2025)</p>
 
-Java 21 + Spring Boot, tek parça ama modüllere bölünmüş. Bir modül diğerinin içine erişirse **CI kırılıyor**.
+Java'da derleyici, birçok hatayı kod daha çalışmadan bulur. Sistemi modüllere ayırdık: Bir modül başka bir modülün iç koduna erişirse **otomatik kontrol hata verir**.
 
 ---
 
 <div class="who">Hasan</div>
 
-# Moodle'da yanlış şifreyi istediğiniz kadar deneyebilirsiniz
+# Kurduğumuz Moodle'da yanlış şifre kaç kez girilirse girilsin hesap kilitlenmiyor
 
 <div class="row">
-<div class="card"><div class="big red">0</div><p>Hesap kilitleme eşiği: kilit kapalı<br>Hedefimiz: 15 dakikada 5 hata → kilit</p></div>
-<div class="card"><div class="big">8 sa</div><p>Boşta kalan oturumun süresi<br>Hedefimiz: en fazla 2 saat</p></div>
+<div class="card"><div class="mid red">Kapalı</div><p>Hesap kilitleme ayarı<br><strong>Hedefimiz:</strong> 15 dakikada 5 yanlış şifreden sonra hesabı kilitlemek</p></div>
+<div class="card"><div class="mid">8 saat</div><p>Hiçbir şey yapmayan kullanıcının oturumu bu kadar açık kalıyor<br><strong>Hedefimiz:</strong> en fazla 2 saat</p></div>
 </div>
 
 <br>
 
-İyi haber: yetkiler doğru çalışıyor. Öğrenci URL'yi değiştirip başka derse giremedi, not verme sayfası 404 döndü.
+Yetkiler ise doğru çalışıyor. Öğrenci olarak giriş yapıp adres çubuğundaki dersi elle değiştirdik: Kayıtlı olmadığımız derse giremedik, not verme sayfası da açılmadı.
 
 ---
 
 <div class="who">Efekan</div>
 
-# Moodle "CS101" ile "cs101"i iki farklı ders sayıyor
+# Moodle, "CS101" varken "cs101" kodlu ikinci bir dersin açılmasına izin veriyor
 
 <div class="row">
-<div class="card"><div class="mid">45 / 45</div><p>ders ve kayıt kuralı canlı Moodle'da doğrulandı</p></div>
-<div class="card"><div class="mid red">Sadece PHP'de</div><p>Ders kodu tekilliği veritabanında değil, yalnızca PHP kodunda kontrol ediliyor</p></div>
+<div class="card"><div class="mid">45 / 45</div><p>Ders ve ders kaydı kurallarını bir betikle çalışan Moodle'da denedik. 45 kontrolün 45'inde Moodle, yazdığımız kurallara uydu.</p></div>
+<div class="card"><p><strong>Bu sırada bulduğumuz iki zayıflık</strong></p><p>1. Ders kodunun tekrar etmemesi veritabanında değil, yalnızca PHP kodunda kontrol ediliyor.</p><p>2. Bitiş tarihi başlangıcından önce olan bir ders kaydı kabul ediliyor, ama hiçbir zaman geçerli olmuyor.</p></div>
 </div>
 
 <br>
 
-Bitişi başlangıcından önce olan bir kayıt da kabul ediliyor, ama hiçbir zaman aktif olmuyor.
-Yeni sistemde bu kurallar **veritabanında** zorunlu olacak.
+Yeni sistemde bu iki kuralı **veritabanı da** zorunlu tutacak. Büyük-küçük harf konusuna ekipçe karar vereceğiz.
 
 ---
 
 <div class="who">Sercan</div>
 
-# Öğretmen "taslağa geri al" dediğinde öğrenci fazladan bir hak kazanıyor
+# Öğretmen bir ödev teslimini "taslağa geri alınca" öğrenciye fazladan bir deneme hakkı açılıyor
 
-![h:400](../../bugs/evidence/MDL-87490-03-student-extra-attempt.png)
+<div class="row">
+<div style="flex:0 0 46%">
 
-<p class="muted">MDL-87490, Moodle 5.3.1'de yeniden üretildi. Beklenen: 1. deneme düzenlenebilir kalsın. Görülen: 2. deneme açıldı.</p>
+![h:360](../../bugs/evidence/MDL-87490-03-student-extra-attempt.png)
+
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18px">
+<div class="card"><p><strong>Beklenen</strong></p><p>Öğrenci 1. denemesini düzeltir ve yeniden gönderir.</p></div>
+<div class="card"><p><strong class="red">Moodle'da olan</strong></p><p>2. deneme açıldı. Dosya 1. denemede kaldı ve öğrenci onu düzenleyemiyor.</p></div>
+</div>
+</div>
+
+<p class="muted">Bu, Moodle'ın bilinen ve hâlâ açık bir hatası (MDL-87490). Moodle 5.3.1'de tarayıcıda adım adım tekrarladık; ekran görüntüsü öğrencinin sayfasından.</p>
 
 ---
 
 <div class="who">Oğuz</div>
 
-# Kategori izni kapatılınca öğrenci kendi dersini bile bulamıyor
+# Ders listeleme izni kapatılınca öğrenci, kayıtlı olduğu derslerin kategorisini de göremiyor
 
 <div class="row">
-<div class="card"><p><strong>student1</strong> (CS101 ve CS201'e kayıtlı)</p><div class="mid red">HTTP 404</div><p>Hiç kategori görmüyor</p></div>
-<div class="card"><p><strong>admin</strong></p><div class="mid green">Hepsi</div><p>Engineering ve tüm dersler</p></div>
+<div class="card"><p><strong>student1</strong> (CS101 ve CS201'e kayıtlı öğrenci)</p><div class="mid red">404 hatası</div><p>Kategori sayfası açılmıyor. Beklenen: kendi derslerini ve kategorisini görmesi.</p></div>
+<div class="card"><p><strong>admin</strong> (yönetici)</p><div class="mid green">Hepsi</div><p>Tüm kategorileri ve dersleri görüyor.</p></div>
 </div>
 
 <br>
 
-MDL-85503 tek komutla yeniden üretiliyor. Not hesaplama tarafında da **18 kural** canlı Moodle'da doğrulandı (ağırlıklı ortalama, en düşük notu atma, sınırlar).
+Bu da Moodle'ın bilinen ve hâlâ açık bir hatası (MDL-85503). Yazdığımız betik hatayı tek komutla tekrarlıyor.
+
+<p class="muted">Not hesaplama kurallarını da çalışan Moodle'da bir betikle denedik: 18 kontrolün 18'i geçti.</p>
 
 ---
 
 <div class="who">Efekan</div>
 
-# Yeni sistemi neyle kıyaslayacağımızı yazmaya başlamadan ölçtük
+# Yeni sistemi kıyaslayabilmek için önce Moodle'ın bugünkü değerlerini ölçtük
 
 <div class="row">
-<div class="card"><div class="mid">%30,8</div><p>Moodle kodunun testlerin çalıştırdığı kısmı (kapsam)<br>Hedef: ≥ %80</p></div>
-<div class="card"><div class="mid">115,8 ms</div><p>Giriş, p95<br>Hedef: daha yavaş olmamak</p></div>
-<div class="card"><div class="mid">8 tık</div><p>Ödev oluşturma<br>Hedef: 6</p></div>
+<div class="card"><div class="mid">%30,8</div><p>Moodle'ın kendi testleri, incelediğimiz kodun bu kadarını çalıştırıyor.<br><strong>Hedefimiz:</strong> en az %80</p></div>
+<div class="card"><div class="mid">115,8 ms</div><p>Giriş süresi: Girişlerin %95'i bundan kısa sürdü.<br><strong>Hedefimiz:</strong> Moodle'dan yavaş olmamak</p></div>
+<div class="card"><div class="mid">8 tık</div><p>Öğretmenin bir ödev oluşturmak için yaptığı tıklama sayısı.<br><strong>Hedefimiz:</strong> 6 tık</p></div>
 </div>
 
 <br>
 
-Toplam **26 KPI**: bakım yapılabilirlik, güvenlik, performans, kullanılabilirlik.
-<p class="muted">Performans tek makinede ve küçük veriyle ölçüldü; sadece aynı koşulda karşılaştırılabilir.</p>
+Toplam **26 ölçüt (KPI)** belirledik: bakım kolaylığı, güvenlik, hız ve kullanım kolaylığı.
+<p class="muted">Hızı tek bilgisayarda ve az veriyle ölçtük. Bu sayılar yalnızca aynı koşulda ölçülen yeni sistemle karşılaştırılabilir.</p>
 
 ---
 
 <div class="who">Sertug · canlı demo</div>
 
-# Moodle student3'ü kaydediyor, bizim sistem "önce CS101" diyor
+# Aynı öğrenciyi yeni sisteme sorduk: "CS201'e kaydolamaz, önce CS101'i geçmeli"
+
+Yazdığımız ilk kod tek bir soruyu cevaplıyor: **"Bu öğrenci bu derse kaydolabilir mi?"** student3 ve CS201 için soruyoruz:
 
 ```bash
 curl -u student3:*** ".../api/advising/prerequisite-check?student=student3&course=CS201"
 ```
 ```json
-{ "allowed": false,
+{ "allowed": false,                      ← kaydolamaz
   "reason": "PREREQUISITES_MISSING",
-  "missingPrerequisites": ["CS101"] }
+  "missingPrerequisites": ["CS101"] }    ← eksik ön koşul dersi
 ```
 
-Kural tek yerde, danışmanlık modülünde. Kayıt ve ders planı onu çağırıyor. 21 test ile geliyor.
+Bu kontrolü **21 otomatik test** sınıyor. Henüz derse kayıt işlemine bağlı değil; sıradaki işimiz bu.
 
 ---
 
 <div class="who">Oğuz</div>
 
-# "CS101'i tamamladı mı?" sorusuna Moodle ile 5 durumun 5'inde aynı cevabı veriyoruz
+# Beş durumun beşinde yeni sistemin kararı, Moodle'daki bilgiyle uyuşuyor
 
-<div class="row">
-<div class="card" style="flex:0 0 32%"><div class="big green">5 / 5</div><p>senaryo aynı sonuç<br>main'de, her PR'da CI'da</p></div>
-<div class="card">
+<p style="font-size:25px">Moodle, öğrencinin CS101'i tamamlayıp tamamlamadığını kaydediyor, ama derse kayıtta buna bakmıyor. Testimiz Moodle'daki bu bilgiyi yeni sistemin kararıyla karşılaştırıyor.</p>
 
-| Senaryo | Sonuç |
-|---|---|
-| CS101'i geçmiş | izin var, Moodle ile aynı |
-| Hiç teslim etmemiş | izin yok, aynı |
-| 40 almış (sınır) | izin yok, aynı |
-| Notlanmamış (sınır) | izin yok, aynı |
-| Başkasını soruyor | reddedildi, aynı |
+<style scoped>table { font-size: 24px; }</style>
 
-</div>
-</div>
+| Öğrencinin durumu | Moodle'daki bilgi | Yeni sistemin kararı |
+|---|---|---|
+| CS101'i 85 ile geçti | tamamladı | CS201'e kaydolabilir |
+| CS101 ödevini teslim etmedi | tamamlamadı | kaydolamaz |
+| CS101'den 40 aldı (geçme notu 50) | tamamlamadı | kaydolamaz |
+| Teslim etti, notu henüz verilmedi | tamamlamadı | kaydolamaz |
+| Başka bir öğrenciyi soruyor | bilgi verilmez * | cevap verilmez |
 
-<p class="muted">Sistemi bilerek bozduk, test farkı satır satır yakaladı. "Başkasını soruyor" senaryosunda Moodle tarafı canlı çağrı değil, kaynak koddaki kural.</p>
+<p class="muted">* Bu satırda Moodle'a canlı sormadık; Moodle'ın kaynak kodundaki kuralı esas aldık.<br>Test, her kod değişikliğinde otomatik çalışıyor. Sistemi bilerek bozduğumuzda farkı satır satır gösterdi.</p>
 
 ---
 
 <div class="who">Sertug</div>
 
-# Kanıt altyapısı hazır, şimdi modülleri yazmaya geçiyoruz
+# Karşılaştırma düzeni hazır, sıra modülleri yazmakta
 
 <div class="row">
-<div class="card"><p><strong>Bu hafta</strong></p><p>Moodle'ın 41 kuralı yazıya döküldü ve denendi<br>26 KPI'ın başlangıç değeri ölçüldü<br>İlk endpoint ve ilk golden master testi: 5/5</p></div>
-<div class="card"><p><strong>Sıradaki</strong></p><p>Ön koşulu kayıt akışına bağlamak<br>Her korunan kurala bir golden master testi<br>İki Moodle hatası için önce başarısız test, sonra düzeltme</p></div>
+<div class="card"><p><strong>Bu hafta yaptıklarımız</strong></p><p>Moodle'ın 41 kuralını yazdık, çoğunu çalışan Moodle'da denedik.</p><p>26 ölçüt belirledik, Moodle'daki değerlerini ölçtük (biri eksik).</p><p>İlk kodu yazıp Moodle ile karşılaştırdık: 5 durumun 5'i uyuşuyor.</p></div>
+<div class="card"><p><strong>Sıradaki işler</strong></p><p>Ön koşul kontrolünü derse kayıt işlemine bağlamak.</p><p>Koruduğumuz her kural için bir karşılaştırma testi yazmak.</p><p>İki Moodle hatasını düzeltmek: önce hatayı gösteren test, sonra düzeltme.</p></div>
 </div>
 
-<br>
+<div style="height:20px"></div>
 
-**Sizin görüşünüzü istediğimiz konu:** YZ destekli ve manuel geliştirmeyi hangi alt fonksiyonda karşılaştıralım?
+**Size sorumuz:** Yapay zekâ destekli geliştirme ile elle geliştirmeyi hangi alt fonksiyonda karşılaştıralım?
 
-<p class="muted">Henüz yok: eğitim planı gereksinimleri, arayüz, kendi kendine kayıt akışının insan ölçümü, ZAP taraması.</p>
+<p class="muted">Henüz yapmadıklarımız: eğitim planı gereksinimleri, arayüz, "derse kendi kendine kayıt" akışının kullanılabilirlik ölçümü, ZAP güvenlik taraması.</p>
 
 ---
 
