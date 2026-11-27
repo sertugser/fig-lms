@@ -44,16 +44,18 @@ cd backend
 Windows: use `mvnw.cmd verify`. CI runs the same command on every pull request. The backend gets its own PostgreSQL service in the Compose file once the first module stores data (#6).
 
 The database schema comes from Flyway migrations in `backend/src/main/resources/db/migration` (tests use H2 in PostgreSQL mode).
-To run the backend locally against PostgreSQL, set `POSTGRES_*` and `SAMPLE_USER_PASSWORD` from `.env.example`, then `./mvnw spring-boot:run`.
-Until the identity module has real accounts, the API uses HTTP Basic with the sample users (`student1`..`student5`, `teacher1`, `teacher2`, `admin`) and the password `SAMPLE_USER_PASSWORD`:
+To run the backend locally against PostgreSQL, set `POSTGRES_*` and `SAMPLE_USER_PASSWORD` from `.env.example`, then `./mvnw spring-boot:run`. Uploaded file contents go to `backend/data/files` (`FIG_FILES_ROOT` changes it; the folder is git-ignored).
+Accounts are stored in the database. The sample users (`student1`..`student5`, `teacher1`, `teacher2`, `admin`) get the password `SAMPLE_USER_PASSWORD` at startup. Tools and the golden master use HTTP Basic; a browser logs in with `POST /api/identity/login` and keeps a session (2 hours):
 ```bash
 curl -u student3:$SAMPLE_USER_PASSWORD "http://localhost:8080/api/advising/prerequisite-check?student=student3&course=CS201"
 # {"student":"student3","course":"CS201","allowed":false,"reason":"PREREQUISITES_MISSING","missingPrerequisites":["CS101"]}
+curl -u student1:$SAMPLE_USER_PASSWORD http://localhost:8080/api/grading/courses/CS101/users/student1
 ```
+The endpoints of each module are listed in its controller (`*Controller.java`, class comment). Errors always have the body `{"error": CODE, "message": text}`.
 
 ## Repository layout
 ```
-backend/             Spring Boot application (modules: identity, course, advising, assignment, grading, planning)
+backend/             Spring Boot application (modules: identity, course, advising, assignment, grading, files, planning)
 frontend/            React UI
 tests/golden-master/ Tests that feed the same inputs to Moodle and the new system and compare results
 tests/e2e/           Playwright tests (including click-count measurements)

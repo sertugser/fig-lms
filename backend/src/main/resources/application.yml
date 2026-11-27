@@ -6,6 +6,11 @@ spring:
     url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:fig}
     username: ${POSTGRES_USER:fig}
     password: ${POSTGRES_PASSWORD:}
+  servlet:
+    multipart:
+      # Must not be lower than fig.files.max-bytes; a request may carry several files.
+      max-file-size: 20MB
+      max-request-size: 100MB
   jpa:
     open-in-view: false
     hibernate:
@@ -24,3 +29,7 @@ fig:
   sample-users:
     # Shared password of the temporary sample users (see identity SecurityConfig). Empty = no users.
     password: ${SAMPLE_USER_PASSWORD:}
+  files:
+    # File contents, named by their SHA-256 hash (see the files module). Keep it outside the web root.
+    root: ${FIG_FILES_ROOT:./data/files}
+    max-bytes: 20MB

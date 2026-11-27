@@ -21,6 +21,7 @@ Fig LMS is a modular monolith (Java 21, Spring Boot 3, Spring Modulith, PostgreS
 | Advising | `ADV` | Course prerequisite check (MDL-22648), advisor approval, credit limit | [advising.md](modules/advising.md) |
 | Assignments | `ASG` | Dates, file submission, late submission, drafts and attempts | [assignment.md](modules/assignment.md) |
 | Grading | `GRD` | Grading, weighted mean, students viewing their own grades | [grading.md](modules/grading.md) |
+| Files | `FIL` | Storing uploads, safe file names, upload limits, protected download | [files.md](modules/files.md) |
 | Study planner (new) | `PLN` | Term-by-term study plan from prerequisites and credit limits | [planning.md](modules/planning.md) |
 | Non-functional | `NFR` | Maintainability, security, performance, usability | [kpi.md](kpi.md) |
 
@@ -39,7 +40,7 @@ Moodle bugs fixed in the new system: MDL-87490 (assignments), MDL-85503 (course 
 ### 1.4 References
 - ISO/IEC/IEEE 29148:2018, Systems and software engineering — Life cycle processes — Requirements engineering
 - Moodle 5.3.1 source, tag `v5.3.1`: https://github.com/moodle/moodle/tree/v5.3.1
-- [ADR-0001](../adr/0001-language-and-architecture.md), [CONTRIBUTING.md](../../CONTRIBUTING.md), [AI usage log rules](../ai-log/README.md)
+- [ADR-0001](../adr/0001-language-and-architecture.md), [ADR-0002](../adr/0002-module-dependencies-and-files.md), [CONTRIBUTING.md](../../CONTRIBUTING.md), [AI usage log rules](../ai-log/README.md)
 
 ## 2. Overall description
 
@@ -92,10 +93,11 @@ Complete example to copy from: `REQ-ADV-01` in [advising.md](modules/advising.md
 | Module | File | Requirements (status 2026-11-24) |
 |---|---|---|
 | Identity & access | [identity.md](modules/identity.md) | `REQ-IDN-01`…`07`, 7 preserved |
-| Courses & enrolment | [course.md](modules/course.md) | `REQ-CRS-01`…`09`, 8 preserved, 1 new |
+| Courses & enrolment | [course.md](modules/course.md) | `REQ-CRS-01`…`10`, 8 preserved, 1 new, 1 bug fix (MDL-85503) |
 | Advising | [advising.md](modules/advising.md) | `REQ-ADV-01`…`09`, 8 preserved, 1 new |
 | Assignments | [assignment.md](modules/assignment.md) | `REQ-ASG-01`…`08`, 7 preserved, 1 bug fix (MDL-87490) |
 | Grading | [grading.md](modules/grading.md) | `REQ-GRD-01`…`08`, 8 preserved |
+| Files | [files.md](modules/files.md) | `REQ-FIL-01`…`07`, 6 preserved, 1 new |
 | Study planner | [planning.md](modules/planning.md) | not written yet |
 
 ### 3.4 Non-functional requirements

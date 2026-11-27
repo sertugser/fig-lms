@@ -1,9 +1,12 @@
 package com.figlms.advising.api;
 
-/** No course has the given short name. */
-public class UnknownCourseException extends RuntimeException {
+import com.figlms.ApiException;
+import org.springframework.http.HttpStatus;
+
+/** No course has the given short name. Rendered as 404 {@code UNKNOWN_COURSE}. */
+public class UnknownCourseException extends ApiException {
 
     public UnknownCourseException(String course) {
-        super("Unknown course: " + course);
+        super(HttpStatus.NOT_FOUND, "UNKNOWN_COURSE", "Unknown course: " + course);
     }
 }

@@ -15,9 +15,11 @@ class ModularityTest {
         MODULES.verify();
     }
 
+    /** The six modules of ADR-0001 plus files (ADR-0002). */
     @Test
-    void hasTheSixModulesFromAdr0001() {
+    void hasTheModulesFromAdr0001AndAdr0002() {
         org.assertj.core.api.Assertions.assertThat(MODULES.stream().map(m -> m.getIdentifier().toString()))
-                .containsExactlyInAnyOrder("identity", "course", "advising", "assignment", "grading", "planning");
+                .containsExactlyInAnyOrder("identity", "course", "advising", "assignment", "grading", "planning",
+                        "files");
     }
 }

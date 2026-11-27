@@ -28,3 +28,6 @@ test-results/
 # Python
 __pycache__/
 *.pyc
+
+# Uploaded file contents of a local run (fig.files.root)
+backend/data/

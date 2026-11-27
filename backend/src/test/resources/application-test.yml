@@ -11,3 +11,6 @@ spring:
 fig:
   sample-users:
     password: test-password
+  files:
+    # Outside the project, so tests never touch real uploads.
+    root: ${java.io.tmpdir}/fig-lms-test-files
