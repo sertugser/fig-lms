@@ -51,14 +51,16 @@ class PrerequisiteServiceTest {
     @Test
     void boundary_completionRowWithoutTimeCompletedDoesNotCount() {
         // Moodle creates a course_completions row at enrolment; only timecompleted makes it complete.
-        jdbc.sql("INSERT INTO adv_course_completion (username, course, time_completed) VALUES ('student4', 'CS101', NULL)")
+        jdbc.sql("""
+                INSERT INTO adv_course_completion (course_id, user_id, time_completed)
+                SELECT c.id, u.id, NULL FROM crs_course c, idn_user u WHERE c.shortname = 'CS101' AND u.username = 'student4'""")
                 .update();
         assertThat(service.check("student4", "CS201").allowed()).isFalse();
     }
 
     @Test
     void boundary_allPrerequisitesMustBeCompleted() {
-        jdbc.sql("INSERT INTO adv_prerequisite (course, prerequisite) VALUES ('CS201', 'MATH101')").update();
+        addPrerequisite("CS201", "MATH101");
 
         PrerequisiteCheck check = service.check("student1", "CS201");
 
@@ -68,7 +70,7 @@ class PrerequisiteServiceTest {
 
     @Test
     void boundary_missingPrerequisitesAreSorted() {
-        jdbc.sql("INSERT INTO adv_prerequisite (course, prerequisite) VALUES ('CS201', 'MATH101')").update();
+        addPrerequisite("CS201", "MATH101");
 
         assertThat(service.check("student3", "CS201").missingPrerequisites()).containsExactly("CS101", "MATH101");
     }
@@ -85,8 +87,14 @@ class PrerequisiteServiceTest {
 
     @Test
     void invalid_courseCannotBeItsOwnPrerequisite() {
-        assertThatThrownBy(() -> jdbc.sql(
-                "INSERT INTO adv_prerequisite (course, prerequisite) VALUES ('CS101', 'CS101')").update())
+        assertThatThrownBy(() -> addPrerequisite("CS101", "CS101"))
                 .isInstanceOf(org.springframework.dao.DataIntegrityViolationException.class);
+    }
+
+    private void addPrerequisite(String course, String prerequisite) {
+        jdbc.sql("""
+                INSERT INTO adv_course_prerequisite (course_id, prerequisite_id)
+                SELECT c.id, p.id FROM crs_course c, crs_course p WHERE c.shortname = ? AND p.shortname = ?""")
+                .params(course, prerequisite).update();
     }
 }

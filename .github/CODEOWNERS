@@ -4,6 +4,7 @@
 /backend/src/main/java/**/planning/    @sertugser
 /backend/src/main/java/**/assignment/  @SercanFurkan
 /backend/src/main/java/**/grading/     @ogithup
+/backend/src/main/java/**/files/       @sertugser
 /infra/                                @efekanegeli2
 /.github/                              @sertugser
 /docs/srs/                             @sertugser

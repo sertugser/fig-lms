@@ -38,6 +38,18 @@
 2. As the student, edit or replace the file and resubmit. Verify that the same attempt becomes submitted.
 3. As a regression control, assign a grade to the resubmitted attempt with Automatic granting and remaining capacity. Verify that normal grading can still grant the next attempt.
 
+## Decisions in the new system
+
+These choices were made in the first implementation (`com.figlms.assignment`) and are open for review by the module owner.
+
+- **Individual submissions only.** Team submissions, group overrides and the group membership gate of REQ-ASG-03 are not implemented; user overrides of the three dates are.
+- **Defaults are Moodle 5.3.1's site defaults:** attempts reopen *until pass*, one attempt (`maxattempts` 1), drafts and the submission statement off, file submissions on with 20 files, statement text "This submission is my own work, except where I have acknowledged the use of the works of other people."
+- **Extension and lateness (REQ-ASG-01/02).** An extension moves the end of the window only when a cut-off date exists, as in `submissions_open()`. Lateness is measured against the due date or a later extension.
+- **Grading creates attempt 0 (REQ-ASG-06).** Grading a student without a submission creates attempt 0 with status `NEW`, as Moodle's grading form does; the direct "allow another attempt" action still needs an existing submission and answers 409 `NO_SUBMISSION`.
+- **REQ-ASG-08 fix.** Revert to draft only sets the latest attempt back to `DRAFT`; it does not run the grade update that opens a new attempt in Moodle. Grading afterwards still follows REQ-ASG-07.
+- **Completion.** An assignment counts as complete on submission (`SUBMIT`) or on grading (`GRADE`: complete-and-passed or complete-and-failed when there is a grade to pass). The state goes to the advising module at once, so course completion has no cron lag.
+- **Errors** use the common body `{"error": CODE, "message": text}` with Moodle's wording where it exists, for example `SUBMISSION_EMPTY` "Nothing was submitted", `STATEMENT_REQUIRED`, `SUBMISSIONS_CLOSED`, `SUBMISSION_LOCKED`, `GRADE_LOCKED`, `MAX_ATTEMPTS_REACHED`.
+
 ## Data model
 
 Relationships marked logical are application references. The XML declares the keys identified as foreign keys below.

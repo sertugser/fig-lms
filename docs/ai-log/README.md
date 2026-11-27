@@ -10,7 +10,7 @@ Create one file per task (one PR) named `docs/ai-log/YYYY-MM-DD-<short-task-name
 | --- | --- |
 | Date | Date the work started, `YYYY-MM-DD`. |
 | Member | Your GitHub username. |
-| Module | Module affected (`identity`, `course`, `advising`, `assignment`, `grading`, `planning`, `golden-master`, `infra`, `backend`). Use `docs` for documentation outside a module. |
+| Module | Module affected (`identity`, `course`, `advising`, `assignment`, `grading`, `files`, `planning`, `golden-master`, `infra`, `backend`). Use `docs` for documentation outside a module. |
 | Task | Issue number, requirement IDs and a short description. Add the PR number when you have it. |
 | AI used | `yes` or `no`. `yes` also when you discarded everything the AI gave you. |
 | Model/version | Model name and version as the tool shows it. Write `version unknown` if the tool hides it. `n/a` for manual work. |

@@ -51,6 +51,13 @@ Table and column names are from Moodle 5.3.1 [`lib/db/install.xml`](https://gith
 
 Relations: `grade_items.categoryid → grade_categories.id`, `grade_grades.itemid → grade_items.id`, `grade_grades.userid → user.id`. The total of a category is a `grade_items` row of type `category` that belongs to that category.
 
+## Decisions in the new system
+
+- **Hidden items and totals (REQ-GRD-07).** The new system follows the HTML user report default, not the web service: when a student's course total contains a hidden item or a hidden grade, the student's report leaves the total out (`totalHidden: true`). Teachers with `moodle/grade:viewhidden` see the total. This settles the G14 difference noted below.
+- **Aggregation methods (REQ-GRD-01).** Mean, weighted mean, median, minimum and maximum are implemented. The site default is *Mean of grades* (`fig.grading.default-aggregation`). *Natural* (sum of grades, Moodle's default since 2.8) is not implemented yet, because its weight adjustment rules are not part of REQ-GRD-01..08; mode, simple weighted mean and mean with extra credits are not implemented either.
+- **Totals are computed when read.** Category and course totals are calculated from the stored grades on every report (`GradeCalculator`), so there is no `needsupdate` flag and no stored total that can go stale.
+- **Activity grades are changed in the activity.** The gradebook refuses to edit a grade of an activity item (`GRADE_IN_ACTIVITY`); activities push their grades through `GradebookService.pushGrade()` as Moodle activities call `grade_update()`.
+
 ## Verification notes
 
 - [`grading/verify_rules.php`](grading/verify_rules.php) creates a temporary course in the Docker Moodle, builds the items above, calls Moodle's own grade API and the `gradereport_user_get_grade_items` web service function as `student1`, and deletes the course. Output: [`grading/verify_results.txt`](grading/verify_results.txt) (18 checks, all passed on 2026-11-22).

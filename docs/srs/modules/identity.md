@@ -42,6 +42,13 @@ The following values were read from the fresh local Moodle 5.3.1 sample instance
 | Enforce password policy at login | Disabled (`passwordpolicycheckonlogin = 0`). |
 | Inactive session timeout | 28,800 seconds (8 hours). This is the configured timeout; expiry was not measured by waiting for a session to lapse. |
 
+## Decisions in the new system
+
+- **Accounts live in the database** (`idn_user`); login works with HTTP Basic (for tools and the golden master) and with `POST /api/identity/login`, which opens a session. Every failure answers 401 `INVALID_LOGIN` "Invalid login, please try again", so the answer does not tell whether the user exists.
+- **Settings are the KPI targets** (`fig.identity.*`): lockout after 5 failures within 15 minutes for 15 minutes (REQ-IDN-06, Moodle's algorithm with a non-zero threshold), session timeout 2 hours (REQ-IDN-07), password at least 12 characters with a digit, a lower-case letter, an upper-case letter and a non-alphanumeric character.
+- **Sample accounts** are seeded without a password and get `SAMPLE_USER_PASSWORD` at startup; with the variable empty nobody can log in as them.
+- **Roles** are the four Moodle archetypes `student`, `teacher`, `editingteacher`, `manager`; capabilities are a fixed table mirroring Moodle's `access.php` defaults (`identity.api.Capability`). Role overrides per context are not implemented.
+
 ## Data model
 
 Table and column names are from Moodle 5.3.1 [`lib/db/install.xml`](https://github.com/moodle/moodle/blob/v5.3.1/public/lib/db/install.xml).

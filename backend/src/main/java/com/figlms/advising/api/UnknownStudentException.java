@@ -1,9 +1,12 @@
 package com.figlms.advising.api;
 
-/** No student has the given username. */
-public class UnknownStudentException extends RuntimeException {
+import com.figlms.ApiException;
+import org.springframework.http.HttpStatus;
+
+/** No user has the given username. Rendered as 404 {@code UNKNOWN_STUDENT}. */
+public class UnknownStudentException extends ApiException {
 
     public UnknownStudentException(String student) {
-        super("Unknown student: " + student);
+        super(HttpStatus.NOT_FOUND, "UNKNOWN_STUDENT", "Unknown student: " + student);
     }
 }

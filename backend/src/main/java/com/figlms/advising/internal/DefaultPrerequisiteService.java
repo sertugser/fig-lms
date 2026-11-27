@@ -5,7 +5,12 @@ import com.figlms.advising.api.PrerequisiteCheck.Reason;
 import com.figlms.advising.api.PrerequisiteService;
 import com.figlms.advising.api.UnknownCourseException;
 import com.figlms.advising.api.UnknownStudentException;
+import com.figlms.course.api.CourseCatalog;
+import com.figlms.course.api.CourseSummary;
+import com.figlms.identity.api.UserAccount;
+import com.figlms.identity.api.UserDirectory;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,25 +20,28 @@ import org.springframework.transaction.annotation.Transactional;
 class DefaultPrerequisiteService implements PrerequisiteService {
 
     private final AdvisingRepository repository;
+    private final UserDirectory users;
+    private final CourseCatalog courses;
 
-    DefaultPrerequisiteService(AdvisingRepository repository) {
+    DefaultPrerequisiteService(AdvisingRepository repository, UserDirectory users, CourseCatalog courses) {
         this.repository = repository;
+        this.users = users;
+        this.courses = courses;
     }
 
     @Override
     public PrerequisiteCheck check(String student, String course) {
-        if (!repository.studentExists(student)) {
-            throw new UnknownStudentException(student);
-        }
-        if (!repository.courseExists(course)) {
-            throw new UnknownCourseException(course);
-        }
-        List<String> prerequisites = repository.prerequisitesOf(course);
+        UserAccount user = users.findByUsername(student).orElseThrow(() -> new UnknownStudentException(student));
+        CourseSummary target = courses.findByShortname(course).orElseThrow(() -> new UnknownCourseException(course));
+        List<String> prerequisites = repository.prerequisitesOf(target.id()).stream()
+                .map(courses::findById).flatMap(Optional::stream).map(CourseSummary::shortname).sorted().toList();
         if (prerequisites.isEmpty()) {
             return new PrerequisiteCheck(student, course, true, Reason.NO_PREREQUISITES, List.of());
         }
-        Set<String> completed = repository.completedCourses(student);
-        List<String> missing = prerequisites.stream().filter(p -> !completed.contains(p)).sorted().toList();
+        Set<Long> completed = repository.completedCourses(user.id());
+        List<String> missing = prerequisites.stream()
+                .filter(p -> courses.findByShortname(p).map(c -> !completed.contains(c.id())).orElse(true))
+                .toList();
         return missing.isEmpty()
                 ? new PrerequisiteCheck(student, course, true, Reason.PREREQUISITES_COMPLETED, List.of())
                 : new PrerequisiteCheck(student, course, false, Reason.PREREQUISITES_MISSING, missing);
